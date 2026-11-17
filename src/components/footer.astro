@@ -1,0 +1,240 @@
+---
+interface Props {
+  brandName?: string;
+  tagline?: string;
+  description?: string;
+  npsn?: string;
+  address?: string;
+  phone?: string;
+  email?: string;
+  hours?: string;
+  whatsappNumber?: string;
+}
+
+const {
+  brandName = "PKBM INTAN",
+  tagline = "INSAN CINTA KEPENDIDIKAN",
+  description = "PKBM INTAN (Pusat Kegiatan Belajar Masyarakat Insan Cinta Kependidikan) adalah sekolah kesetaraan resmi dan terakreditasi A yang berlokasi di Perum Graha Pesona Blok A No 6, Kelurahan Cisaranten Wetan, Kecamatan Cinambo, Kota Bandung.",
+  npsn = "P9948537",
+  address = "Perum Graha Pesona, Blok A No 6, Kelurahan Cisaranten Wetan, Kecamatan Cinambo, Kota Bandung, Jawa Barat",
+  phone = "0857-2245-9994",
+  email = "support@pkbm.id",
+  hours = "Senin - Jum'at: 08.00–17.00 WIB, Sabtu 08.00–12.00 WIB",
+  whatsappNumber = "6285722459994",
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+
+const programs = [
+  { label: "Kesetaraan Paket A", href: "/program#paket-a" },
+  { label: "Kesetaraan Paket B", href: "/program#paket-b" },
+  { label: "Kesetaraan Paket C", href: "/program#paket-c" },
+];
+
+const galleryLinks = [
+  { label: "Galeri Foto", href: "/galeri#foto" },
+  { label: "Galeri Video", href: "/galeri#video" },
+];
+
+const quickLinks = [
+  { label: "Beranda", href: "/" },
+  { label: "Visi & Misi", href: "/visi-misi" },
+  { label: "Filosofi Logo", href: "/filosofi-logo" },
+  { label: "Blog & Artikel", href: "/blog" },
+  { label: "Kontak Kami", href: "/kontak" },
+];
+---
+
+<footer class="bg-[#0b1320] text-slate-300 pt-16 pb-8 border-t border-slate-800/80 relative">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <!-- Grid Utama Footer (4 Kolom) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+      
+      <!-- Kolom 1: Profil & NPSN (Lebar 4 dari 12 kolom) -->
+      <div class="lg:col-span-4 space-y-4">
+        <!-- Logo & Nama PKBM -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center p-2 text-white border border-white/20">
+            <!-- Icon Logo Edukasi / Buku Toga -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+              <path d="m6 6 6-3 6 3"></path>
+              <path d="m6 10 6-3 6 3"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-white text-lg tracking-wide leading-tight">{brandName}</h3>
+            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">{tagline}</p>
+          </div>
+        </div>
+
+        <!-- Deskripsi Singkat -->
+        <p class="text-xs leading-relaxed text-slate-400 pr-4">
+          {description}
+        </p>
+
+        <!-- Box NPSN -->
+        <div class="inline-block bg-[#111c2e] border border-slate-700/60 rounded-lg px-4 py-2">
+          <span class="block text-[11px] text-slate-400 font-medium">NPSN</span>
+          <span class="text-amber-400 font-bold text-base tracking-wide">{npsn}</span>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex items-center gap-2 pt-2">
+          <!-- YouTube -->
+          <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.6 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg>
+          </a>
+          <!-- TikTok -->
+          <a href="#" aria-label="TikTok" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.35 22a6.33 6.33 0 0 0 6.34-6.32V9.37a8.16 8.16 0 0 0 4.9 1.62v-3.45a4.85 4.85 0 0 1-1-.85z"/></svg>
+          </a>
+          <!-- X (Twitter) -->
+          <a href="#" aria-label="X" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <!-- Threads -->
+          <a href="#" aria-label="Threads" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.186 24C5.466 24 .002 18.675 0 12.008 0 5.334 5.468.009 12.186.009c6.643 0 12.072 5.253 12.176 11.884-.09 5.867-4.496 10.36-10.457 10.518-3.084.082-5.748-1.07-7.307-3.155l1.986-1.503c1.173 1.571 3.23 2.457 5.32 2.399 4.333-.12 7.502-3.41 7.57-7.797-.075-4.994-4.148-8.995-9.288-8.995-5.204 0-9.435 4.108-9.435 9.148 0 5.041 4.231 9.149 9.435 9.149 2.502 0 4.88-.979 6.524-2.686l1.737 1.758C18.17 22.84 15.28 24 12.186 24z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Kolom 2: Alamat & Kontak (Lebar 3 dari 12 kolom) -->
+      <div class="lg:col-span-3 space-y-4">
+        <div>
+          <h4 class="font-bold text-white text-sm tracking-wide">Alamat & Kontak</h4>
+          <div class="w-8 h-0.5 bg-amber-400 mt-1.5 rounded-full"></div>
+        </div>
+
+        <ul class="space-y-3.5 text-xs text-slate-400">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-0.5 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="leading-relaxed">{address}</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="text-amber-400 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span>{phone}</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="text-amber-400 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span>{email}</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-0.5 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <span class="leading-relaxed">{hours}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Program & Galeri (Lebar 2 dari 12 kolom) -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Sub-section: Program -->
+        <div class="space-y-3">
+          <div>
+            <h4 class="font-bold text-white text-sm tracking-wide">Program</h4>
+            <div class="w-8 h-0.5 bg-amber-400 mt-1.5 rounded-full"></div>
+          </div>
+          <ul class="space-y-2 text-xs">
+            {programs.map((prog) => (
+              <li>
+                <a href={prog.href} class="text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors group">
+                  <span class="text-amber-400 text-[10px] group-hover:translate-x-0.5 transition-transform">&rsaquo;</span>
+                  <span>{prog.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Sub-section: Galeri -->
+        <div class="space-y-3">
+          <div>
+            <h4 class="font-bold text-white text-sm tracking-wide">Galeri</h4>
+            <div class="w-8 h-0.5 bg-amber-400 mt-1.5 rounded-full"></div>
+          </div>
+          <ul class="space-y-2 text-xs">
+            {galleryLinks.map((gal) => (
+              <li>
+                <a href={gal.href} class="text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors group">
+                  <span class="text-amber-400 text-[10px] group-hover:translate-x-0.5 transition-transform">&rsaquo;</span>
+                  <span>{gal.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Kolom 4: Tautan & WhatsApp (Lebar 3 dari 12 kolom) -->
+      <div class="lg:col-span-3 space-y-4">
+        <div>
+          <h4 class="font-bold text-white text-sm tracking-wide">Tautan</h4>
+          <div class="w-8 h-0.5 bg-amber-400 mt-1.5 rounded-full"></div>
+        </div>
+
+        <ul class="space-y-2 text-xs">
+          {quickLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors group">
+                <span class="text-amber-400 text-[10px] group-hover:translate-x-0.5 transition-transform">&rsaquo;</span>
+                <span>{link.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Tombol Chat WhatsApp -->
+        <div class="pt-2">
+          <a
+            href={`https://wa.me/${whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2.5 w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs py-2.5 px-4 rounded-lg shadow-md transition-all active:scale-95"
+          >
+            <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Chat WhatsApp Kami</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar: Hak Cipta & Admin Panel -->
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p class="text-center md:text-left">
+        &copy; {currentYear} {brandName} &mdash; {tagline}. All Rights Reserved.
+      </p>
+      <a href="/admin" class="hover:text-slate-300 transition-colors">
+        Admin Panel
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button (Pojok Kanan Bawah) -->
+  <a
+    href={`https://wa.me/${whatsappNumber}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp"
+    class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-transform"
+  >
+    <svg class="w-8 h-8 fill-currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  </a>
+</footer>
