@@ -1,23 +1,33 @@
-import header from "../components/header.astro"
-import footer from "../components/footer.astro"
+---
+import '../styles/global.css';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
 
-interface props {
-    tittle?:string;
+interface Props {
+  title?: string;
 }
-<!Doctype html>
- <html lang="id">
-    <head>
-      <meta charshet="UTF-8"/>
-      <meta name="view content="width=device-width, initial-scale=1.0"/>
-        <link rel="icon" type="image/svg+xml"
-              href="/favicon.svg"/>
-              <title>{title}</title>
-              </head>
-              <body class"bg-slate-900 text-white min-h-screen flex flex-col">
-              <header>
-              </header>
-         <main class="flex-1">
+
+const { title = "PKBM INTAN - Sekolah Kesetaraan Resmi" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-[#0f172a] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-amber-400 selection:text-slate-900">
+    <!-- Navbar / Header -->
+    <Header />
+
+    <!-- Konten Halaman (Index atau halaman lainnya) -->
+    <main class="flex-1">
       <slot />
     </main>
+
+    <!-- Footer -->
+    <Footer />
   </body>
 </html>
