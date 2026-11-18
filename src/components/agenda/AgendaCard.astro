@@ -36,21 +36,10 @@ const isCompleted = agenda.status === 'completed';
   </div>
 
   <div class="p-5 sm:p-6 flex flex-col flex-1">
-    <div class="flex items-center justify-between gap-2 mb-3">
+    <div class="mb-3">
       <span class={`inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold leading-none ${categoryBadgeClass}`}>
         {agenda.category}
       </span>
-
-      {isCompleted ? (
-        <span class="text-[11px] font-medium text-[#687789]">
-          Telah Terlaksana
-        </span>
-      ) : (
-        <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#A86D0A]">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E9A820]" aria-hidden="true"></span>
-          <span>Akan Datang</span>
-        </span>
-      )}
     </div>
 
     <h2 class="text-[17px] font-bold text-[#102F4D] leading-snug group-hover:text-[#153A5B] transition-colors line-clamp-2">
@@ -123,3 +112,4 @@ const isCompleted = agenda.status === 'completed';
     </div>
   </div>
 </article>
+

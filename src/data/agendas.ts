@@ -39,7 +39,7 @@ export const AGENDA_CATEGORY_BADGES: Record<AgendaCategory, string> = {
 export const AGENDAS: AgendaItem[] = [
   {
     id: 'agenda-1',
-    slug: 'outbound-pkbm-intan-2026',
+    slug: 'outbound-pkbm-2026',
     category: 'Olahraga',
     status: 'upcoming',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -51,7 +51,7 @@ export const AGENDAS: AgendaItem[] = [
     organizer: 'Lorem ipsum',
     feeLabel: 'Lorem ipsum dolor',
     poster: '/images/agenda/agenda-outbound-2026.svg',
-    posterAlt: 'Poster Outbound PKBM INTAN 2026 Pembelajaran Luar Kelas di Grafika Cikole Lembang',
+    posterAlt: 'Poster Outbound PKBM 2026 Pembelajaran Luar Kelas di Grafika Cikole Lembang',
   },
   {
     id: 'agenda-2',
@@ -67,7 +67,7 @@ export const AGENDAS: AgendaItem[] = [
     organizer: 'Lorem ipsum',
     feeLabel: 'Lorem ipsum dolor',
     poster: '/images/agenda/agenda-kelas-barista.svg',
-    posterAlt: 'Poster Ekstrakurikuler Kelas Barista Batch 5 PKBM INTAN',
+    posterAlt: 'Poster Ekstrakurikuler Kelas Barista Batch 5 PKBM',
   },
   {
     id: 'agenda-3',
@@ -99,7 +99,7 @@ export const AGENDAS: AgendaItem[] = [
     organizer: 'Lorem ipsum',
     feeLabel: 'Lorem ipsum dolor',
     poster: '/images/agenda/agenda-fun-sport-badminton.svg',
-    posterAlt: 'Poster Fun Sport Badminton PKBM INTAN November 2026',
+    posterAlt: 'Poster Fun Sport Badminton PKBM November 2026',
   },
   {
     id: 'agenda-5',
@@ -115,7 +115,7 @@ export const AGENDAS: AgendaItem[] = [
     organizer: 'Lorem ipsum',
     feeLabel: 'Lorem ipsum dolor',
     poster: '/images/agenda/agenda-webinar-snpmb.svg',
-    posterAlt: 'Poster Webinar Persiapan SNPMB dan Perguruan Tinggi PKBM INTAN',
+    posterAlt: 'Poster Webinar Persiapan SNPMB dan Perguruan Tinggi PKBM',
   },
   {
     id: 'agenda-6',
@@ -131,6 +131,6 @@ export const AGENDAS: AgendaItem[] = [
     organizer: 'Lorem ipsum',
     feeLabel: 'Lorem ipsum dolor',
     poster: '/images/agenda/agenda-workshop-literasi.svg',
-    posterAlt: 'Poster Workshop Literasi Digital Perpustakaan PKBM INTAN',
+    posterAlt: 'Poster Workshop Literasi Digital Perpustakaan PKBM',
   },
 ];
