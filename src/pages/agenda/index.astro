@@ -7,8 +7,8 @@ import { AGENDAS } from '../../data/agendas';
 ---
 
 <MainLayout
-  title="Agenda | PKBM INTAN"
-  description="Daftar agenda kegiatan, olahraga, webinar edukasi, dan pelatihan keterampilan warga belajar PKBM INTAN."
+  title="Agenda | PKBM"
+  description="Daftar agenda kegiatan, olahraga, webinar edukasi, dan pelatihan keterampilan warga belajar PKBM."
 >
   <PageHero title="Agenda" currentPage="Agenda" />
 
@@ -46,7 +46,6 @@ import { AGENDAS } from '../../data/agendas';
     </div>
   </section>
 
-  <!-- Static Agenda Detail Preview Dialog -->
   <dialog
     id="agenda-detail-dialog"
     aria-labelledby="agenda-dialog-title"
@@ -170,7 +169,6 @@ import { AGENDAS } from '../../data/agendas';
     applyAgendaFilter();
   });
 
-  // Static Detail Dialog
   const dialog = document.getElementById('agenda-detail-dialog');
   const closeBtn = document.getElementById('agenda-dialog-close');
   const dismissBtn = document.getElementById('agenda-dialog-dismiss');
