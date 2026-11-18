@@ -1,0 +1,30 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/common/PageHero.astro';
+import ContactInfo from '../../components/kontak/ContactInfo.astro';
+import ContactForm from '../../components/kontak/ContactForm.astro';
+import ContactMap from '../../components/kontak/ContactMap.astro';
+---
+
+<MainLayout
+  title="Kontak | PKBM"
+  description="Informasi kontak, kirim pesan, dan lokasi PKBM di Kota Bandung, Jawa Barat."
+>
+  <PageHero title="Kontak" currentPage="Kontak" />
+
+  <section class="bg-[#F5F7F9] py-10 md:py-12 lg:py-14" aria-label="Informasi dan Formulir Kontak">
+    <div class="max-w-[1528px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-4">
+          <ContactInfo />
+        </div>
+
+        <div class="lg:col-span-8">
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactMap />
+</MainLayout>
