@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Ekstrakurikuler Kelas Barista Batch 5 PKBM INTAN">
+  <defs>
+    <linearGradient id="barista-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#606E80"/>
+      <stop offset="100%" stop-color="#3E4B5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#barista-bg)"/>
+  <!-- Subtle coffee bean motifs -->
+  <g fill="#FFFFFF" fill-opacity="0.06">
+    <ellipse cx="90" cy="640" rx="34" ry="22" transform="rotate(-25 90 640)"/>
+    <ellipse cx="560" cy="480" rx="28" ry="18" transform="rotate(30 560 480)"/>
+    <ellipse cx="140" cy="460" rx="24" ry="16" transform="rotate(15 140 460)"/>
+  </g>
+
+  <!-- Top-left label (leaves top-right clear for Selesai badge) -->
+  <text x="34" y="56" fill="#E2E8F0" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="2">EKSTRAKURIKULER • BATCH 5</text>
+  <rect x="34" y="74" width="142" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.92"/>
+  <text x="105" y="94" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="800">PKBM INTAN</text>
+
+  <!-- Circular Free Stamp -->
+  <g transform="translate(500 225)">
+    <circle cx="0" cy="0" r="88" fill="#F2D785"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#3E4B5B" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="0" y="-22" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800">100%</text>
+    <text x="0" y="8" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="900">GRATIS</text>
+    <text x="0" y="32" text-anchor="middle" fill="#3E4B5B" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">+ SERTIFIKAT</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="34" y="254" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="48" font-weight="800">Kelas</text>
+  <text x="34" y="322" fill="#F2D785" font-family="Segoe UI, system-ui, sans-serif" font-size="68" font-weight="900" letter-spacing="1">BARISTA</text>
+
+  <text x="34" y="380" fill="#F8FAFC" font-family="Segoe UI, system-ui, sans-serif" font-size="19" font-weight="500">Belajar meracik kopi bareng tutor,</text>
+  <text x="34" y="408" fill="#F8FAFC" font-family="Segoe UI, system-ui, sans-serif" font-size="19" font-weight="700">diutamakan Warga Belajar PKBM INTAN.</text>
+
+  <!-- Coffee cup illustration -->
+  <g transform="translate(340 448)">
+    <path d="M56 32c0-14 14-22 14-34M96 32c0-14 14-22 14-34M136 32c0-14 14-22 14-34" stroke="#F2D785" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M24 56h156v74a56 56 0 0 1-56 56H80a56 56 0 0 1-56-56V56z" fill="#FFFFFF"/>
+    <ellipse cx="102" cy="56" rx="78" ry="16" fill="#6F4E37"/>
+    <path d="M180 74h26a22 22 0 0 1 0 44h-26" stroke="#FFFFFF" stroke-width="10" fill="none"/>
+    <ellipse cx="102" cy="198" rx="108" ry="16" fill="#CBD5E1"/>
+  </g>
+
+  <!-- Bottom schedule strip -->
+  <rect x="34" y="676" width="572" height="92" rx="14" fill="#091E32" fill-opacity="0.72"/>
+  <text x="60" y="712" fill="#F2D785" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="800">9 – 30 NOVEMBER 2026 • 09.00–12.00 WIB</text>
+  <text x="60" y="742" fill="#E2E8F0" font-family="Segoe UI, system-ui, sans-serif" font-size="15">Kampus PKBM INTAN, Cisaranten Wetan, Bandung</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Workshop Literasi Digital Perpustakaan PKBM INTAN">
+  <defs>
+    <linearGradient id="workshop-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102F4D"/>
+      <stop offset="100%" stop-color="#091E32"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#workshop-bg)"/>
+  <rect x="40" y="38" width="194" height="34" rx="17" fill="#E9A820"/>
+  <text x="137" y="60" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">WORKSHOP LITERASI</text>
+
+  <text x="40" y="154" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800" letter-spacing="2">PERPUSTAKAAN DIGITAL</text>
+  <text x="40" y="210" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="900">Akses Modul Gratis</text>
+  <text x="40" y="258" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="900">di perpus.pkbm.id</text>
+  <text x="40" y="302" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="18">Pelatihan pemanfaatan koleksi e-modul Paket A, B, C</text>
+
+  <!-- Books illustration -->
+  <g transform="translate(110 356)">
+    <rect x="0" y="24" width="122" height="194" rx="10" fill="#1D6FA5" transform="rotate(-6 60 120)"/>
+    <text x="58" y="112" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800" transform="rotate(-6 60 120)">PAKET A</text>
+
+    <rect x="148" y="12" width="126" height="206" rx="10" fill="#E9A820"/>
+    <text x="211" y="110" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800">PAKET B</text>
+
+    <rect x="296" y="24" width="122" height="194" rx="10" fill="#FFFFFF" transform="rotate(6 356 120)"/>
+    <text x="358" y="112" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800" transform="rotate(6 356 120)">PAKET C</text>
+  </g>
+
+  <rect x="40" y="652" width="560" height="106" rx="14" fill="#FFFFFF"/>
+  <text x="68" y="694" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="800">Sabtu, 5 Desember 2026 • 09.00–12.00 WIB</text>
+  <text x="68" y="726" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="16">Aula PKBM INTAN &amp; Live Streaming • Gratis</text>
+</svg>

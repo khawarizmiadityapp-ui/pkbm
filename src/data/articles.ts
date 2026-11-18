@@ -101,7 +101,7 @@ export const ARTICLES: Article[] = [
     month: 'NOV',
     title: 'Ekstrakurikuler Barista Batch 5 PKBM Resmi Dimulai',
     description:
-      'Program pelatihan keterampilan barista untuk meningkatkan kompetensi dan pengalaman praktis peserta didik.',
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
     thumbnail: '/images/blog/article-kelas-barista.svg',
     thumbnailAlt:
       'Banner Program Ekstrakurikuler Kelas Barista Batch 5 PKBM',
@@ -114,7 +114,7 @@ export const ARTICLES: Article[] = [
     month: 'NOV',
     title: 'Mengenal Pendidikan Kesetaraan Paket A, B, dan C',
     description:
-      'Informasi mengenai pendidikan kesetaraan dan kesempatan belajar bagi masyarakat.',
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
     thumbnail: '/images/blog/article-pendidikan-kesetaraan.svg',
     thumbnailAlt:
       'Ilustrasi Informasi Pendidikan Kesetaraan Paket A, B, dan C PKBM',
@@ -140,7 +140,7 @@ export const ARTICLES: Article[] = [
     month: 'NOV',
     title: 'Persiapan Melanjutkan Pendidikan ke Perguruan Tinggi',
     description:
-      'Informasi dan panduan persiapan pendidikan lanjutan bagi peserta didik.',
+      'Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis.',
     thumbnail: '/images/blog/article-persiapan-snpmb.svg',
     thumbnailAlt:
       'Ilustrasi Panduan Persiapan SNPMB dan Perguruan Tinggi PKBM',
