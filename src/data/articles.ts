@@ -6,8 +6,6 @@ export interface Article {
   category: ArticleCategory;
   day: string;
   month: string;
-  publishedAt: string;
-  author: string;
   title: string;
   description: string;
   thumbnail: string;
@@ -73,46 +71,40 @@ export const ARTICLES: Article[] = [
     category: 'NEWS',
     day: '13',
     month: 'NOV',
-    publishedAt: '13 Nov 2026',
-    author: 'Admin PKBM INTAN',
     title:
-      'Agenda November: Fun Sport Badminton 14 November dan Outbound PKBM INTAN 21 November 2026',
+      'Agenda November: Fun Sport Badminton 14 November dan Outbound PKBM 21 November 2026',
     description:
-      'Informasi kegiatan olahraga dan outbound sebagai bagian dari aktivitas ekstrakurikuler peserta didik PKBM INTAN.',
+      'Informasi kegiatan olahraga dan outbound sebagai bagian dari aktivitas ekstrakurikuler peserta didik PKBM.',
     thumbnail: '/images/blog/article-badminton-outbound.svg',
     thumbnailAlt:
-      'Poster Agenda November Fun Sport Badminton dan Outbound PKBM INTAN 2026',
+      'Poster Agenda November Fun Sport Badminton dan Outbound PKBM 2026',
   },
   {
     id: 'art-2',
-    slug: 'pkbm-intan-buka-perpustakaan-digital-perpus-pkbm-id',
+    slug: 'pkbm-buka-perpustakaan-digital-perpus-pkbm-id',
     category: 'NEWS',
     day: '13',
     month: 'NOV',
-    publishedAt: '13 Nov 2026',
-    author: 'Admin PKBM INTAN',
     title:
-      'PKBM INTAN Buka Perpustakaan Digital perpus.pkbm.id: Ribuan Modul dan Buku Bisa Dibaca Gratis',
+      'PKBM Buka Perpustakaan Digital perpus.pkbm.id: Ribuan Modul dan Buku Bisa Dibaca Gratis',
     description:
-      'PKBM INTAN menghadirkan akses perpustakaan digital untuk mendukung kegiatan belajar masyarakat.',
+      'PKBM menghadirkan akses perpustakaan digital untuk mendukung kegiatan belajar masyarakat.',
     thumbnail: '/images/blog/article-perpustakaan-digital.svg',
     thumbnailAlt:
-      'Banner Perpustakaan Digital PKBM INTAN perpus.pkbm.id dengan koleksi modul belajar',
+      'Banner Perpustakaan Digital PKBM perpus.pkbm.id dengan koleksi modul belajar',
   },
   {
     id: 'art-3',
-    slug: 'ekstrakurikuler-barista-batch-5-pkbm-intan-resmi-dimulai',
+    slug: 'ekstrakurikuler-barista-batch-5-pkbm-resmi-dimulai',
     category: 'NEWS',
     day: '13',
     month: 'NOV',
-    publishedAt: '13 Nov 2026',
-    author: 'Admin PKBM INTAN',
-    title: 'Ekstrakurikuler Barista Batch 5 PKBM INTAN Resmi Dimulai',
+    title: 'Ekstrakurikuler Barista Batch 5 PKBM Resmi Dimulai',
     description:
       'Program pelatihan keterampilan barista untuk meningkatkan kompetensi dan pengalaman praktis peserta didik.',
     thumbnail: '/images/blog/article-kelas-barista.svg',
     thumbnailAlt:
-      'Banner Program Ekstrakurikuler Kelas Barista Batch 5 PKBM INTAN',
+      'Banner Program Ekstrakurikuler Kelas Barista Batch 5 PKBM',
   },
   {
     id: 'art-4',
@@ -120,29 +112,25 @@ export const ARTICLES: Article[] = [
     category: 'EDUKASI',
     day: '10',
     month: 'NOV',
-    publishedAt: '10 Nov 2026',
-    author: 'Tim Akademik',
     title: 'Mengenal Pendidikan Kesetaraan Paket A, B, dan C',
     description:
       'Informasi mengenai pendidikan kesetaraan dan kesempatan belajar bagi masyarakat.',
     thumbnail: '/images/blog/article-pendidikan-kesetaraan.svg',
     thumbnailAlt:
-      'Ilustrasi Informasi Pendidikan Kesetaraan Paket A, B, dan C PKBM INTAN',
+      'Ilustrasi Informasi Pendidikan Kesetaraan Paket A, B, dan C PKBM',
   },
   {
     id: 'art-5',
-    slug: 'informasi-penerimaan-peserta-didik-baru-pkbm-intan',
+    slug: 'informasi-penerimaan-peserta-didik-baru-pkbm',
     category: 'PPDB',
     day: '05',
     month: 'NOV',
-    publishedAt: '05 Nov 2026',
-    author: 'Panitia PPDB',
-    title: 'Informasi Penerimaan Peserta Didik Baru PKBM INTAN',
+    title: 'Informasi Penerimaan Peserta Didik Baru PKBM',
     description:
       'Informasi pendaftaran dan persyaratan calon peserta didik baru.',
-    thumbnail: '/images/blog/article-ppdb-pkbm-intan.svg',
+    thumbnail: '/images/blog/article-ppdb-pkbm.svg',
     thumbnailAlt:
-      'Banner Informasi Penerimaan Peserta Didik Baru PKBM INTAN',
+      'Banner Informasi Penerimaan Peserta Didik Baru PKBM',
   },
   {
     id: 'art-6',
@@ -150,13 +138,11 @@ export const ARTICLES: Article[] = [
     category: 'SNPMB',
     day: '02',
     month: 'NOV',
-    publishedAt: '02 Nov 2026',
-    author: 'Bimbingan Karir',
     title: 'Persiapan Melanjutkan Pendidikan ke Perguruan Tinggi',
     description:
       'Informasi dan panduan persiapan pendidikan lanjutan bagi peserta didik.',
     thumbnail: '/images/blog/article-persiapan-snpmb.svg',
     thumbnailAlt:
-      'Ilustrasi Panduan Persiapan SNPMB dan Perguruan Tinggi PKBM INTAN',
+      'Ilustrasi Panduan Persiapan SNPMB dan Perguruan Tinggi PKBM',
   },
 ];
