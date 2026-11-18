@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Persiapan Melanjutkan Pendidikan ke Perguruan Tinggi SNPMB">
+  <defs>
+    <linearGradient id="bg-snpmb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091E32"/>
+      <stop offset="60%" stop-color="#102F4D"/>
+      <stop offset="100%" stop-color="#153A5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-snpmb)"/>
+  <!-- Left institutional copy (below top-left badge safe zone y=0..215) -->
+  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">PANDUAN SNPMB</text>
+  <text x="48" y="280" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Persiapan Menuju</text>
+  <text x="48" y="316" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Perguruan Tinggi</text>
+  <text x="48" y="348" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Strategi seleksi nasional bagi lulusan Paket C.</text>
+  <rect x="48" y="374" width="144" height="32" rx="16" fill="#E9A820"/>
+  <text x="120" y="395" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">pkbm.id/snpmb</text>
+  <!-- Right pathway visual -->
+  <g transform="translate(476 74)">
+    <rect width="274" height="302" rx="12" fill="#13385C" stroke="#2D5A87" stroke-width="1.5"/>
+    <g transform="translate(97 26)" stroke="#E9A820" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40 8 4 24l36 16 36-16L40 8z"/>
+      <path d="M16 30v18c0 6 10.7 12 24 12s24-6 24-12V30"/>
+      <path d="M72 26v20"/>
+    </g>
+    <text x="137" y="114" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">JALUR SELEKSI PTN</text>
+    <rect x="24" y="138" width="226" height="42" rx="8" fill="#091E32"/>
+    <text x="40" y="164" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">SNBP</text>
+    <text x="92" y="164" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Seleksi Prestasi Akademik</text>
+
+    <rect x="24" y="190" width="226" height="42" rx="8" fill="#091E32"/>
+    <text x="40" y="216" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">SNBT</text>
+    <text x="92" y="216" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Ujian Tulis Berbasis Komputer</text>
+
+    <rect x="24" y="242" width="226" height="42" rx="8" fill="#091E32"/>
+    <text x="40" y="268" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">MANDIRI</text>
+    <text x="108" y="268" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Seleksi Kampus Tujuan</text>
+  </g>
+</svg>

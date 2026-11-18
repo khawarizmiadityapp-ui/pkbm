@@ -1,0 +1,128 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import BlogHero from '../../components/blog/BlogHero.astro';
+import BlogToolbar from '../../components/blog/BlogToolbar.astro';
+import BlogCard from '../../components/blog/BlogCard.astro';
+import BlogPagination from '../../components/blog/BlogPagination.astro';
+import { ARTICLES } from '../../data/articles';
+---
+
+<MainLayout
+  title="Blog & Artikel | PKBM INTAN"
+  description="Informasi terbaru seputar pendidikan kesetaraan Paket A, B, C, agenda kegiatan, PPDB, perpustakaan digital, dan persiapan SNPMB di PKBM INTAN."
+>
+  <BlogHero title="Blog & Artikel" currentPage="Blog" />
+
+  <section class="bg-[#F5F7F9] py-10 md:py-12 lg:py-14" aria-label="Daftar Blog dan Artikel">
+    <div class="max-w-[1528px] mx-auto px-4 sm:px-6 lg:px-10">
+      <BlogToolbar />
+
+      <div
+        id="article-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-6 lg:gap-7"
+      >
+        {ARTICLES.map((article, index) => (
+          <BlogCard article={article} eager={index < 3} />
+        ))}
+      </div>
+
+      <div
+        id="article-empty-state"
+        class="hidden bg-white border border-[#DCE3EA] rounded-xl px-6 py-12 text-center"
+      >
+        <p class="text-base font-semibold text-[#102F4D]">
+          Artikel tidak ditemukan
+        </p>
+        <p class="mt-1.5 text-sm text-[#687789]">
+          Coba ubah kata kunci pencarian atau pilih kategori lain.
+        </p>
+        <button
+          id="reset-article-filter"
+          type="button"
+          class="mt-4 h-9 px-4 rounded-md bg-[#102F4D] hover:bg-[#153A5B] text-white text-xs font-semibold transition-colors cursor-pointer"
+        >
+          Tampilkan Semua Artikel
+        </button>
+      </div>
+
+      <BlogPagination activePage={1} />
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  const searchForm = document.getElementById('article-search-form') as HTMLFormElement | null;
+  const searchInput = document.getElementById('article-search') as HTMLInputElement | null;
+  const categoryButtons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('[data-category-btn]'),
+  );
+  const articleCards = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-article-card]'),
+  );
+  const emptyState = document.getElementById('article-empty-state');
+  const resetBtn = document.getElementById('reset-article-filter');
+
+  let activeCategory = 'ALL';
+  let searchQuery = '';
+
+  function updateCategoryButtonStyles() {
+    for (const btn of categoryButtons) {
+      const value = btn.dataset.categoryBtn ?? 'ALL';
+      const activeClasses = (btn.dataset.activeClass ?? '').split(' ').filter(Boolean);
+      const inactiveClasses = (btn.dataset.inactiveClass ?? '').split(' ').filter(Boolean);
+      const isSelected = value === activeCategory;
+
+      btn.setAttribute('aria-pressed', String(isSelected));
+      btn.classList.remove(...activeClasses, ...inactiveClasses);
+      btn.classList.add(...(isSelected ? activeClasses : inactiveClasses));
+    }
+  }
+
+  function applyArticleFilters() {
+    let visibleCount = 0;
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+
+    for (const card of articleCards) {
+      const cardCategory = card.dataset.category ?? '';
+      const cardSearchText = card.dataset.searchText ?? '';
+
+      const matchesCategory = activeCategory === 'ALL' || cardCategory === activeCategory;
+      const matchesQuery = !normalizedQuery || cardSearchText.includes(normalizedQuery);
+      const isVisible = matchesCategory && matchesQuery;
+
+      card.classList.toggle('hidden', !isVisible);
+      if (isVisible) visibleCount += 1;
+    }
+
+    if (emptyState) {
+      emptyState.classList.toggle('hidden', visibleCount > 0);
+    }
+  }
+
+  for (const btn of categoryButtons) {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.categoryBtn ?? 'ALL';
+      updateCategoryButtonStyles();
+      applyArticleFilters();
+    });
+  }
+
+  searchForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    searchQuery = searchInput?.value ?? '';
+    applyArticleFilters();
+  });
+
+  searchInput?.addEventListener('input', () => {
+    searchQuery = searchInput.value;
+    applyArticleFilters();
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    activeCategory = 'ALL';
+    searchQuery = '';
+    if (searchInput) searchInput.value = '';
+    updateCategoryButtonStyles();
+    applyArticleFilters();
+  });
+</script>

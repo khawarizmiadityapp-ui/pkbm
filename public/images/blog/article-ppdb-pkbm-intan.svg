@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Informasi Penerimaan Peserta Didik Baru PKBM INTAN">
+  <defs>
+    <linearGradient id="bg-ppdb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091E32"/>
+      <stop offset="60%" stop-color="#102F4D"/>
+      <stop offset="100%" stop-color="#153A5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-ppdb)"/>
+  <!-- Left institutional copy (below top-left badge safe zone y=0..215) -->
+  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">PPDB PKBM INTAN</text>
+  <text x="48" y="280" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Penerimaan Peserta</text>
+  <text x="48" y="316" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Didik Baru</text>
+  <text x="48" y="348" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Panduan alur pendaftaran &amp; kelengkapan berkas.</text>
+  <rect x="48" y="374" width="132" height="32" rx="16" fill="#E9A820"/>
+  <text x="114" y="395" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">pkbm.id/ppdb</text>
+  <!-- Right checklist card -->
+  <g transform="translate(474 68)">
+    <rect width="276" height="314" rx="12" fill="#FFFFFF"/>
+    <rect width="276" height="60" rx="12" fill="#1D6FA5"/>
+    <rect y="40" width="276" height="20" fill="#1D6FA5"/>
+    <text x="24" y="37" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="800">ALUR PENDAFTARAN</text>
+
+    <g transform="translate(24 84)">
+      <circle cx="14" cy="14" r="14" fill="#EFF7FC"/>
+      <path d="M8 14l4 4 8-8" stroke="#1D6FA5" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="14" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="700">1. Konsultasi Program</text>
+      <text x="40" y="32" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Paket A, B, atau Paket C</text>
+    </g>
+
+    <g transform="translate(24 152)">
+      <circle cx="14" cy="14" r="14" fill="#EFF7FC"/>
+      <path d="M8 14l4 4 8-8" stroke="#1D6FA5" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="14" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="700">2. Kelengkapan Berkas</text>
+      <text x="40" y="32" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="12">KK, Akta, &amp; Ijazah Terakhir</text>
+    </g>
+
+    <g transform="translate(24 220)">
+      <circle cx="14" cy="14" r="14" fill="#FEF8EB"/>
+      <path d="M8 14l4 4 8-8" stroke="#E9A820" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="14" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="700">3. Registrasi &amp; Orientasi</text>
+      <text x="40" y="32" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Terdaftar Resmi di Dapodik</text>
+    </g>
+  </g>
+</svg>
