@@ -1,0 +1,33 @@
+---
+import { AGENDA_FILTERS } from '../../data/agendas';
+---
+
+<div
+  role="group"
+  aria-label="Filter kategori agenda"
+  class="flex flex-wrap items-center gap-2.5 mb-8"
+>
+  {AGENDA_FILTERS.map((filter, index) => {
+    const isDefaultActive = index === 0;
+    const activeClasses = 'bg-[#102F4D] text-white font-semibold';
+    const inactiveClasses =
+      'bg-[#E5E9EF] hover:bg-[#DCE3EA] text-[#102F4D] font-medium';
+
+    return (
+      <button
+        type="button"
+        data-agenda-filter={filter.value}
+        data-active-class={activeClasses}
+        data-inactive-class={inactiveClasses}
+        aria-pressed={isDefaultActive ? 'true' : 'false'}
+        class:list={[
+          'h-9 px-4 rounded-md text-xs sm:text-[13px] transition-colors cursor-pointer whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#102F4D]',
+          isDefaultActive ? activeClasses : inactiveClasses,
+        ]}
+      >
+        {filter.label}
+      </button>
+    );
+  })}
+</div>
+

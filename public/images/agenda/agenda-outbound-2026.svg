@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Outbound PKBM 2026 Pembelajaran Luar Kelas">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E6F0F8"/>
+      <stop offset="55%" stop-color="#C8DEC8"/>
+      <stop offset="100%" stop-color="#1E4D3B"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#sky)"/>
+  <!-- Warm gold accent shape top right -->
+  <circle cx="595" cy="90" r="145" fill="#E9A820"/>
+  <!-- Top left category pill -->
+  <rect x="28" y="28" width="262" height="36" rx="18" fill="#102F4D"/>
+  <text x="159" y="51" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4">PEMBELAJARAN LUAR KELAS</text>
+  <!-- Top right PKBM pill inside gold accent -->
+  <rect x="468" y="34" width="144" height="34" rx="17" fill="#FFFFFF"/>
+  <text x="540" y="56" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">PKBM</text>
+
+  <!-- Stylized forest & mountain landscape -->
+  <path d="M0 440 L150 280 L300 410 L460 250 L640 430 L640 800 L0 800 Z" fill="#295944"/>
+  <path d="M0 490 L180 340 L340 465 L520 330 L640 460 L640 800 L0 800 Z" fill="#193D2E"/>
+  <!-- Pine tree silhouettes -->
+  <g fill="#0F2A20" opacity="0.65">
+    <polygon points="75,260 40,390 110,390"/>
+    <polygon points="135,235 92,395 178,395"/>
+    <polygon points="565,245 520,390 610,390"/>
+  </g>
+  <!-- Camp banner -->
+  <g transform="translate(150 375)">
+    <rect width="340" height="96" rx="10" fill="#FFFFFF" opacity="0.95"/>
+    <rect x="12" y="12" width="316" height="72" rx="6" fill="#F5F7F9" stroke="#102F4D" stroke-width="1.5"/>
+    <text x="170" y="42" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">PKBM GOES TO LEMBANG</text>
+    <text x="170" y="70" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="900">OUTBOUND 2026</text>
+  </g>
+
+  <!-- Circular 100% Gratis stamp -->
+  <g transform="translate(500 440)">
+    <circle cx="0" cy="0" r="82" fill="#E9A820"/>
+    <circle cx="0" cy="0" r="74" fill="none" stroke="#091E32" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="0" y="-22" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">100%</text>
+    <text x="0" y="8" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="900">GRATIS</text>
+    <text x="0" y="30" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">1 DAY TRIP</text>
+  </g>
+
+  <!-- Main Poster Title Footer -->
+  <rect x="0" y="560" width="640" height="240" fill="#091E32" fill-opacity="0.9"/>
+  <text x="320" y="634" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="62" font-weight="900" letter-spacing="2">OUTBOUND</text>
+  <text x="320" y="684" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">Sabtu, 21 November 2026</text>
+  <text x="320" y="722" text-anchor="middle" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="18">Terminal Wisata Grafika Cikole, Lembang</text>
+  <rect x="210" y="746" width="220" height="32" rx="16" fill="#E9A820"/>
+  <text x="320" y="767" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800">Khusus Warga Belajar</text>
+</svg>
