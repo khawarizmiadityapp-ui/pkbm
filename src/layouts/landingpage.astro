@@ -19,15 +19,10 @@ const { title = "PKBM - Lorem ipsum dolor sit amet" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-[#0f172a] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-amber-400 selection:text-slate-900">
-    <!-- Navbar / Header -->
     <Header />
-
-    <!-- Konten Halaman (Index atau halaman lainnya) -->
     <main class="flex-1">
       <slot />
     </main>
-
-    <!-- Footer -->
     <Footer />
   </body>
 </html>

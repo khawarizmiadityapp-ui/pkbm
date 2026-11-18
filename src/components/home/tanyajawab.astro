@@ -1,0 +1,94 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FaqItem[] = [
+  {
+    question: "Apakah ijazah dari PKBM INTAN sah dan diakui negara?",
+    answer: "Ya, 100% resmi dan sah! PKBM INTAN terakreditasi A oleh BAN-PAUD PNF Kemdikbudristek. Ijazah kesetaraan Paket A, B, dan C memiliki hak sipil dan legalitas setara sekolah formal, bisa digunakan untuk mendaftar kuliah di PTN/PTS, melamar kerja BUMN/swasta, hingga mendaftar CPNS.",
+  },
+  {
+    question: "Apakah ada batasan usia untuk mendaftar?",
+    answer: "Tidak ada batasan usia sama sekali. Program pendidikan kesetaraan terbuka bagi siapa saja, mulai dari usia sekolah hingga usia dewasa yang ingin menuntaskan pendidikannya.",
+  },
+  {
+    question: "Bagaimana sistem pembelajarannya? Apakah bisa online bagi yang bekerja?",
+    answer: "Sangat bisa. Kami menerapkan kurikulum fleksibel dengan metode belajar daring (online) dan modul digital mandiri, sehingga warga belajar yang berstatus pekerja, atlet, atau di luar kota tetap dapat belajar tanpa mengganggu aktivitas utama.",
+  },
+  {
+    question: "Bagaimana jika saya siswa pindahan / putus sekolah di tengah jalan?",
+    answer: "Bisa langsung melanjutkan! Anda cukup melampirkan raport terakhir dari sekolah sebelumnya, dan jenjang kelas akan disesuaikan dengan riwayat belajar Anda tanpa perlu mengulang dari awal.",
+  },
+  {
+    question: "Apa saja dokumen syarat pendaftarannya?",
+    answer: "Syaratnya sangat mudah: Scan/Foto KTP, Kartu Keluarga (KK), Akta Kelahiran, Pas Foto terbaru, dan Ijazah terakhir (jika ada). Semua berkas bisa dikirimkan langsung secara online via WhatsApp.",
+  },
+  {
+    question: "Apakah biaya pendidikan bisa diangsur / dicicil?",
+    answer: "Tentu saja. Kami mengedepankan kemudahan akses pendidikan bagi masyarakat dengan biaya yang terjangkau serta fasilitas pembayaran cicilan berkala tanpa bunga.",
+  },
+];
+---
+
+<section id="faq" class="bg-slate-50 text-slate-900 py-20 px-6 md:px-10 border-t border-slate-200">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Pertanyaan yang Sering Diajukan
+      </h2>
+      <p class="mt-4 text-base text-slate-600 leading-relaxed">
+        Punya pertanyaan seputar pendaftaran, legalitas, atau jadwal belajar? Temukan jawabannya di bawah ini.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((item, index) => (
+        <details
+          class="group bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden transition-all duration-300"
+          open={index === 0}
+        >
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-base sm:text-lg text-slate-900 select-none group-open:text-amber-600 group-open:border-b group-open:border-slate-100 transition-colors">
+            <span>{item.question}</span>
+            <span class="w-8 h-8 rounded-full bg-slate-100 group-open:bg-amber-100 text-slate-600 group-open:text-amber-700 flex items-center justify-center shrink-0 ml-4 transition-transform duration-300 group-open:rotate-180">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="p-6 text-sm text-slate-600 leading-relaxed bg-slate-50/50">
+            {item.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <p class="text-center text-xs text-slate-500 mt-8">
+      Masih memiliki pertanyaan lain yang belum terjawab? 
+      <a href="https://wa.me/6285722459994" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-bold hover:underline">
+        Tanyakan langsung ke Tim Konsultasi kami &rarr;
+      </a>
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto mt-20">
+    <div class="bg-[#0b1424] rounded-3xl p-8 md:p-12 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+          Siap Meraih Ijazah & Masa Depan Impian Anda?
+        </h3>
+        <p class="text-sm text-slate-300 mt-2 max-w-xl">
+          Pendaftaran warga belajar baru telah dibuka. Amankan kursi belajarmu sekarang juga!
+        </p>
+      </div>
+
+      <a
+        href="https://wa.me/6285722459994"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-sm px-8 py-4 rounded-full shadow-lg shadow-amber-500/20 transition-all"
+      >
+        Daftar via WhatsApp Sekarang
+      </a>
+    </div>
+  </div>
+</section>
