@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Webinar Persiapan SNPMB dan Perguruan Tinggi PKBM INTAN">
+  <defs>
+    <linearGradient id="snpmb-poster-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#091E32"/>
+      <stop offset="100%" stop-color="#153A5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#snpmb-poster-bg)"/>
+  <circle cx="560" cy="140" r="140" fill="#E9A820" fill-opacity="0.1"/>
+  <rect x="40" y="38" width="184" height="34" rx="17" fill="#E9A820"/>
+  <text x="132" y="60" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">WEBINAR EDUKASI</text>
+
+  <text x="40" y="156" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800" letter-spacing="2">PERSIAPAN SNPMB 2027</text>
+  <text x="40" y="214" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="900">Strategi Masuk</text>
+  <text x="40" y="266" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="900">Perguruan Tinggi</text>
+  <text x="40" y="312" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="19">Khusus Peserta Didik Kesetaraan Paket C</text>
+
+  <!-- Pathway Cards -->
+  <g transform="translate(40 364)">
+    <rect width="560" height="68" rx="12" fill="#102F4D" stroke="#2D5A87" stroke-width="1.5"/>
+    <rect x="16" y="16" width="96" height="36" rx="8" fill="#E9A820"/>
+    <text x="64" y="39" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="800">SNBP</text>
+    <text x="134" y="40" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="600">Seleksi Nasional Berdasarkan Prestasi</text>
+
+    <rect y="86" width="560" height="68" rx="12" fill="#102F4D" stroke="#2D5A87" stroke-width="1.5"/>
+    <rect x="16" y="102" width="96" height="36" rx="8" fill="#E9A820"/>
+    <text x="64" y="125" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="800">SNBT</text>
+    <text x="134" y="126" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="600">Ujian Tulis Berbasis Komputer (UTBK)</text>
+
+    <rect y="172" width="560" height="68" rx="12" fill="#102F4D" stroke="#2D5A87" stroke-width="1.5"/>
+    <rect x="16" y="188" width="96" height="36" rx="8" fill="#E9A820"/>
+    <text x="64" y="211" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="800">MANDIRI</text>
+    <text x="134" y="212" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="600">Persiapan Portofolio &amp; Ujian Mandiri</text>
+  </g>
+
+  <rect x="40" y="652" width="560" height="106" rx="14" fill="#FFFFFF"/>
+  <text x="68" y="694" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="800">Sabtu, 28 November 2026 • 13.00–15.00 WIB</text>
+  <text x="68" y="726" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="16">Online via Zoom Meeting • Gratis + E-Sertifikat</text>
+</svg>

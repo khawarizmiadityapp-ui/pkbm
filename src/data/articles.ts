@@ -73,12 +73,11 @@ export const ARTICLES: Article[] = [
     category: 'NEWS',
     day: '13',
     month: 'NOV',
-    publishedAt: '13 Nov 2026',
-    author: 'Admin PKBM INTAN',
-    title:
-      'Agenda November: Fun Sport Badminton 14 November dan Outbound PKBM INTAN 21 November 2026',
+    publishedAt: 'Lorem ipsum',
+    author: 'Dolor sit amet',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     description:
-      'Informasi kegiatan olahraga dan outbound sebagai bagian dari aktivitas ekstrakurikuler peserta didik PKBM INTAN.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     thumbnail: '/images/blog/article-badminton-outbound.svg',
     thumbnailAlt:
       'Poster Agenda November Fun Sport Badminton dan Outbound PKBM INTAN 2026',
@@ -89,12 +88,11 @@ export const ARTICLES: Article[] = [
     category: 'NEWS',
     day: '13',
     month: 'NOV',
-    publishedAt: '13 Nov 2026',
-    author: 'Admin PKBM INTAN',
-    title:
-      'PKBM INTAN Buka Perpustakaan Digital perpus.pkbm.id: Ribuan Modul dan Buku Bisa Dibaca Gratis',
+    publishedAt: 'Lorem ipsum',
+    author: 'Dolor sit amet',
+    title: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco',
     description:
-      'PKBM INTAN menghadirkan akses perpustakaan digital untuk mendukung kegiatan belajar masyarakat.',
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     thumbnail: '/images/blog/article-perpustakaan-digital.svg',
     thumbnailAlt:
       'Banner Perpustakaan Digital PKBM INTAN perpus.pkbm.id dengan koleksi modul belajar',
@@ -105,11 +103,11 @@ export const ARTICLES: Article[] = [
     category: 'NEWS',
     day: '13',
     month: 'NOV',
-    publishedAt: '13 Nov 2026',
-    author: 'Admin PKBM INTAN',
-    title: 'Ekstrakurikuler Barista Batch 5 PKBM INTAN Resmi Dimulai',
+    publishedAt: 'Lorem ipsum',
+    author: 'Dolor sit amet',
+    title: 'Excepteur sint occaecat cupidatat non proident sunt',
     description:
-      'Program pelatihan keterampilan barista untuk meningkatkan kompetensi dan pengalaman praktis peserta didik.',
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
     thumbnail: '/images/blog/article-kelas-barista.svg',
     thumbnailAlt:
       'Banner Program Ekstrakurikuler Kelas Barista Batch 5 PKBM INTAN',
@@ -120,11 +118,11 @@ export const ARTICLES: Article[] = [
     category: 'EDUKASI',
     day: '10',
     month: 'NOV',
-    publishedAt: '10 Nov 2026',
-    author: 'Tim Akademik',
-    title: 'Mengenal Pendidikan Kesetaraan Paket A, B, dan C',
+    publishedAt: 'Lorem ipsum',
+    author: 'Dolor sit amet',
+    title: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur',
     description:
-      'Informasi mengenai pendidikan kesetaraan dan kesempatan belajar bagi masyarakat.',
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
     thumbnail: '/images/blog/article-pendidikan-kesetaraan.svg',
     thumbnailAlt:
       'Ilustrasi Informasi Pendidikan Kesetaraan Paket A, B, dan C PKBM INTAN',
@@ -135,11 +133,11 @@ export const ARTICLES: Article[] = [
     category: 'PPDB',
     day: '05',
     month: 'NOV',
-    publishedAt: '05 Nov 2026',
-    author: 'Panitia PPDB',
-    title: 'Informasi Penerimaan Peserta Didik Baru PKBM INTAN',
+    publishedAt: 'Lorem ipsum',
+    author: 'Dolor sit amet',
+    title: 'Quis autem vel eum iure reprehenderit qui in ea voluptate',
     description:
-      'Informasi pendaftaran dan persyaratan calon peserta didik baru.',
+      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
     thumbnail: '/images/blog/article-ppdb-pkbm-intan.svg',
     thumbnailAlt:
       'Banner Informasi Penerimaan Peserta Didik Baru PKBM INTAN',
@@ -150,11 +148,11 @@ export const ARTICLES: Article[] = [
     category: 'SNPMB',
     day: '02',
     month: 'NOV',
-    publishedAt: '02 Nov 2026',
-    author: 'Bimbingan Karir',
-    title: 'Persiapan Melanjutkan Pendidikan ke Perguruan Tinggi',
+    publishedAt: 'Lorem ipsum',
+    author: 'Dolor sit amet',
+    title: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
     description:
-      'Informasi dan panduan persiapan pendidikan lanjutan bagi peserta didik.',
+      'Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis.',
     thumbnail: '/images/blog/article-persiapan-snpmb.svg',
     thumbnailAlt:
       'Ilustrasi Panduan Persiapan SNPMB dan Perguruan Tinggi PKBM INTAN',
