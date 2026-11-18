@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Ekstrakurikuler Kelas Barista Batch 5 PKBM INTAN">
+  <defs>
+    <linearGradient id="bg-barista" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091E32"/>
+      <stop offset="60%" stop-color="#102F4D"/>
+      <stop offset="100%" stop-color="#153A5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-barista)"/>
+  <circle cx="640" cy="360" r="150" fill="#E9A820" fill-opacity="0.06"/>
+  <!-- Left institutional copy (below top-left badge safe zone y=0..215) -->
+  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">EKSTRAKURIKULER • BATCH 5</text>
+  <text x="48" y="280" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Kelas Barista</text>
+  <text x="48" y="316" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Resmi Dimulai</text>
+  <text x="48" y="348" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Pelatihan keterampilan praktis di Kampus PKBM INTAN.</text>
+  <rect x="48" y="374" width="110" height="32" rx="16" fill="#E9A820"/>
+  <text x="103" y="395" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">pkbm.id</text>
+  <!-- Right program poster card -->
+  <g transform="translate(500 54) rotate(2.5)">
+    <rect width="234" height="322" rx="14" fill="#13385C" stroke="#2D5A87" stroke-width="1.5"/>
+    <rect x="20" y="22" width="194" height="34" rx="8" fill="#091E32"/>
+    <text x="117" y="44" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">PKBM INTAN SKILL</text>
+    <text x="117" y="92" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">KELAS</text>
+    <text x="117" y="122" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="800">BARISTA</text>
+    <g transform="translate(77 144)">
+      <path d="M18 18c0-6 5-10 5-16M38 18c0-6 5-10 5-16M58 18c0-6 5-10 5-16" stroke="#E9A820" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M10 30h56v24a20 20 0 0 1-20 20H30a20 20 0 0 1-20-20V30z" fill="#FFFFFF"/>
+      <path d="M66 35h10a8 8 0 0 1 0 16H66" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+      <rect x="6" y="78" width="64" height="6" rx="3" fill="#E9A820"/>
+    </g>
+    <rect x="24" y="246" width="186" height="54" rx="8" fill="#FFFFFF"/>
+    <text x="117" y="269" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="800">BATCH 5 • 9–30 NOV</text>
+    <text x="117" y="287" text-anchor="middle" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="11">Kampus PKBM INTAN Bandung</text>
+  </g>
+</svg>

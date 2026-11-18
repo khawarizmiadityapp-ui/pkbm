@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Perpustakaan Digital PKBM INTAN perpus.pkbm.id">
+  <defs>
+    <linearGradient id="bg-perpus" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091E32"/>
+      <stop offset="60%" stop-color="#102F4D"/>
+      <stop offset="100%" stop-color="#153A5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-perpus)"/>
+  <circle cx="670" cy="110" r="140" fill="#E9A820" fill-opacity="0.06"/>
+  <!-- Left institutional copy (below top-left badge safe zone y=0..215) -->
+  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">PERPUSTAKAAN DIGITAL</text>
+  <text x="48" y="280" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Baca Modul dan</text>
+  <text x="48" y="316" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Buku Pelajaran</text>
+  <text x="48" y="348" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Akses gratis modul Paket A, B, dan C untuk umum.</text>
+  <rect x="48" y="374" width="150" height="32" rx="16" fill="#E9A820"/>
+  <text x="123" y="395" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">perpus.pkbm.id</text>
+  <!-- Book showcase on right -->
+  <g transform="translate(432 96) rotate(-7)">
+    <rect width="128" height="196" rx="8" fill="#1D6FA5" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="0" y="0" width="16" height="196" rx="4" fill="#14537D"/>
+    <text x="72" y="54" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">MODUL</text>
+    <text x="72" y="74" text-anchor="middle" fill="#E2E8F0" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="600">PAKET A</text>
+    <rect x="30" y="102" width="84" height="58" rx="6" fill="#FFFFFF" fill-opacity="0.16"/>
+    <path d="M56 122h32M56 134h24" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(528 84) rotate(-2)">
+    <rect width="132" height="204" rx="8" fill="#E9A820" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="0" y="0" width="16" height="204" rx="4" fill="#C4880D"/>
+    <text x="74" y="52" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">MATEMATIKA</text>
+    <text x="74" y="72" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="700">PAKET B</text>
+    <rect x="30" y="96" width="88" height="72" rx="6" fill="#FFFFFF" fill-opacity="0.65"/>
+    <circle cx="74" cy="132" r="18" fill="#102F4D"/>
+    <path d="M67 132h14M74 125v14" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(622 104) rotate(5)">
+    <rect width="134" height="208" rx="8" fill="#FFFFFF" stroke="#DCE3EA" stroke-width="1.5"/>
+    <rect x="0" y="0" width="16" height="208" rx="4" fill="#C84B17"/>
+    <rect x="28" y="24" width="90" height="44" rx="6" fill="#C84B17"/>
+    <text x="73" y="45" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="800">BAHASA</text>
+    <text x="73" y="59" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="800">INDONESIA</text>
+    <text x="73" y="96" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700">PAKET C</text>
+    <rect x="28" y="114" width="90" height="68" rx="6" fill="#F5F7F9"/>
+    <path d="M44 138h58M44 152h46M44 166h52" stroke="#687789" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>

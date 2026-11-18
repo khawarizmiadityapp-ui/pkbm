@@ -1,0 +1,12 @@
+---
+import PageHero from '../common/PageHero.astro';
+
+interface Props {
+  title?: string;
+  currentPage?: string;
+}
+
+const { title = 'Blog & Artikel', currentPage = 'Blog' } = Astro.props;
+---
+
+<PageHero title={title} currentPage={currentPage} />

@@ -1,0 +1,67 @@
+---
+import { CATEGORY_FILTERS } from '../../data/articles';
+---
+
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
+  <!-- Search Control -->
+  <form
+    id="article-search-form"
+    role="search"
+    class="flex items-center gap-2 w-full lg:max-w-[460px]"
+  >
+    <label for="article-search" class="sr-only">Cari artikel</label>
+    <input
+      id="article-search"
+      name="q"
+      type="search"
+      placeholder="Cari artikel..."
+      autocomplete="off"
+      class="h-10 flex-1 min-w-0 bg-white border border-[#DCE3EA] rounded-md px-3.5 text-sm text-[#102F4D] placeholder:text-[#687789] focus:outline-none focus:border-[#102F4D] focus:ring-2 focus:ring-[#102F4D]/10 transition-colors"
+    />
+    <button
+      type="submit"
+      aria-label="Cari artikel"
+      class="h-10 w-11 shrink-0 bg-[#102F4D] hover:bg-[#153A5B] text-white rounded-md inline-flex items-center justify-center transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E9A820]"
+    >
+      <svg
+        class="w-4 h-4"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.3-4.3" />
+      </svg>
+    </button>
+  </form>
+
+  <!-- Category Filter Pills -->
+  <div
+    role="group"
+    aria-label="Filter kategori artikel"
+    class="flex flex-wrap items-center gap-2"
+  >
+    {CATEGORY_FILTERS.map((cat, idx) => {
+      const isDefaultActive = idx === 0;
+      return (
+        <button
+          type="button"
+          data-category-btn={cat.value}
+          data-active-class={cat.activeClasses}
+          data-inactive-class={cat.inactiveClasses}
+          aria-pressed={isDefaultActive ? 'true' : 'false'}
+          class:list={[
+            'h-10 px-4 rounded-md border text-xs font-semibold tracking-wide transition-colors cursor-pointer whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#102F4D]',
+            isDefaultActive ? cat.activeClasses : cat.inactiveClasses,
+          ]}
+        >
+          {cat.label}
+        </button>
+      );
+    })}
+  </div>
+</div>

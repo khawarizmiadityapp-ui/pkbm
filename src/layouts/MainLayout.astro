@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Blog & Artikel | PKBM INTAN',
+  description = 'Berita, informasi pendidikan kesetaraan, agenda kegiatan, PPDB, dan panduan pembelajaran PKBM INTAN.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-[#F5F7F9] text-[#102F4D] min-h-screen flex flex-col antialiased overflow-x-clip selection:bg-[#E9A820]/25 selection:text-[#102F4D]">
+    <Header />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

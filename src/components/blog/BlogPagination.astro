@@ -1,0 +1,82 @@
+---
+interface Props {
+  activePage?: number;
+}
+
+const { activePage = 1 } = Astro.props;
+const pages = [1, 2];
+---
+
+<nav
+  aria-label="Navigasi halaman artikel"
+  class="mt-10 md:mt-12 flex justify-center"
+>
+  <ul class="inline-flex items-center gap-1.5">
+    <!-- Previous -->
+    <li>
+      <span
+        aria-disabled="true"
+        class="h-9 px-3 inline-flex items-center gap-1 rounded-md border border-[#DCE3EA] bg-white text-xs font-medium text-[#687789] opacity-60 cursor-not-allowed select-none"
+      >
+        <svg
+          class="w-3.5 h-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        <span>Previous</span>
+      </span>
+    </li>
+
+    <!-- Page Numbers -->
+    {pages.map((page) => {
+      const isActive = page === activePage;
+      return (
+        <li>
+          <a
+            href={`#page-${page}`}
+            aria-label={`Halaman ${page}`}
+            aria-current={isActive ? 'page' : undefined}
+            class:list={[
+              'h-9 min-w-9 px-3 inline-flex items-center justify-center rounded-md border text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#102F4D]',
+              isActive
+                ? 'bg-[#102F4D] text-white border-[#102F4D]'
+                : 'bg-white text-[#102F4D] border-[#DCE3EA] hover:bg-[#EDF2F7]',
+            ]}
+          >
+            {page}
+          </a>
+        </li>
+      );
+    })}
+
+    <!-- Next -->
+    <li>
+      <a
+        href="#page-2"
+        aria-label="Halaman berikutnya"
+        class="h-9 px-3 inline-flex items-center gap-1 rounded-md border border-[#DCE3EA] bg-white hover:bg-[#EDF2F7] text-xs font-medium text-[#102F4D] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#102F4D]"
+      >
+        <span>Next</span>
+        <svg
+          class="w-3.5 h-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
