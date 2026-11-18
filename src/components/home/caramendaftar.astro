@@ -1,0 +1,75 @@
+---
+interface StepItem {
+  step: string;
+  title: string;
+  desc: string;
+}
+
+const steps: StepItem[] = [
+  {
+    step: "01",
+    title: "Konsultasi & Pilih Program",
+    desc: "Hubungi admin kami melalui WhatsApp untuk konsultasi gratis mengenai jenjang pendidikan yang sesuai (Paket A, B, atau C).",
+  },
+  {
+    step: "02",
+    title: "Lengkapi Berkas Persyaratan",
+    desc: "Kirim foto/scan dokumen sederhana seperti KTP, Kartu Keluarga, Akta Kelahiran, dan Ijazah jenjang sebelumnya (jika ada).",
+  },
+  {
+    step: "03",
+    title: "Registrasi & Administrasi",
+    desc: "Pemberian Nomor Induk Warga Belajar resmi setelah administrasi ringan diselesaikan. Tersedia skema cicilan berkala.",
+  },
+  {
+    step: "04",
+    title: "Mulai Belajar & Raih Ijazah",
+    desc: "Akses materi daring atau ikuti kelas tatap muka sesuai jadwal fleksibel Anda hingga sukses menempuh Asesmen Nasional.",
+  },
+];
+---
+
+<section id="cara-daftar" class="bg-[#0b1320] text-white py-20 px-6 md:px-10 border-t border-slate-800/80">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Alur Mudah Menjadi Warga Belajar
+      </h2>
+      <p class="mt-4 text-base text-slate-400 leading-relaxed">
+        Proses pendaftaran cepat, ramah, dan bisa dilakukan secara online tanpa perlu repot datang ke lokasi.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((item) => (
+        <div class="bg-[#111e30] border border-slate-800/90 rounded-2xl p-6 relative overflow-hidden group hover:border-amber-500/50 hover:bg-[#132238] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 font-black text-lg flex items-center justify-center mb-6 shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
+              {item.step}
+            </div>
+
+            <h3 class="font-bold text-white text-lg group-hover:text-amber-400 transition-colors">
+              {item.title}
+            </h3>
+
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="https://wa.me/6285722459994?text=Halo%20PKBM%20INTAN,%20saya%20siap%20mendaftar"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-sm px-8 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all"
+      >
+        <span>Mulai Pendaftaran Sekarang</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

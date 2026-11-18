@@ -1,33 +1,20 @@
 ---
 import LandingLayout from '../layouts/landingpage.astro';
+import Banner from '../components/home/banner.astro';
+import ProgramPilihan from '../components/home/programpilihan.astro';
+import Keunggulan from '../components/home/keunggulan.astro';
+import ModulFasilitas from '../components/home/new.astro';
+import CaraMendaftar from '../components/home/caramendaftar.astro';
+import KabarTerbaru from '../components/home/kabarterbaru.astro';
+import TanyaJawab from '../components/home/tanyajawab.astro';
 ---
 
-<LandingLayout title="PKBM - Lorem ipsum">
-  <section class="max-w-6xl mx-auto px-6 py-24 text-center">
-
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-      Raih Masa Depan Lebih Cerah Bersama <br />
-      <span class="text-amber-400">PKBM</span>
-    </h1>
-
-    <p class="mt-6 text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-      Sekolah kesetaraan resmi dan terakreditasi A. Layanan pendidikan Paket A, Paket B, dan Paket C yang fleksibel, bermutu, dan diakui negara.
-    </p>
- 
-    <!-- Tombol CTA -->
-    <div class="mt-10 flex flex-wrap justify-center gap-4">
-      <a
-        href="/program"
-        class="bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold px-8 py-3.5 rounded-full transition shadow-lg shadow-amber-500/20"
-      >
-        Lihat Program Belajar
-      </a>
-      <a
-        href="/kontak"
-        class="border border-slate-700 hover:border-slate-500 bg-slate-800/60 hover:bg-slate-800 text-white font-medium px-8 py-3.5 rounded-full transition"
-      >
-        Hubungi Kami
-      </a>
-    </div>
-  </section>
+<LandingLayout title="PKBM - Sekolah Kesetaraan Resmi & Terakreditasi A">
+  <Banner />
+  <ProgramPilihan />
+  <Keunggulan />
+  <ModulFasilitas />
+  <CaraMendaftar />
+  <KabarTerbaru />
+  <TanyaJawab />
 </LandingLayout>
