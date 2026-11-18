@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Webinar In-Depth Learning Scam Ready ASEAN">
+  <rect width="640" height="800" fill="#2563EB"/>
+  <!-- Top white partner strip (leaves top-right clear for Selesai badge) -->
+  <rect width="640" height="104" fill="#FFFFFF"/>
+  <rect x="28" y="34" width="30" height="30" rx="6" fill="#1D6FA5"/>
+  <path d="M36 49l6 6 10-12" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="48" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">Scam Ready</text>
+  <text x="70" y="64" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="600">ASEAN</text>
+
+  <text x="192" y="56" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700">ASEAN FOUNDATION</text>
+  <text x="330" y="56" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="600">Supported by Google.org</text>
+
+  <!-- Subtle diagonal accents -->
+  <rect x="520" y="138" width="90" height="62" rx="8" fill="none" stroke="#FACC15" stroke-width="4" transform="rotate(14 565 169)"/>
+  <path d="M525 144l40 28 40-28" fill="none" stroke="#FACC15" stroke-width="4" transform="rotate(14 565 169)"/>
+
+  <!-- Main copy -->
+  <text x="38" y="182" fill="#E0F2FE" font-family="Segoe UI, system-ui, sans-serif" font-size="25" font-weight="700">In-Depth Learning</text>
+  <text x="38" y="218" fill="#E0F2FE" font-family="Segoe UI, system-ui, sans-serif" font-size="25" font-weight="700">Scam Ready ASEAN</text>
+
+  <text x="38" y="286" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="33" font-weight="900">Scam Proof Generation:</text>
+  <text x="38" y="330" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Protect Your Personal</text>
+  <text x="38" y="372" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Data, Outsmart Digital</text>
+  <text x="38" y="414" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Scams</text>
+
+  <!-- Highlight yellow tag -->
+  <rect x="38" y="446" width="268" height="66" rx="8" fill="#FACC15"/>
+  <text x="56" y="474" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="800">Learn, Play and</text>
+  <text x="56" y="498" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="800">Protect One Another</text>
+
+  <!-- Stylized Speaker Card & Digital Shield -->
+  <g transform="translate(360 440)">
+    <circle cx="135" cy="120" r="108" fill="#1E40AF"/>
+    <!-- Minimalist speaker figure -->
+    <circle cx="135" cy="96" r="42" fill="#FDE68A"/>
+    <path d="M104 82c8-20 54-20 62 0" fill="#1E293B"/>
+    <path d="M64 228c6-48 40-72 71-72s65 24 71 72" fill="#0F172A"/>
+    <!-- Glasses icon -->
+    <rect x="110" y="90" width="20" height="12" rx="3" fill="none" stroke="#1E293B" stroke-width="2.5"/>
+    <rect x="140" y="90" width="20" height="12" rx="3" fill="none" stroke="#1E293B" stroke-width="2.5"/>
+    <line x1="130" y1="96" x2="140" y2="96" stroke="#1E293B" stroke-width="2.5"/>
+  </g>
+
+  <!-- Bottom info pill -->
+  <rect x="38" y="676" width="330" height="92" rx="14" fill="#FFFFFF"/>
+  <text x="58" y="712" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">Sabtu, 7 November 2026</text>
+  <text x="58" y="740" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="600">10.00 – 12.00 WIB • Online Zoom</text>
+</svg>
