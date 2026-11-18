@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Mengenal Pendidikan Kesetaraan Paket A, B, dan C PKBM INTAN">
+  <defs>
+    <linearGradient id="bg-kesetaraan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091E32"/>
+      <stop offset="60%" stop-color="#102F4D"/>
+      <stop offset="100%" stop-color="#153A5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-kesetaraan)"/>
+  <!-- Left institutional copy (below top-left badge safe zone y=0..215) -->
+  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">EDUKASI KESETARAAN</text>
+  <text x="48" y="280" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Pendidikan Kesetaraan</text>
+  <text x="48" y="316" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Paket A, B, dan C</text>
+  <text x="48" y="348" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Layanan pendidikan resmi terakreditasi A.</text>
+  <rect x="48" y="374" width="144" height="32" rx="16" fill="#E9A820"/>
+  <text x="120" y="395" text-anchor="middle" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">pkbm.id/program</text>
+  <!-- Right three level cards -->
+  <g transform="translate(474 74)">
+    <rect x="0" y="0" width="278" height="86" rx="10" fill="#FFFFFF"/>
+    <rect x="14" y="15" width="56" height="56" rx="8" fill="#102F4D"/>
+    <text x="42" y="51" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">A</text>
+    <text x="86" y="38" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800">Kesetaraan Paket A</text>
+    <text x="86" y="60" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Setara Jenjang SD / MI</text>
+
+    <rect x="0" y="106" width="278" height="86" rx="10" fill="#FFFFFF"/>
+    <rect x="14" y="121" width="56" height="56" rx="8" fill="#102F4D"/>
+    <text x="42" y="157" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">B</text>
+    <text x="86" y="144" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800">Kesetaraan Paket B</text>
+    <text x="86" y="166" fill="#687789" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Setara Jenjang SMP / MTs</text>
+
+    <rect x="0" y="212" width="278" height="86" rx="10" fill="#E9A820"/>
+    <rect x="14" y="227" width="56" height="56" rx="8" fill="#091E32"/>
+    <text x="42" y="263" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">C</text>
+    <text x="86" y="250" fill="#091E32" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="800">Kesetaraan Paket C</text>
+    <text x="86" y="272" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="600">Setara Jenjang SMA / MA</text>
+  </g>
+</svg>

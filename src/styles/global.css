@@ -1,1 +1,21 @@
-@import "tailwindcss"; 
+@import "tailwindcss";
+
+@theme {
+  --color-navy-primary: #102F4D;
+  --color-navy-dark: #091E32;
+  --color-navy-secondary: #153A5B;
+  --color-gold-accent: #E9A820;
+  --color-surface-page: #F5F7F9;
+  --color-surface-card: #FFFFFF;
+  --color-text-primary: #102F4D;
+  --color-text-secondary: #687789;
+  --color-border-subtle: #DCE3EA;
+  --color-whatsapp: #20C968;
+  --font-sans: "Plus Jakarta Sans", "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+}
