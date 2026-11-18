@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Informasi Penerimaan Peserta Didik Baru PKBM INTAN">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Informasi Penerimaan Peserta Didik Baru PKBM">
   <defs>
     <linearGradient id="bg-ppdb" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#091E32"/>
@@ -8,7 +8,7 @@
   </defs>
   <rect width="800" height="450" fill="url(#bg-ppdb)"/>
   <!-- Left institutional copy (below top-left badge safe zone y=0..215) -->
-  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">PPDB PKBM INTAN</text>
+  <text x="48" y="242" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.8">PPDB PKBM</text>
   <text x="48" y="280" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Penerimaan Peserta</text>
   <text x="48" y="316" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="31" font-weight="800">Didik Baru</text>
   <text x="48" y="348" fill="#CBD5E1" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Panduan alur pendaftaran &amp; kelengkapan berkas.</text>

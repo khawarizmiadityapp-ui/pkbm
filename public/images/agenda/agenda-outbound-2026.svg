@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Outbound PKBM INTAN 2026 Pembelajaran Luar Kelas">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" role="img" aria-label="Poster Outbound PKBM 2026 Pembelajaran Luar Kelas">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#E6F0F8"/>
@@ -14,7 +14,7 @@
   <text x="159" y="51" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4">PEMBELAJARAN LUAR KELAS</text>
   <!-- Top right PKBM pill inside gold accent -->
   <rect x="468" y="34" width="144" height="34" rx="17" fill="#FFFFFF"/>
-  <text x="540" y="56" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">PKBM INTAN</text>
+  <text x="540" y="56" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800">PKBM</text>
 
   <!-- Stylized forest & mountain landscape -->
   <path d="M0 440 L150 280 L300 410 L460 250 L640 430 L640 800 L0 800 Z" fill="#295944"/>
@@ -29,7 +29,7 @@
   <g transform="translate(150 375)">
     <rect width="340" height="96" rx="10" fill="#FFFFFF" opacity="0.95"/>
     <rect x="12" y="12" width="316" height="72" rx="6" fill="#F5F7F9" stroke="#102F4D" stroke-width="1.5"/>
-    <text x="170" y="42" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">PKBM INTAN GOES TO LEMBANG</text>
+    <text x="170" y="42" text-anchor="middle" fill="#102F4D" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">PKBM GOES TO LEMBANG</text>
     <text x="170" y="70" text-anchor="middle" fill="#E9A820" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="900">OUTBOUND 2026</text>
   </g>
 
