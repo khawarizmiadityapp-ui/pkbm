@@ -1,10 +1,16 @@
 ---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
 interface Props {
   title: string;
   currentPage: string;
+  parentPage?: BreadcrumbItem;
 }
 
-const { title, currentPage } = Astro.props;
+const { title, currentPage, parentPage } = Astro.props;
 ---
 
 <section class="bg-gradient-to-b from-[#091E32] to-[#0D253E] border-b-2 border-[#E9A820]">
@@ -13,13 +19,28 @@ const { title, currentPage } = Astro.props;
       {title}
     </h1>
 
-    <nav aria-label="Breadcrumb" class="mt-2.5 flex items-center text-sm">
+    <nav aria-label="Breadcrumb" class="mt-2.5 flex items-center flex-wrap text-sm">
       <a
         href="/"
         class="text-slate-300 hover:text-white transition-colors"
       >
         Beranda
       </a>
+      {parentPage && (
+        <>
+          <span class="mx-2 text-slate-400" aria-hidden="true">/</span>
+          {parentPage.href ? (
+            <a
+              href={parentPage.href}
+              class="text-slate-300 hover:text-white transition-colors"
+            >
+              {parentPage.label}
+            </a>
+          ) : (
+            <span class="text-slate-300">{parentPage.label}</span>
+          )}
+        </>
+      )}
       <span class="mx-2 text-slate-400" aria-hidden="true">/</span>
       <span aria-current="page" class="text-[#E9A820] font-medium">
         {currentPage}
