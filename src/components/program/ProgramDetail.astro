@@ -1,0 +1,331 @@
+---
+import type { ProgramMockupData } from '../../data/programs';
+
+interface Props {
+  program: ProgramMockupData;
+}
+
+const { program } = Astro.props;
+---
+
+<section class="bg-white py-10 md:py-14" aria-label={program.title}>
+  <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-8 items-start">
+      <!-- Left Main Content Card -->
+      <div class="lg:col-span-8 bg-white rounded-xl border border-[#E6EAF0] shadow-[0_2px_12px_rgba(15,37,55,0.03)] overflow-hidden">
+        <!-- Top Program Banner Graphic -->
+        <div class="relative overflow-hidden bg-gradient-to-r from-[#EFF5FB] via-[#F9FBFD] to-[#FDF6E2] px-5 sm:px-8 py-8 sm:py-10 text-center border-b border-[#EEF2F6]">
+          <!-- Subtle diagonal light rays & watermark -->
+          <div
+            class="pointer-events-none absolute inset-0 opacity-35"
+            style="background: linear-gradient(125deg, transparent 20%, rgba(255,255,255,0.8) 35%, transparent 50%, rgba(255,255,255,0.6) 65%, transparent 80%);"
+            aria-hidden="true"
+          ></div>
+          <svg
+            class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 text-slate-400/[0.07]"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm-7 9.18V16l7 3.82L19 16v-3.82l-7 3.82-7-3.82z" />
+          </svg>
+
+          <!-- Brand lockup -->
+          <div class="relative z-10 inline-flex items-center gap-2.5 text-left">
+            <div class="w-8 h-8 rounded-full bg-[#0F2537] text-white flex items-center justify-center shadow-xs shrink-0">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="5" />
+                <polyline points="8.21 13.89 7 22 12 19 17 22 15.79 13.88" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs font-extrabold text-[#0F2537] tracking-wider leading-none">
+                PKBM
+              </div>
+              <div class="text-[8px] font-semibold text-slate-500 tracking-[0.14em] uppercase mt-0.5">
+                INSAN CINTA KEPENDIDIKAN
+              </div>
+            </div>
+          </div>
+
+          <!-- Banner Heading -->
+          <h2 class="relative z-10 mt-3.5 text-base sm:text-[21px] font-extrabold text-[#0F2537] tracking-wide uppercase">
+            PROGRAM PENDIDIKAN KESETARAAN
+          </h2>
+
+          <!-- Program Level Pills -->
+          <div class="relative z-10 mt-3.5 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+            <span class="inline-flex items-center gap-1.5 bg-[#F59E0B] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-md shadow-2xs">
+              <svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm-1.25 14.25-3.5-3.5 1.41-1.41 2.09 2.08 4.59-4.58 1.41 1.41-6 6z" />
+              </svg>
+              <span>PAKET A <span class="font-normal opacity-95">(Setara SD)</span></span>
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 bg-[#0284C7] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-md shadow-2xs">
+              <svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm-1.25 14.25-3.5-3.5 1.41-1.41 2.09 2.08 4.59-4.58 1.41 1.41-6 6z" />
+              </svg>
+              <span>PAKET B <span class="font-normal opacity-95">(Setara SMP)</span></span>
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 bg-[#0D9488] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-md shadow-2xs">
+              <svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm-1.25 14.25-3.5-3.5 1.41-1.41 2.09 2.08 4.59-4.58 1.41 1.41-6 6z" />
+              </svg>
+              <span>PAKET C <span class="font-normal opacity-95">(Setara SMA)</span></span>
+            </span>
+          </div>
+
+          <!-- Tagline -->
+          <p class="relative z-10 mt-3.5 text-[11px] sm:text-xs italic text-slate-500 font-medium">
+            Mewujudkan Generasi Mandiri, Berkualitas, dan Berdaya Saing Global
+          </p>
+        </div>
+
+        <!-- Main Card Body -->
+        <div class="p-6 sm:p-8 lg:p-9">
+          {program.badge && (
+            <span class="inline-block bg-[#FEF3C7] text-[#92400E] text-[11px] font-bold px-3 py-1 rounded-md mb-3">
+              {program.badge}
+            </span>
+          )}
+
+          <h2 class="text-xl sm:text-2xl font-bold text-[#0F2537] tracking-tight">
+            {program.title}
+          </h2>
+
+          <h3 class="mt-4 text-xs sm:text-sm font-bold text-[#1E293B]">
+            {program.subHeading}
+          </h3>
+
+          <div class="mt-3 space-y-3.5 text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+            {program.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+
+          <!-- Berkas Persyaratan -->
+          <div class="mt-7">
+            <h4 class="text-xs sm:text-[13px] font-bold text-[#1E293B] mb-3.5">
+              {program.requirementsTitle}
+            </h4>
+
+            <ul class="space-y-2.5 text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-slate-400 text-[10px] mt-1 shrink-0" aria-hidden="true">&#9656;</span>
+                <span>
+                  Fotocopy KTP &amp; KK (Masing-masing 1 Lembar).{' '}
+                  <em class="italic text-slate-500">
+                    *Jika belum berusia 17 tahun, dapat digantikan dengan fotocopy akta kelahiran.
+                  </em>
+                </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-slate-400 text-[10px] mt-1 shrink-0" aria-hidden="true">&#9656;</span>
+                <span>
+                  Pas Foto Ukuran 3x4 (6 Lembar) &mdash; Kemeja putih standar ijazah, Background:{' '}
+                  <strong class="font-bold text-red-600">Merah.</strong>
+                </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-slate-400 text-[10px] mt-1 shrink-0" aria-hidden="true">&#9656;</span>
+                <span>
+                  Pas Foto Ukuran 2x3 (6 Lembar) &mdash; Kemeja putih standar ijazah, Background:{' '}
+                  <strong class="font-bold text-red-600">Merah.</strong>
+                </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-slate-400 text-[10px] mt-1 shrink-0" aria-hidden="true">&#9656;</span>
+                <span>
+                  Fotocopy Rapor Terakhir SD/MI (Dilampirkan jika ada atau tersedia).
+                </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-slate-400 text-[10px] mt-1 shrink-0" aria-hidden="true">&#9656;</span>
+                <span>
+                  Materai Rp10.000 (2 Lembar) untuk kebutuhan administrasi berkas fisik.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <hr class="border-t border-slate-100 my-7" />
+
+          <!-- Keunggulan Program -->
+          <div>
+            <h4 class="text-xs sm:text-[13px] font-bold text-[#0F2537] mb-4">
+              Keunggulan Program
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+              {program.features.map((feature) => (
+                <div class="flex items-center gap-2.5 text-xs sm:text-[13px] text-slate-600">
+                  <span class="w-4 h-4 rounded-full bg-[#E9A820] text-white flex items-center justify-center shrink-0" aria-hidden="true">
+                    <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span>{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- CTA Daftar Sekarang -->
+          <div class="mt-8">
+            <a
+              href="#daftar"
+              class="inline-flex items-center gap-2 bg-[#DDA027] hover:bg-[#c88d19] text-[#0F2537] font-bold text-xs px-5 py-2.5 rounded-lg transition-colors shadow-2xs"
+            >
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+              <span>Daftar Sekarang</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-4 space-y-6">
+        <!-- Info Pendaftaran Card -->
+        <div class="bg-[#0B192C] rounded-xl p-6 text-white shadow-sm">
+          <h3 class="text-sm sm:text-base font-bold text-white">
+            Info Pendaftaran
+          </h3>
+          <p class="mt-2 text-xs text-slate-300 leading-relaxed">
+            Untuk informasi lengkap mengenai biaya, jadwal, dan persyaratan, hubungi kami:
+          </p>
+
+          <ul class="mt-4 space-y-2.5 text-xs text-slate-200">
+            <li class="flex items-center gap-2.5">
+              <svg class="w-3.5 h-3.5 text-[#E9A820] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z" />
+              </svg>
+              <span>0857-2245-9994</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-3.5 h-3.5 text-[#E9A820] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <span>support@pkbm.id</span>
+            </li>
+          </ul>
+
+          <a
+            href="#chat-whatsapp"
+            class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-[#DDA027] hover:bg-[#c88d19] text-[#0B192C] font-bold text-xs py-2.5 px-4 rounded-lg transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            <span>Chat WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Program Lainnya Card -->
+        <div class="bg-white rounded-xl border border-[#E6EAF0] p-6 shadow-[0_2px_12px_rgba(15,37,55,0.03)]">
+          <h3 class="text-[11px] font-bold uppercase tracking-wider text-[#0F2537] mb-4">
+            PROGRAM LAINNYA
+          </h3>
+
+          <div class="space-y-3">
+            {program.relatedPrograms.map((item) => (
+              <a
+                href={item.href}
+                class="flex items-center justify-between gap-3 p-3 rounded-lg border border-slate-100 hover:border-amber-300 hover:bg-amber-50/20 transition-all group"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-[#FEF3C7] text-[#B45309] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm-7 9.18V16l7 3.82L19 16v-3.82l-7 3.82-7-3.82z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[#0F2537] group-hover:text-amber-600 transition-colors">
+                      {item.title}
+                    </div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">
+                      {item.subtitle}
+                    </div>
+                  </div>
+                </div>
+                <span class="text-slate-300 group-hover:text-amber-500 transition-colors text-xs" aria-hidden="true">
+                  &rarr;
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Bagikan Program Card -->
+        <div class="bg-white rounded-xl border border-[#E6EAF0] p-6 shadow-[0_2px_12px_rgba(15,37,55,0.03)]">
+          <h3 class="text-[11px] font-bold uppercase tracking-wider text-[#0F2537] mb-4">
+            BAGIKAN PROGRAM
+          </h3>
+
+          <div class="grid grid-cols-3 gap-2">
+            <a
+              href="#share-whatsapp"
+              class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-[11px] font-semibold py-2 px-2.5 rounded-md inline-flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <svg class="w-3 h-3 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+
+            <a
+              href="#share-facebook"
+              class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-[11px] font-semibold py-2 px-2.5 rounded-md inline-flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <svg class="w-3 h-3 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.6 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z" />
+              </svg>
+              <span>Facebook</span>
+            </a>
+
+            <a
+              href="#share-x"
+              class="bg-black hover:bg-neutral-800 text-white text-[11px] font-semibold py-2 px-2.5 rounded-md inline-flex items-center justify-center transition-colors"
+            >
+              <span>X</span>
+            </a>
+          </div>
+
+          <a
+            href="#share-threads"
+            class="mt-2 w-full bg-black hover:bg-neutral-800 text-white text-[11px] font-semibold py-2 px-3 rounded-md inline-flex items-center justify-center transition-colors"
+          >
+            <span>Threads</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bottom CTA Banner -->
+    <div class="mt-10 md:mt-12 bg-[#0B192C] rounded-2xl px-7 py-8 sm:px-10 sm:py-9 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+      <div>
+        <h2 class="text-xl sm:text-2xl md:text-[26px] font-extrabold text-white tracking-tight">
+          Lorem ipsum dolor sit amet consectetur
+        </h2>
+        <p class="mt-1.5 text-xs sm:text-[13px] text-slate-400">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed
+        </p>
+      </div>
+
+      <a
+        href="#cta"
+        class="shrink-0 bg-[#F59E0B] hover:bg-[#eab308] text-[#0B192C] font-bold text-xs px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors shadow-xs"
+      >
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 14.93V13H8v-2h5V7.07L17.93 12 13 16.93z" />
+        </svg>
+        <span>Lorem ipsum</span>
+      </a>
+    </div>
+  </div>
+</section>
