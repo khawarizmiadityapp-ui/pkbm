@@ -1,0 +1,28 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import PageHero from '../../../components/common/PageHero.astro';
+import PhotoAlbumDetail from '../../../components/galeri/PhotoAlbumDetail.astro';
+import { PHOTO_GALLERY_ITEMS } from '../../../data/gallery';
+
+export function getStaticPaths() {
+  return PHOTO_GALLERY_ITEMS.map((album) => ({
+    params: { id: album.id },
+    props: { album },
+  }));
+}
+
+const { album } = Astro.props;
+const photos = album.photos ?? [];
+---
+
+<MainLayout
+  title={`${album.title} | Galeri Foto | PKBM`}
+  description={album.description}
+>
+  <PageHero
+    title={album.title}
+    currentPage={album.title}
+    parentPage={{ label: 'Galeri Foto', href: '/galeri/foto' }}
+  />
+  <PhotoAlbumDetail albumTitle={album.title} photos={photos} />
+</MainLayout>

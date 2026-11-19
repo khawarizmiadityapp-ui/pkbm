@@ -1,0 +1,342 @@
+---
+import type { AlbumPhotoItem } from '../../data/gallery';
+
+interface Props {
+  albumTitle: string;
+  photos: AlbumPhotoItem[];
+}
+
+const { albumTitle, photos } = Astro.props;
+---
+
+<section class="bg-white py-10 md:py-14" aria-label={`Album ${albumTitle}`}>
+  <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+    <!-- Top Info & Back Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+      <div class="inline-flex items-center gap-2 text-xs sm:text-[13px] font-medium text-[#64748B]">
+        <svg
+          class="w-4 h-4 text-[#64748B] shrink-0"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <polyline points="21 15 16 10 5 21" />
+        </svg>
+        <span>{photos.length} foto dalam album ini</span>
+      </div>
+
+      <a
+        href="/galeri/foto"
+        class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#DCE3EA] bg-white hover:bg-slate-50 text-xs font-semibold text-[#102F4D] shadow-2xs transition-colors"
+      >
+        <span aria-hidden="true">&larr;</span>
+        <span>Semua Album</span>
+      </a>
+    </div>
+
+    <!-- 4-Column Photo Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      {photos.map((photo, index) => (
+        <button
+          type="button"
+          data-album-photo={index}
+          aria-label={`Perbesar foto ${index + 1}: ${photo.alt}`}
+          class="album-photo-card group relative aspect-square w-full rounded-xl overflow-hidden bg-slate-100 border border-[#EAECEF] shadow-2xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E9A820]"
+        >
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            width="600"
+            height="600"
+            loading={index < 4 ? 'eager' : 'lazy'}
+            decoding="async"
+            class="album-photo-img w-full h-full object-cover"
+          />
+
+          <!-- Hover / Click Overlay with Blur & Solid Yellow Magnifier Circle -->
+          <div
+            class="album-photo-overlay absolute inset-0 flex items-center justify-center pointer-events-none"
+            aria-hidden="true"
+          >
+            <span class="album-photo-badge flex items-center justify-center">
+              <svg
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5" fill="#0F172A" />
+                <line x1="15.2" y1="15.2" x2="20.5" y2="20.5" stroke="#0F172A" stroke-width="2.8" stroke-linecap="round" />
+                <line x1="10.5" y1="7.8" x2="10.5" y2="13.2" stroke="#F5BA28" stroke-width="1.9" stroke-linecap="round" />
+                <line x1="7.8" y1="10.5" x2="13.2" y2="10.5" stroke="#F5BA28" stroke-width="1.9" stroke-linecap="round" />
+              </svg>
+            </span>
+          </div>
+        </button>
+      ))}
+    </div>
+
+    <!-- Divider -->
+    <div class="max-w-3xl mx-auto border-t border-[#EAECEF] my-10 md:my-12"></div>
+
+    <!-- Bottom CTA & Share Section -->
+    <div class="text-center">
+      <p class="text-xs sm:text-[13px] text-[#64748B]">
+        Ingin bergabung bersama kami?
+      </p>
+
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="#daftar-whatsapp"
+          class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition-colors"
+        >
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          <span>Daftar via WhatsApp</span>
+        </a>
+
+        <a
+          href="/galeri/foto"
+          class="inline-flex items-center gap-1.5 border border-[#DCE3EA] bg-white hover:bg-slate-50 text-[#102F4D] text-xs font-semibold px-5 py-2.5 rounded-full shadow-2xs transition-colors"
+        >
+          <span aria-hidden="true">&larr;</span>
+          <span>Kembali ke Galeri</span>
+        </a>
+      </div>
+
+      <div class="mt-8">
+        <p class="text-[10.5px] font-bold uppercase tracking-wider text-[#64748B]">
+          BAGIKAN ALBUM:
+        </p>
+
+        <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
+          <a
+            href="#share-whatsapp"
+            class="bg-[#16A34A] hover:bg-[#15803D] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-md inline-flex items-center gap-1.5 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <a
+            href="#share-facebook"
+            class="bg-[#1877F2] hover:bg-[#166FE5] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-md inline-flex items-center gap-1.5 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.6 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z" />
+            </svg>
+            <span>Facebook</span>
+          </a>
+
+          <a
+            href="#share-x"
+            class="bg-black hover:bg-neutral-800 text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-md inline-flex items-center gap-1.5 transition-colors"
+          >
+            <svg class="w-3 h-3 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            <span>X</span>
+          </a>
+
+          <a
+            href="#share-threads"
+            class="bg-black hover:bg-neutral-800 text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-md inline-flex items-center gap-1.5 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.186 24C5.466 24 .002 18.675 0 12.008 0 5.334 5.468.009 12.186.009c6.643 0 12.072 5.253 12.176 11.884-.09 5.867-4.496 10.36-10.457 10.518-3.084.082-5.748-1.07-7.307-3.155l1.986-1.503c1.173 1.571 3.23 2.457 5.32 2.399 4.333-.12 7.502-3.41 7.57-7.797-.075-4.994-4.148-8.995-9.288-8.995-5.204 0-9.435 4.108-9.435 9.148 0 5.041 4.231 9.149 9.435 9.149 2.502 0 4.88-.979 6.524-2.686l1.737 1.758C18.17 22.84 15.28 24 12.186 24z" />
+            </svg>
+            <span>Threads</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal Mockup -->
+  <dialog
+    id="album-lightbox-dialog"
+    aria-label="Pratinjau Foto Album"
+    class="m-auto w-[calc(100%-2rem)] max-w-4xl bg-transparent p-0 backdrop:bg-[#091E32]/85 focus:outline-none"
+  >
+    <div class="relative bg-[#0B192C] rounded-2xl overflow-hidden border border-slate-700/60 shadow-2xl">
+      <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800 text-white">
+        <span id="lightbox-counter" class="text-xs font-semibold text-slate-300">
+          1 / {photos.length}
+        </span>
+        <button
+          id="lightbox-close"
+          type="button"
+          aria-label="Tutup pratinjau foto"
+          class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white inline-flex items-center justify-center transition-colors cursor-pointer"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="relative bg-[#07111E] flex items-center justify-center min-h-[280px] sm:min-h-[420px] max-h-[72vh]">
+        <img
+          id="lightbox-image"
+          src=""
+          alt=""
+          class="max-h-[72vh] w-auto object-contain"
+        />
+
+        <button
+          id="lightbox-prev"
+          type="button"
+          aria-label="Foto sebelumnya"
+          class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/75 text-white inline-flex items-center justify-center transition-colors cursor-pointer"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+
+        <button
+          id="lightbox-next"
+          type="button"
+          aria-label="Foto berikutnya"
+          class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/75 text-white inline-flex items-center justify-center transition-colors cursor-pointer"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="px-5 py-3 bg-[#0B192C] text-center">
+        <p id="lightbox-caption" class="text-xs sm:text-sm text-slate-300"></p>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<script define:vars={{ photos }}>
+  const dialog = document.getElementById('album-lightbox-dialog');
+  const imgEl = document.getElementById('lightbox-image');
+  const captionEl = document.getElementById('lightbox-caption');
+  const counterEl = document.getElementById('lightbox-counter');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+
+  function showPhoto(index) {
+    if (!photos.length) return;
+    currentIndex = (index + photos.length) % photos.length;
+    const current = photos[currentIndex];
+    if (imgEl) {
+      imgEl.setAttribute('src', current.src);
+      imgEl.setAttribute('alt', current.alt);
+    }
+    if (captionEl) {
+      captionEl.textContent = current.caption || current.alt;
+    }
+    if (counterEl) {
+      counterEl.textContent = `${currentIndex + 1} / ${photos.length}`;
+    }
+  }
+
+  for (const trigger of document.querySelectorAll('[data-album-photo]')) {
+    trigger.addEventListener('click', () => {
+      const idx = Number(trigger.getAttribute('data-album-photo') ?? '0');
+      for (const el of document.querySelectorAll('[data-album-photo]')) {
+        el.classList.remove('is-active');
+      }
+      trigger.classList.add('is-active');
+      showPhoto(idx);
+      setTimeout(() => {
+        dialog?.showModal();
+      }, 140);
+    });
+  }
+
+  prevBtn?.addEventListener('click', () => showPhoto(currentIndex - 1));
+  nextBtn?.addEventListener('click', () => showPhoto(currentIndex + 1));
+  closeBtn?.addEventListener('click', () => dialog?.close());
+
+  dialog?.addEventListener('close', () => {
+    for (const el of document.querySelectorAll('[data-album-photo]')) {
+      el.classList.remove('is-active');
+    }
+  });
+
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!dialog?.open) return;
+    if (event.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+    if (event.key === 'ArrowRight') showPhoto(currentIndex + 1);
+  });
+</script>
+
+<style>
+  .album-photo-img {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, filter;
+  }
+
+  .album-photo-overlay {
+    background-color: rgba(11, 25, 44, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .album-photo-badge {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 9999px;
+    background-color: #F5BA28;
+    box-shadow: 0 0 0 5px rgba(245, 186, 40, 0.32),
+      0 10px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(0.75);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .album-photo-card:hover .album-photo-img,
+  .album-photo-card:focus-visible .album-photo-img,
+  .album-photo-card:active .album-photo-img,
+  .album-photo-card.is-active .album-photo-img {
+    transform: scale(1.06);
+    filter: blur(4px);
+  }
+
+  .album-photo-card:hover .album-photo-overlay,
+  .album-photo-card:focus-visible .album-photo-overlay,
+  .album-photo-card:active .album-photo-overlay,
+  .album-photo-card.is-active .album-photo-overlay {
+    opacity: 1;
+  }
+
+  .album-photo-card:hover .album-photo-badge,
+  .album-photo-card:focus-visible .album-photo-badge,
+  .album-photo-card:active .album-photo-badge,
+  .album-photo-card.is-active .album-photo-badge {
+    transform: scale(1);
+  }
+
+  .album-photo-card:active .album-photo-badge,
+  .album-photo-card.is-active .album-photo-badge {
+    transform: scale(0.94);
+    box-shadow: 0 0 0 7px rgba(245, 186, 40, 0.42),
+      0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+</style>
