@@ -1,0 +1,14 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/common/PageHero.astro';
+import GalleryGrid from '../../components/galeri/GalleryGrid.astro';
+import { VIDEO_GALLERY_ITEMS } from '../../data/gallery';
+---
+
+<MainLayout
+  title="Galeri Video | PKBM"
+  description="Dokumentasi galeri video kegiatan pembelajaran dan aktivitas warga belajar PKBM."
+>
+  <PageHero title="Galeri Video" currentPage="Galeri Video" />
+  <GalleryGrid items={VIDEO_GALLERY_ITEMS} ariaLabel="Daftar Galeri Video" />
+</MainLayout>
