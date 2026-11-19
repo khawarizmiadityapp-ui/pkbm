@@ -1,4 +1,4 @@
-export type AgendaCategory = 'Olahraga' | 'Webinar' | 'Lainnya';
+export type AgendaCategory = 'Webinar' | 'Edukasi' | 'Olahraga' | 'Lainnya';
 
 export type AgendaStatus = 'upcoming' | 'completed';
 
@@ -6,14 +6,19 @@ export interface AgendaItem {
   id: string;
   slug: string;
   category: AgendaCategory;
+  badgeLabel?: string;
   status: AgendaStatus;
+  isFree?: boolean;
   title: string;
   description: string;
   dateLabel: string;
   timeLabel: string;
+  modeLabel: 'Offline' | 'Online' | 'Hybrid';
   location: string;
   organizer: string;
   feeLabel: string;
+  statusNote: string;
+  actionLabel: string;
   poster: string;
   posterAlt: string;
 }
@@ -25,112 +30,141 @@ export interface AgendaFilterOption {
 
 export const AGENDA_FILTERS: AgendaFilterOption[] = [
   { value: 'ALL', label: 'Semua' },
-  { value: 'Olahraga', label: 'Olahraga' },
   { value: 'Webinar', label: 'Webinar' },
+  { value: 'Edukasi', label: 'Edukasi' },
+  { value: 'Olahraga', label: 'Olahraga' },
   { value: 'Lainnya', label: 'Lainnya' },
 ];
 
 export const AGENDA_CATEGORY_BADGES: Record<AgendaCategory, string> = {
-  Olahraga: 'bg-[#EFF7FC] text-[#1D6FA5] border border-[#1D6FA5]/20',
-  Webinar: 'bg-[#ECFAFD] text-[#0E7490] border border-[#0E7490]/20',
-  Lainnya: 'bg-[#FEF8EB] text-[#A86D0A] border border-[#E9A820]/30',
+  Edukasi: 'bg-[#F97316] text-white',
+  Olahraga: 'bg-[#10B981] text-white',
+  Webinar: 'bg-[#0284C7] text-white',
+  Lainnya: 'bg-[#E9A820] text-white',
 };
 
 export const AGENDAS: AgendaItem[] = [
   {
     id: 'agenda-1',
-    slug: 'outbound-pkbm-2026',
-    category: 'Olahraga',
-    status: 'upcoming',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    slug: 'tka-2026-paket-c',
+    category: 'Edukasi',
+    badgeLabel: 'ASESMEN',
+    status: 'completed',
+    title: 'Tes Kemampuan Akademik (TKA) 2026 Paket C',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    dateLabel: 'Lorem ipsum',
-    timeLabel: 'Dolor sit amet',
-    location: 'Lorem ipsum dolor',
-    organizer: 'Lorem ipsum',
-    feeLabel: 'Lorem ipsum dolor',
+      'Pelaksanaan Tes Kemampuan Akademik bagi warga belajar Paket C sebagai persiapan evaluasi akhir pendidikan kesetaraan.',
+    dateLabel: '31 Okt 2026',
+    timeLabel: '07:00',
+    modeLabel: 'Offline',
+    location: 'SMP Negeri 17 Kota Bandung (Jl. Pacuan Kuda, Sukamiskin, Kec. Arcamanik, Kota Bandung)',
+    organizer: 'PKBM',
+    feeLabel: 'Gratis untuk Warga Belajar',
+    statusNote: 'Status: Selesai diuji',
+    actionLabel: 'Rincian Informasi',
     poster: '/images/agenda/agenda-outbound-2026.svg',
-    posterAlt: 'Poster Outbound PKBM 2026 Pembelajaran Luar Kelas di Grafika Cikole Lembang',
+    posterAlt: 'Poster Tes Kemampuan Akademik (TKA) 2026 Paket C',
   },
   {
     id: 'agenda-2',
-    slug: 'kelas-barista-batch-5',
-    category: 'Lainnya',
+    slug: 'mabar-fun-sport-badminton',
+    category: 'Olahraga',
+    badgeLabel: 'OLAHRAGA',
     status: 'completed',
-    title: 'Ut enim ad minim veniam, quis nostrud exercitation',
+    isFree: true,
+    title: 'MABAR FUN SPORT BADMINTON PKBM',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.',
-    dateLabel: 'Lorem ipsum',
-    timeLabel: 'Dolor sit amet',
-    location: 'Lorem ipsum dolor',
-    organizer: 'Lorem ipsum',
-    feeLabel: 'Lorem ipsum dolor',
-    poster: '/images/agenda/agenda-kelas-barista.svg',
-    posterAlt: 'Poster Ekstrakurikuler Kelas Barista Batch 5 PKBM',
+      'Kegiatan olahraga bersama warga belajar dan tutor PKBM untuk mempererat kebersamaan serta menjaga kebugaran.',
+    dateLabel: '08 Aug 2026',
+    timeLabel: '13:00',
+    modeLabel: 'Offline',
+    location: 'Progresif Futsal (Jl. Soekarno Hatta No. 785A - Kota Bandung)',
+    organizer: 'PKBM',
+    feeLabel: 'Gratis untuk Warga',
+    statusNote: 'Gratis untuk Warga',
+    actionLabel: 'Dokumentasi',
+    poster: '/images/agenda/agenda-fun-sport-badminton.svg',
+    posterAlt: 'Poster Mabar Fun Sport Badminton PKBM',
   },
   {
     id: 'agenda-3',
-    slug: 'in-depth-learning-scam-ready-asean',
-    category: 'Webinar',
+    slug: 'funsport-25-jul-2026',
+    category: 'Olahraga',
+    badgeLabel: 'OLAHRAGA',
     status: 'completed',
-    title: 'Excepteur sint occaecat cupidatat non proident',
+    isFree: true,
+    title: 'FunSport 25 Jul 2026 : Badminton Time!',
     description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.',
-    dateLabel: 'Lorem ipsum',
-    timeLabel: 'Dolor sit amet',
-    location: 'Lorem ipsum dolor',
-    organizer: 'Lorem ipsum',
-    feeLabel: 'Lorem ipsum dolor',
-    poster: '/images/agenda/agenda-scam-ready-asean.svg',
-    posterAlt: 'Poster Webinar In-Depth Learning Scam Ready ASEAN Foundation',
+      'Sesi latihan dan pertandingan persahabatan badminton warga belajar PKBM bersama komunitas.',
+    dateLabel: '25 Jul 2026',
+    timeLabel: '13:00',
+    modeLabel: 'Offline',
+    location: 'Progresif Futsal (Jl. Soekarno Hatta No.785A, Babakan Penghulu, Kec. Cinambo, Kota Bandung)',
+    organizer: 'PKBM',
+    feeLabel: 'Gratis',
+    statusNote: 'Kegiatan Terlaksana',
+    actionLabel: 'Dokumentasi',
+    poster: '/images/agenda/agenda-fun-sport-badminton.svg',
+    posterAlt: 'Poster FunSport 25 Jul 2026 Badminton Time PKBM',
   },
   {
     id: 'agenda-4',
-    slug: 'fun-sport-badminton-november-2026',
-    category: 'Olahraga',
-    status: 'completed',
-    title: 'Nemo enim ipsam voluptatem quia voluptas sit',
-    description:
-      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci.',
-    dateLabel: 'Lorem ipsum',
-    timeLabel: 'Dolor sit amet',
-    location: 'Lorem ipsum dolor',
-    organizer: 'Lorem ipsum',
-    feeLabel: 'Lorem ipsum dolor',
-    poster: '/images/agenda/agenda-fun-sport-badminton.svg',
-    posterAlt: 'Poster Fun Sport Badminton PKBM November 2026',
-  },
-  {
-    id: 'agenda-5',
     slug: 'webinar-sosialisasi-persiapan-snpmb-2026',
     category: 'Webinar',
+    badgeLabel: 'WEBINAR',
     status: 'upcoming',
-    title: 'Quis autem vel eum iure reprehenderit qui in ea',
+    isFree: true,
+    title: 'Webinar Sosialisasi & Persiapan SNPMB 2026',
     description:
-      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.',
-    dateLabel: 'Lorem ipsum',
-    timeLabel: 'Dolor sit amet',
-    location: 'Lorem ipsum dolor',
-    organizer: 'Lorem ipsum',
-    feeLabel: 'Lorem ipsum dolor',
+      'Pembekalan jalur masuk perguruan tinggi negeri dan strategi pemilihan jurusan bagi warga belajar Paket C.',
+    dateLabel: '14 Nov 2026',
+    timeLabel: '09:00',
+    modeLabel: 'Online',
+    location: 'Zoom Meeting & Live YouTube PKBM',
+    organizer: 'Tim Bimbingan Akademik PKBM',
+    feeLabel: 'Gratis untuk Warga',
+    statusNote: 'Pendaftaran Dibuka',
+    actionLabel: 'Rincian Informasi',
     poster: '/images/agenda/agenda-webinar-snpmb.svg',
     posterAlt: 'Poster Webinar Persiapan SNPMB dan Perguruan Tinggi PKBM',
   },
   {
-    id: 'agenda-6',
-    slug: 'workshop-literasi-perpustakaan-digital',
-    category: 'Lainnya',
-    status: 'upcoming',
-    title: 'At vero eos et accusamus et iusto odio dignissimos',
+    id: 'agenda-5',
+    slug: 'in-depth-learning-scam-ready-asean',
+    category: 'Webinar',
+    badgeLabel: 'WEBINAR',
+    status: 'completed',
+    title: 'In-Depth Learning Scam Ready ASEAN Foundation',
     description:
-      'Et harum quidem rerum facilis est et expedita distinctio nam libero tempore.',
-    dateLabel: 'Lorem ipsum',
-    timeLabel: 'Dolor sit amet',
-    location: 'Lorem ipsum dolor',
-    organizer: 'Lorem ipsum',
-    feeLabel: 'Lorem ipsum dolor',
-    poster: '/images/agenda/agenda-workshop-literasi.svg',
-    posterAlt: 'Poster Workshop Literasi Digital Perpustakaan PKBM',
+      'Edukasi literasi keamanan digital dan pencegahan penipuan daring untuk warga belajar dan masyarakat umum.',
+    dateLabel: '19 Sep 2026',
+    timeLabel: '10:00',
+    modeLabel: 'Online',
+    location: 'Zoom Meeting PKBM',
+    organizer: 'PKBM x ASEAN Foundation',
+    feeLabel: 'Gratis',
+    statusNote: 'Kegiatan Terlaksana',
+    actionLabel: 'Dokumentasi',
+    poster: '/images/agenda/agenda-scam-ready-asean.svg',
+    posterAlt: 'Poster Webinar In-Depth Learning Scam Ready ASEAN Foundation',
+  },
+  {
+    id: 'agenda-6',
+    slug: 'kelas-barista-batch-5',
+    category: 'Lainnya',
+    badgeLabel: 'LAINNYA',
+    status: 'completed',
+    title: 'Ekstrakurikuler Kelas Barista & Kewirausahaan Batch 5',
+    description:
+      'Pelatihan keterampilan meracik kopi dan manajemen usaha kafe bagi warga belajar PKBM.',
+    dateLabel: '22 Agu 2026',
+    timeLabel: '09:30',
+    modeLabel: 'Offline',
+    location: 'Workshop Kewirausahaan PKBM, Kota Bandung',
+    organizer: 'Divisi Keterampilan PKBM',
+    feeLabel: 'Subsidi Lembaga',
+    statusNote: 'Kegiatan Terlaksana',
+    actionLabel: 'Dokumentasi',
+    poster: '/images/agenda/agenda-kelas-barista.svg',
+    posterAlt: 'Poster Ekstrakurikuler Kelas Barista Batch 5 PKBM',
   },
 ];
