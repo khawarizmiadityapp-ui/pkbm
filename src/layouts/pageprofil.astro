@@ -1,0 +1,25 @@
+---
+import MainLayout from './MainLayout.astro';
+import PageHero from '../components/common/PageHero.astro';
+
+interface Props {
+  title: string;
+  currentPage: string;
+  description?: string;
+}
+
+const {
+  title,
+  currentPage,
+  description = 'Profil PKBM — Tentang PKBM, Visi & Misi, dan Filosofi Logo.',
+} = Astro.props;
+---
+
+<MainLayout title={`${title} | PKBM`} description={description}>
+  <PageHero
+    title={title}
+    currentPage={currentPage}
+    parentPage={{ label: 'Profile', href: '/profil' }}
+  />
+  <slot />
+</MainLayout>
