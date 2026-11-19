@@ -1,0 +1,23 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/common/PageHero.astro';
+import GalleryGrid from '../../components/galeri/GalleryGrid.astro';
+import { PHOTO_GALLERY_ITEMS } from '../../data/gallery';
+---
+
+<MainLayout
+  title="Galeri Foto | PKBM"
+  description="Dokumentasi galeri foto dan video kegiatan warga belajar PKBM."
+>
+  <PageHero title="Galeri Foto" currentPage="Galeri Foto" />
+  <GalleryGrid items={PHOTO_GALLERY_ITEMS} ariaLabel="Daftar Galeri Foto" />
+</MainLayout>
+
+<script>
+  const hash = window.location.hash.toLowerCase();
+  if (hash === '#video') {
+    window.location.replace('/galeri/video');
+  } else if (hash === '#foto') {
+    window.location.replace('/galeri/foto');
+  }
+</script>
