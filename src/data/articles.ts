@@ -10,6 +10,19 @@ export interface Article {
   description: string;
   thumbnail: string;
   thumbnailAlt: string;
+  publishedAt?: string;
+  author?: string;
+  heroBadge?: string;
+  heroTitle?: string;
+  breadcrumbLabel?: string;
+  badgeLabel?: string;
+  badgeColorClass?: string;
+  dateLabel?: string;
+  timeLabel?: string;
+  modeLabel?: 'Offline' | 'Online' | 'Hybrid';
+  location?: string;
+  contentHeading?: string;
+  paragraphs?: string[];
 }
 
 export interface CategoryFilterOption {
@@ -146,3 +159,35 @@ export const ARTICLES: Article[] = [
       'Ilustrasi Panduan Persiapan SNPMB dan Perguruan Tinggi PKBM',
   },
 ];
+
+export const PROGRAM_BLOG_ARTICLE: Article = {
+  id: 'program-blog',
+  slug: 'program-blog',
+  category: 'EDUKASI',
+  day: '31',
+  month: 'OKT',
+  title: 'Tes Kemampuan Akademik (TKA) 2026 Paket C',
+  description:
+    'Hubungi kami sekarang untuk informasi pendaftaran Paket A, B, atau C. Gratis konsultasi!',
+  thumbnail: '/images/blog/article-tka-2026.svg',
+  thumbnailAlt: 'Poster Siap TKA 2026 Tes Kemampuan Akademik Paket C PKBM',
+  publishedAt: '31 Okt 2026',
+  author: 'Admin PKBM',
+  heroBadge: 'Lorem Ipsum Dolor Sit Amet',
+  heroTitle: 'Lorem Ipsum Dolor Sit Amet',
+  breadcrumbLabel: 'Program Blog',
+  badgeLabel: 'ASESMEN',
+  badgeColorClass: 'bg-[#F97316] text-white',
+  dateLabel: '31 Okt 2026',
+  timeLabel: '07:00',
+  modeLabel: 'Offline',
+  location:
+    'SMP Negeri 17 Kota Bandung (Jl. Pacuan Kuda, Sukamiskin, Kec. Arcamanik, Kota Bandung)',
+  contentHeading: 'Tes Kemampuan Akademik (TKA) 2026 Paket C',
+  paragraphs: [
+    'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+    'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+    'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+    'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
+  ],
+};
