@@ -1,0 +1,138 @@
+---
+import { CATEGORY_BADGE_STYLES, type Article } from '../../data/articles';
+import BottomCtaBanner from '../common/BottomCtaBanner.astro';
+import EventMetaList from '../common/EventMetaList.astro';
+
+interface Props {
+  article: Article;
+  relatedArticles: Article[];
+}
+
+const { article, relatedArticles } = Astro.props;
+const badgeClasses = article.badgeColorClass ?? CATEGORY_BADGE_STYLES[article.category];
+const badgeLabel = article.badgeLabel ?? article.category;
+const dateLabel = article.dateLabel ?? article.publishedAt ?? `${article.day} ${article.month} 2026`;
+const bodyParagraphs = article.paragraphs && article.paragraphs.length > 0
+  ? article.paragraphs
+  : [article.description];
+---
+
+<section class="bg-white py-10 md:py-14" aria-label={article.title}>
+  <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-8 items-start">
+      <!-- Left Main Content Card -->
+      <article class="lg:col-span-8 bg-white rounded-xl border border-[#E6EAF0] shadow-[0_2px_12px_rgba(15,37,55,0.03)] overflow-hidden">
+        <!-- Top Poster / Thumbnail Banner -->
+        <div class="w-full bg-[#324052] overflow-hidden">
+          <img
+            src={article.thumbnail}
+            alt={article.thumbnailAlt}
+            width="800"
+            height="520"
+            loading="eager"
+            decoding="async"
+            class="w-full h-auto block object-cover"
+          />
+        </div>
+
+        <!-- Card Body -->
+        <div class="p-6 sm:p-8 lg:p-9">
+          <div>
+            <span
+              class:list={[
+                'inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider leading-none',
+                badgeClasses,
+              ]}
+            >
+              {badgeLabel}
+            </span>
+          </div>
+
+          <h2 class="mt-4 text-lg sm:text-xl font-bold text-[#0F2537] tracking-tight leading-snug">
+            {article.title}
+          </h2>
+
+          <EventMetaList
+            dateLabel={dateLabel}
+            timeLabel={article.timeLabel}
+            modeLabel={article.modeLabel}
+            location={article.location}
+            class="mt-4"
+          />
+
+          <div class="mt-9 pt-2">
+            {article.contentHeading && (
+              <h3 class="text-sm sm:text-base font-bold text-[#0F2537] leading-snug">
+                {article.contentHeading}
+              </h3>
+            )}
+
+            <div class="mt-2.5 space-y-1.5 text-xs sm:text-[13px] text-[#687789] leading-relaxed">
+              {bodyParagraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-4 space-y-6">
+        <!-- Registration CTA Card -->
+        <div class="bg-[#0B192C] rounded-xl p-6 text-white shadow-sm">
+          <h3 class="text-lg font-bold text-[#E9A820]">
+            Tertarik Mendaftar?
+          </h3>
+          <p class="mt-2.5 text-xs sm:text-[13px] text-slate-300 leading-relaxed">
+            Hubungi kami sekarang untuk informasi pendaftaran Paket A, B, atau C. Gratis konsultasi!
+          </p>
+
+          <a
+            href="/kontak"
+            class="mt-5 w-full inline-flex items-center justify-center bg-[#DDA027] hover:bg-[#c88d19] text-[#0B192C] font-bold text-xs py-2.5 px-4 rounded-lg transition-colors"
+          >
+            <span>Daftar Sekarang</span>
+          </a>
+        </div>
+
+        <!-- Related Articles Card -->
+        {relatedArticles.length > 0 && (
+          <div class="bg-white rounded-xl border border-[#E6EAF0] p-6 shadow-[0_2px_12px_rgba(15,37,55,0.03)]">
+            <h3 class="text-xl font-bold text-[#0F2537] tracking-tight mb-4">
+              Artikel Terkait
+            </h3>
+
+            <div class="space-y-4">
+              {relatedArticles.map((related) => (
+                <a
+                  href={`/blog/${related.slug}`}
+                  class="group block rounded-lg overflow-hidden border border-[#EEF2F6] bg-white shadow-[0_2px_8px_rgba(15,37,55,0.04)] hover:border-[#E9A820]/70 transition-all"
+                >
+                  <div class="aspect-[16/10] bg-[#324052] overflow-hidden">
+                    <img
+                      src={related.thumbnail}
+                      alt={related.thumbnailAlt}
+                      width="480"
+                      height="300"
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div class="p-3.5">
+                    <p class="text-xs text-[#334155] leading-relaxed group-hover:text-[#0F2537] transition-colors line-clamp-3">
+                      {related.description}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </aside>
+    </div>
+
+    <!-- Bottom CTA Banner -->
+    <BottomCtaBanner />
+  </div>
+</section>

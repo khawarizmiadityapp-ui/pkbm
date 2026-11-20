@@ -49,7 +49,7 @@ const badgeClasses = CATEGORY_BADGE_STYLES[article.category];
   <div class="p-5 sm:p-6 flex flex-col flex-1">
     <h2 class="text-[17px] font-bold text-[#102F4D] leading-snug group-hover:text-[#153A5B] transition-colors line-clamp-3">
       <a
-        href={`#${article.slug}`}
+        href={`/blog/${article.slug}`}
         class="focus:outline-none focus-visible:underline"
       >
         {article.title}
@@ -77,11 +77,13 @@ const badgeClasses = CATEGORY_BADGE_STYLES[article.category];
           <line x1="8" y1="2" x2="8" y2="6" />
           <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
-        <span class="truncate">{article.publishedAt} &bull; {article.author}</span>
+        <span class="truncate">
+          {article.publishedAt ?? `${article.day} ${article.month} 2026`} &bull; {article.author ?? 'Admin PKBM'}
+        </span>
       </div>
 
       <a
-        href={`#${article.slug}`}
+        href={`/blog/${article.slug}`}
         aria-label={`Baca selengkapnya: ${article.title}`}
         class="inline-flex items-center gap-1 font-semibold text-[#102F4D] hover:text-[#B87A0E] transition-colors shrink-0"
       >

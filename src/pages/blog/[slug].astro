@@ -1,0 +1,48 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/common/PageHero.astro';
+import BlogDetail from '../../components/blog/BlogDetail.astro';
+import {
+  ARTICLES,
+  PROGRAM_BLOG_ARTICLE,
+  type Article,
+} from '../../data/articles';
+
+export function getStaticPaths() {
+  const allArticles: Article[] = [PROGRAM_BLOG_ARTICLE, ...ARTICLES];
+
+  return allArticles.map((article) => {
+    const relatedArticles =
+      article.slug === PROGRAM_BLOG_ARTICLE.slug
+        ? [PROGRAM_BLOG_ARTICLE]
+        : ARTICLES.filter((item) => item.slug !== article.slug).slice(0, 2);
+
+    return {
+      params: { slug: article.slug },
+      props: { article, relatedArticles },
+    };
+  });
+}
+
+interface Props {
+  article: Article;
+  relatedArticles: Article[];
+}
+
+const { article, relatedArticles } = Astro.props;
+const heroTitle = article.heroTitle ?? article.title;
+const currentPage = article.breadcrumbLabel ?? article.title;
+---
+
+<MainLayout
+  title={`${article.title} | Blog | PKBM`}
+  description={article.description}
+>
+  <PageHero
+    badge={article.heroBadge}
+    title={heroTitle}
+    currentPage={currentPage}
+    parentPage={{ label: 'Blog', href: '/blog' }}
+  />
+  <BlogDetail article={article} relatedArticles={relatedArticles} />
+</MainLayout>

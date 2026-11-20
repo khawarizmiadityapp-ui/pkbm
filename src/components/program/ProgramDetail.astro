@@ -1,5 +1,6 @@
 ---
 import type { ProgramMockupData } from '../../data/programs';
+import BottomCtaBanner from '../common/BottomCtaBanner.astro';
 
 interface Props {
   program: ProgramMockupData;
@@ -307,25 +308,6 @@ const { program } = Astro.props;
     </div>
 
     <!-- Bottom CTA Banner -->
-    <div class="mt-10 md:mt-12 bg-[#0B192C] rounded-2xl px-7 py-8 sm:px-10 sm:py-9 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
-      <div>
-        <h2 class="text-xl sm:text-2xl md:text-[26px] font-extrabold text-white tracking-tight">
-          Lorem ipsum dolor sit amet consectetur
-        </h2>
-        <p class="mt-1.5 text-xs sm:text-[13px] text-slate-400">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-        </p>
-      </div>
-
-      <a
-        href="#cta"
-        class="shrink-0 bg-[#F59E0B] hover:bg-[#eab308] text-[#0B192C] font-bold text-xs px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors shadow-xs"
-      >
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 14.93V13H8v-2h5V7.07L17.93 12 13 16.93z" />
-        </svg>
-        <span>Lorem ipsum</span>
-      </a>
-    </div>
+    <BottomCtaBanner />
   </div>
 </section>
