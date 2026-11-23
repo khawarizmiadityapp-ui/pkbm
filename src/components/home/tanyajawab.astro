@@ -1,4 +1,12 @@
 ---
+import { WHATSAPP_NUMBER } from '../../data/contact';
+
+interface Props {
+  whatsappNumber?: string;
+}
+
+const { whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
+
 interface FaqItem {
   question: string;
   answer: string;
@@ -64,7 +72,7 @@ const faqs: FaqItem[] = [
 
     <p class="text-center text-xs text-slate-500 mt-6">
       Masih memiliki pertanyaan lain yang belum terjawab? 
-      <a href="" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-bold hover:underline">
+      <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" class="text-amber-600 font-bold hover:underline">
         Tanyakan langsung ke Tim Konsultasi kami &rarr;
       </a>
     </p>
@@ -82,7 +90,7 @@ const faqs: FaqItem[] = [
       </div>
 
       <a
-        href=""
+        href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
         rel="noopener noreferrer"
         class="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md shadow-amber-500/20 transition-all"

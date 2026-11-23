@@ -1,12 +1,14 @@
 ---
 import { PROFILE_NAV_ITEMS, type ProfileMockupData } from '../../data/profile';
+import { WHATSAPP_NUMBER } from '../../data/contact';
 import BottomCtaBanner from '../common/BottomCtaBanner.astro';
 
 interface Props {
   profile: ProfileMockupData;
+  whatsappNumber?: string;
 }
 
-const { profile } = Astro.props;
+const { profile, whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
 ---
 
 <section class="bg-white py-10 md:py-14" aria-label={profile.title}>
@@ -56,7 +58,9 @@ const { profile } = Astro.props;
           </ul>
 
           <a
-            href="#chat-whatsapp"
+            href={`https://wa.me/${whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
             class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-[#DDA027] hover:bg-[#c88d19] text-[#0B192C] font-bold text-xs py-2.5 px-4 rounded-lg transition-colors"
           >
             <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">

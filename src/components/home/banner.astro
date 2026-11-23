@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import bannerImage1 from '../../images/banner.webp';
 import bannerImage2 from '../../images/Banner-Menggunakan-Format-WebP-di-WordPress.webp';
+import { WHATSAPP_NUMBER } from '../../data/contact';
 
 interface StatItem {
   value: string;
@@ -21,7 +22,7 @@ const {
   title1 = "Daftar Dari Mana",
   title2 = "Saja, Kapan Saja!",
   description = "Menerima pendaftaran warga belajar baru & pindahan dari seluruh nusantara bahkan luar negeri.",
-  whatsappNumber = "6285722459994",
+  whatsappNumber = WHATSAPP_NUMBER,
   programHref = "/program",
   stats = [
     { value: "Akreditasi A", label: "RESMI KEMDIKBUD" },
