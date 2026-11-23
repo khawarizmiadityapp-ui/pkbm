@@ -27,7 +27,7 @@ export const CONTACT_INFO_ITEMS: ContactInfoItem[] = [
   },
 ];
 
-export const WHATSAPP_NUMBER = '6285722459994';
+export const WHATSAPP_NUMBER = '08';
 
 export const CONTACT_LINKS = {
   whatsappHref: `https://wa.me/${WHATSAPP_NUMBER}`,
