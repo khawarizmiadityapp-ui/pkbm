@@ -54,7 +54,12 @@ const badgeText = agenda.badgeLabel ?? agenda.category;
     </div>
 
     <h2 class="mt-3 text-[15px] sm:text-base font-bold text-[#0F2537] leading-snug group-hover:text-[#0284C7] transition-colors line-clamp-2">
-      {agenda.title}
+      <a
+        href={`/agenda/${agenda.slug}`}
+        class="focus:outline-none focus-visible:underline"
+      >
+        {agenda.title}
+      </a>
     </h2>
 
     <EventMetaList
