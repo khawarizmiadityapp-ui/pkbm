@@ -1,4 +1,12 @@
 ---
+import { WHATSAPP_NUMBER } from '../../data/contact';
+
+interface Props {
+  whatsappNumber?: string;
+}
+
+const { whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
+
 interface StepItem {
   step: string;
   title: string;
@@ -62,10 +70,10 @@ const steps: StepItem[] = [
 
     <div class="text-center mt-12">
       <a
-        href="https://wa.me/6285722459994?text=Halo%20Admin%20PKBM,%20saya%20siap%20mendaftar"
+        href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-sm px-8 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all"
+        class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all"
       >
         <span>Mulai Pendaftaran Sekarang</span>
         <span>&rarr;</span>
