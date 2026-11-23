@@ -6,11 +6,13 @@ import Footer from '../components/footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  hideChrome?: boolean;
 }
 
 const {
   title = 'Blog & Artikel | PKBM',
   description = 'Berita, informasi pendidikan kesetaraan, agenda kegiatan, PPDB, dan panduan pembelajaran PKBM.',
+  hideChrome = false,
 } = Astro.props;
 ---
 
@@ -24,12 +26,12 @@ const {
     <title>{title}</title>
   </head>
   <body class="bg-[#F5F7F9] text-[#102F4D] min-h-screen flex flex-col antialiased overflow-x-clip selection:bg-[#E9A820]/25 selection:text-[#102F4D]">
-    <Header />
+    {!hideChrome && <Header />}
 
     <main class="flex-1">
       <slot />
     </main>
 
-    <Footer />
+    {!hideChrome && <Footer />}
   </body>
 </html>
