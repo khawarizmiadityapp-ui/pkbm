@@ -1,4 +1,5 @@
 ---
+import CalonWargaConsultationFields from './CalonWargaConsultationFields.astro';
 import LembagaConsultationFields from './LembagaConsultationFields.astro';
 
 interface RoleOption {
@@ -149,7 +150,8 @@ const roleOptions: RoleOption[] = [
         </div>
       </fieldset>
 
-      <!-- Step 2 & 3 Form for Lembaga / Mitra / Alumni -->
+      <!-- Step 2+ Forms by Selected Role -->
+      <CalonWargaConsultationFields />
       <LembagaConsultationFields />
     </div>
 
@@ -166,23 +168,28 @@ const roleOptions: RoleOption[] = [
   const step1Prefix = document.getElementById('step-1-number-prefix');
   const roleGroup = document.getElementById('role-options-group');
   const roleCards = Array.from(document.querySelectorAll<HTMLLabelElement>('[data-role-option]'));
+  const calonWargaForm = document.getElementById('calon-warga-consultation-form');
+  const cwProgramSelect = document.getElementById('cw-program') as HTMLSelectElement | null;
   const lembagaForm = document.getElementById('lembaga-consultation-form');
 
   function updateRoleUI(selectedRole: string) {
+    const isExpanded = Boolean(selectedRole);
+    const isPersonalRole =
+      selectedRole === 'calon-warga-belajar' || selectedRole === 'orang-tua-wali';
     const isLembaga = selectedRole === 'lembaga-mitra-alumni';
 
-    wrapper?.classList.toggle('max-w-[640px]', isLembaga);
-    wrapper?.classList.toggle('max-w-[540px]', !isLembaga);
+    wrapper?.classList.toggle('max-w-[640px]', isExpanded);
+    wrapper?.classList.toggle('max-w-[540px]', !isExpanded);
 
-    step1Badge?.classList.toggle('hidden', !isLembaga);
-    step1Prefix?.classList.toggle('hidden', isLembaga);
+    step1Badge?.classList.toggle('hidden', !isExpanded);
+    step1Prefix?.classList.toggle('hidden', isExpanded);
 
     if (roleGroup) {
-      roleGroup.classList.toggle('space-y-3', !isLembaga);
-      roleGroup.classList.toggle('grid', isLembaga);
-      roleGroup.classList.toggle('grid-cols-1', isLembaga);
-      roleGroup.classList.toggle('sm:grid-cols-3', isLembaga);
-      roleGroup.classList.toggle('gap-3', isLembaga);
+      roleGroup.classList.toggle('space-y-3', !isExpanded);
+      roleGroup.classList.toggle('grid', isExpanded);
+      roleGroup.classList.toggle('grid-cols-1', isExpanded);
+      roleGroup.classList.toggle('sm:grid-cols-3', isExpanded);
+      roleGroup.classList.toggle('gap-3', isExpanded);
     }
 
     for (const item of roleCards) {
@@ -193,26 +200,26 @@ const roleOptions: RoleOption[] = [
       const isChecked = Boolean(input?.checked);
 
       if (iconBox) {
-        iconBox.classList.toggle('w-8', isLembaga);
-        iconBox.classList.toggle('h-8', isLembaga);
-        iconBox.classList.toggle('w-10', !isLembaga);
-        iconBox.classList.toggle('h-10', !isLembaga);
+        iconBox.classList.toggle('w-8', isExpanded);
+        iconBox.classList.toggle('h-8', isExpanded);
+        iconBox.classList.toggle('w-10', !isExpanded);
+        iconBox.classList.toggle('h-10', !isExpanded);
       }
 
       if (radioDot) {
-        radioDot.classList.toggle('hidden', !isLembaga);
-        radioDot.classList.toggle('inline-flex', isLembaga);
-        radioDot.classList.toggle('border-[#0F2537]', isLembaga && isChecked);
-        radioDot.classList.toggle('bg-[#0F2537]', isLembaga && isChecked);
-        radioDot.classList.toggle('border-[#CBD5E1]', isLembaga && !isChecked);
-        radioDot.classList.toggle('bg-white', isLembaga && !isChecked);
+        radioDot.classList.toggle('hidden', !isExpanded);
+        radioDot.classList.toggle('inline-flex', isExpanded);
+        radioDot.classList.toggle('border-[#0F2537]', isExpanded && isChecked);
+        radioDot.classList.toggle('bg-[#0F2537]', isExpanded && isChecked);
+        radioDot.classList.toggle('border-[#CBD5E1]', isExpanded && !isChecked);
+        radioDot.classList.toggle('bg-white', isExpanded && !isChecked);
       }
 
       if (radioInner) {
-        radioInner.classList.toggle('hidden', !(isLembaga && isChecked));
+        radioInner.classList.toggle('hidden', !(isExpanded && isChecked));
       }
 
-      if (isLembaga) {
+      if (isExpanded) {
         item.classList.remove('border-[#E9A820]', 'bg-[#FFFDF7]', 'ring-2', 'ring-[#E9A820]/25');
         item.classList.toggle('items-start', true);
         item.classList.toggle('items-center', false);
@@ -237,6 +244,13 @@ const roleOptions: RoleOption[] = [
       }
     }
 
+    calonWargaForm?.classList.toggle('hidden', !isPersonalRole);
+    if (calonWargaForm && isPersonalRole) {
+      calonWargaForm.dataset.selectedRole = selectedRole;
+      if (cwProgramSelect) {
+        cwProgramSelect.value = selectedRole === 'calon-warga-belajar' ? 'Paket A (SD)' : '';
+      }
+    }
     lembagaForm?.classList.toggle('hidden', !isLembaga);
   }
 
