@@ -1,8 +1,11 @@
 ---
+import LembagaConsultationFields from './LembagaConsultationFields.astro';
+
 interface RoleOption {
   id: string;
   title: string;
   description: string;
+  compactDescription: string;
   icon: 'cap' | 'family' | 'building';
 }
 
@@ -11,28 +14,31 @@ const roleOptions: RoleOption[] = [
     id: 'calon-warga-belajar',
     title: 'Calon Warga Belajar',
     description: 'Konsultasi & daftar untuk diri sendiri',
+    compactDescription: 'Konsultasi & daftar untuk diri sendiri',
     icon: 'cap',
   },
   {
     id: 'orang-tua-wali',
     title: 'Orang Tua / Wali',
     description: 'Mendaftarkan anak atau keluarga',
+    compactDescription: 'Mendaftarkan anak atau anggota keluarga',
     icon: 'family',
   },
   {
     id: 'lembaga-mitra-alumni',
     title: 'Lembaga / Mitra / Alumni',
     description: 'Instansi, kerja sama, atau alumni',
+    compactDescription: 'Instansi, kerja sama, atau alumni',
     icon: 'building',
   },
 ];
 ---
 
 <section
-  class="lg:col-span-7 bg-[#FAF6EC] px-4 py-8 sm:px-8 sm:py-12 lg:px-12 flex flex-col items-center justify-center"
+  class="lg:col-span-7 min-h-screen bg-[#FAF6EC] px-4 py-8 sm:px-8 sm:py-12 lg:px-12 flex flex-col items-center"
   aria-label="Formulir Konsultasi"
 >
-  <div class="w-full max-w-[540px]">
+  <div id="consultation-card-wrapper" class="w-full max-w-[540px] my-auto transition-all duration-200">
     <!-- Main Form Card -->
     <div class="bg-white rounded-2xl border border-[#ECE8DE] shadow-[0_12px_36px_rgba(15,37,55,0.06)] p-6 sm:p-8 lg:p-9">
       <p class="text-[10.5px] font-bold uppercase tracking-[0.1em] text-[#B4690E]">
@@ -66,22 +72,31 @@ const roleOptions: RoleOption[] = [
             NPSN <strong class="font-bold text-[#0F2537]">P9948537</strong> &middot; Terakreditasi <strong class="font-bold text-[#0F2537]">A</strong>
           </p>
           <p class="mt-1 text-[11px] text-[#64748B] leading-relaxed">
-            Jalan Pesona Raya, Perum Graha Pesona Blok A No. 6, Bandung. PKBM  <strong class="font-bold text-[#0F2537]">tidak memiliki kantor cabang</strong> di kota lain.
+            Jalan Pesona Raya, Perum Graha Pesona Blok A No. 6, Bandung. PKBM <strong class="font-bold text-[#0F2537]">tidak memiliki kantor cabang</strong> di kota lain.
           </p>
         </div>
       </div>
 
       <!-- Step 1 Role Question -->
       <fieldset class="mt-6">
-        <legend class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
-          1. Saya menghubungi sebagai <span class="text-[#DC2626]">*</span>
+        <legend class="flex items-center gap-2 text-xs sm:text-[13px] font-bold text-[#0F2537]">
+          <span
+            id="step-1-badge"
+            class="hidden w-5 h-5 rounded-full bg-[#0F2537] text-white text-[11px] font-bold inline-flex items-center justify-center shrink-0"
+          >
+            1
+          </span>
+          <span>
+            <span id="step-1-number-prefix">1. </span>Saya menghubungi sebagai <span class="text-[#DC2626]">*</span>
+          </span>
         </legend>
 
-        <div class="mt-3.5 space-y-3" role="radiogroup">
+        <div id="role-options-group" class="mt-3.5 space-y-3" role="radiogroup">
           {roleOptions.map((option) => (
             <label
               data-role-option
-              class="group flex items-center gap-3.5 rounded-xl border border-[#E2E8F0] bg-white hover:border-[#E9A820] hover:bg-[#FFFDF7] px-4 py-3.5 cursor-pointer transition-all shadow-[0_1px_2px_rgba(15,37,55,0.02)]"
+              data-role-id={option.id}
+              class="group relative flex items-center gap-3.5 rounded-xl border border-[#E2E8F0] bg-white hover:border-[#E9A820] hover:bg-[#FFFDF7] px-4 py-3.5 cursor-pointer transition-all shadow-[0_1px_2px_rgba(15,37,55,0.02)]"
             >
               <input
                 type="radio"
@@ -91,6 +106,7 @@ const roleOptions: RoleOption[] = [
               />
 
               <span
+                data-role-icon
                 class="w-10 h-10 rounded-lg bg-[#FBF2DC] text-[#9A6310] inline-flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#F7E7BE]"
                 aria-hidden="true"
               >
@@ -112,17 +128,29 @@ const roleOptions: RoleOption[] = [
               </span>
 
               <span class="min-w-0 flex-1">
-                <span class="block text-[13px] font-bold text-[#0F2537] leading-snug">
-                  {option.title}
+                <span class="flex items-start justify-between gap-2">
+                  <span class="block text-[13px] font-bold text-[#0F2537] leading-snug">
+                    {option.title}
+                  </span>
+                  <span
+                    data-role-radio-dot
+                    class="hidden mt-0.5 w-3.5 h-3.5 rounded-full border border-[#CBD5E1] shrink-0 items-center justify-center"
+                    aria-hidden="true"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-white hidden" data-role-radio-inner></span>
+                  </span>
                 </span>
-                <span class="block mt-0.5 text-[11.5px] text-[#64748B]">
-                  {option.description}
+                <span class="block mt-0.5 text-[11.5px] text-[#64748B] leading-snug">
+                  {option.compactDescription}
                 </span>
               </span>
             </label>
           ))}
         </div>
       </fieldset>
+
+      <!-- Step 2 & 3 Form for Lembaga / Mitra / Alumni -->
+      <LembagaConsultationFields />
     </div>
 
     <!-- Bottom Caption -->
@@ -133,14 +161,73 @@ const roleOptions: RoleOption[] = [
 </section>
 
 <script>
+  const wrapper = document.getElementById('consultation-card-wrapper');
+  const step1Badge = document.getElementById('step-1-badge');
+  const step1Prefix = document.getElementById('step-1-number-prefix');
+  const roleGroup = document.getElementById('role-options-group');
   const roleCards = Array.from(document.querySelectorAll<HTMLLabelElement>('[data-role-option]'));
+  const lembagaForm = document.getElementById('lembaga-consultation-form');
 
-  for (const card of roleCards) {
-    const radio = card.querySelector<HTMLInputElement>('input[type="radio"]');
-    radio?.addEventListener('change', () => {
-      for (const item of roleCards) {
-        const input = item.querySelector<HTMLInputElement>('input[type="radio"]');
-        const isChecked = Boolean(input?.checked);
+  function updateRoleUI(selectedRole: string) {
+    const isLembaga = selectedRole === 'lembaga-mitra-alumni';
+
+    wrapper?.classList.toggle('max-w-[640px]', isLembaga);
+    wrapper?.classList.toggle('max-w-[540px]', !isLembaga);
+
+    step1Badge?.classList.toggle('hidden', !isLembaga);
+    step1Prefix?.classList.toggle('hidden', isLembaga);
+
+    if (roleGroup) {
+      roleGroup.classList.toggle('space-y-3', !isLembaga);
+      roleGroup.classList.toggle('grid', isLembaga);
+      roleGroup.classList.toggle('grid-cols-1', isLembaga);
+      roleGroup.classList.toggle('sm:grid-cols-3', isLembaga);
+      roleGroup.classList.toggle('gap-3', isLembaga);
+    }
+
+    for (const item of roleCards) {
+      const input = item.querySelector<HTMLInputElement>('input[type="radio"]');
+      const iconBox = item.querySelector<HTMLElement>('[data-role-icon]');
+      const radioDot = item.querySelector<HTMLElement>('[data-role-radio-dot]');
+      const radioInner = item.querySelector<HTMLElement>('[data-role-radio-inner]');
+      const isChecked = Boolean(input?.checked);
+
+      if (iconBox) {
+        iconBox.classList.toggle('w-8', isLembaga);
+        iconBox.classList.toggle('h-8', isLembaga);
+        iconBox.classList.toggle('w-10', !isLembaga);
+        iconBox.classList.toggle('h-10', !isLembaga);
+      }
+
+      if (radioDot) {
+        radioDot.classList.toggle('hidden', !isLembaga);
+        radioDot.classList.toggle('inline-flex', isLembaga);
+        radioDot.classList.toggle('border-[#0F2537]', isLembaga && isChecked);
+        radioDot.classList.toggle('bg-[#0F2537]', isLembaga && isChecked);
+        radioDot.classList.toggle('border-[#CBD5E1]', isLembaga && !isChecked);
+        radioDot.classList.toggle('bg-white', isLembaga && !isChecked);
+      }
+
+      if (radioInner) {
+        radioInner.classList.toggle('hidden', !(isLembaga && isChecked));
+      }
+
+      if (isLembaga) {
+        item.classList.remove('border-[#E9A820]', 'bg-[#FFFDF7]', 'ring-2', 'ring-[#E9A820]/25');
+        item.classList.toggle('items-start', true);
+        item.classList.toggle('items-center', false);
+        item.classList.toggle('p-3.5', true);
+        item.classList.toggle('px-4', false);
+        item.classList.toggle('py-3.5', false);
+        item.classList.toggle('border-[#0F2537]', isChecked);
+        item.classList.toggle('ring-1', isChecked);
+        item.classList.toggle('ring-[#0F2537]', isChecked);
+        item.classList.toggle('bg-[#F8FAFC]', isChecked);
+        item.classList.toggle('border-[#E2E8F0]', !isChecked);
+        item.classList.toggle('bg-white', !isChecked);
+      } else {
+        item.classList.remove('border-[#0F2537]', 'ring-1', 'ring-[#0F2537]', 'bg-[#F8FAFC]', 'items-start', 'p-3.5');
+        item.classList.add('items-center', 'px-4', 'py-3.5');
         item.classList.toggle('border-[#E9A820]', isChecked);
         item.classList.toggle('bg-[#FFFDF7]', isChecked);
         item.classList.toggle('ring-2', isChecked);
@@ -148,6 +235,15 @@ const roleOptions: RoleOption[] = [
         item.classList.toggle('border-[#E2E8F0]', !isChecked);
         item.classList.toggle('bg-white', !isChecked);
       }
+    }
+
+    lembagaForm?.classList.toggle('hidden', !isLembaga);
+  }
+
+  for (const card of roleCards) {
+    const radio = card.querySelector<HTMLInputElement>('input[type="radio"]');
+    radio?.addEventListener('change', () => {
+      updateRoleUI(radio.value);
     });
   }
 </script>

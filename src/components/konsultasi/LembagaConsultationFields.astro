@@ -1,0 +1,257 @@
+---
+import { WHATSAPP_NUMBER } from '../../data/contact';
+
+interface Props {
+  whatsappNumber?: string;
+}
+
+const { whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
+
+const cities = [
+  'Kota Bandung',
+  'Kabupaten Bandung',
+  'Kabupaten Bandung Barat',
+  'Kota Cimahi',
+  'Luar Bandung / Jawa Barat',
+  'Luar Pulau Jawa',
+];
+
+const purposes = [
+  'Penyetaraan Ijazah Karyawan (Paket A / B / C)',
+  'Kerja Sama Lembaga / Sekolah / Yayasan',
+  'Legalisir / Informasi Alumni',
+  'Kunjungan / Studi Banding',
+  'Lainnya',
+];
+---
+
+<form
+  id="lembaga-consultation-form"
+  data-wa-number={whatsappNumber}
+  class="hidden mt-7 pt-6 border-t border-[#EEF2F6] space-y-6"
+>
+  <!-- Section 2: Identitas Pengirim -->
+  <div class="space-y-4">
+    <div class="flex items-center gap-2.5">
+      <span class="w-5 h-5 rounded-full bg-[#0F2537] text-white text-[11px] font-bold inline-flex items-center justify-center shrink-0">
+        2
+      </span>
+      <h3 class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
+        Identitas Pengirim
+      </h3>
+    </div>
+
+    <!-- Nama Pengirim -->
+    <div>
+      <label for="lembaga-sender-name" class="block text-xs font-bold text-[#0F2537]">
+        Nama Pengirim <span class="text-[#DC2626]">*</span>
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">Nama lengkap Anda.</p>
+      <input
+        id="lembaga-sender-name"
+        name="sender_name"
+        type="text"
+        required
+        class="mt-1.5 w-full h-10 rounded-lg border border-[#DCE3EA] bg-white px-3.5 text-xs sm:text-[13px] text-[#0F2537] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors"
+      />
+    </div>
+
+    <!-- Nomor WhatsApp -->
+    <div>
+      <label for="lembaga-whatsapp" class="block text-xs font-bold text-[#0F2537]">
+        Nomor WhatsApp <span class="text-[#DC2626]">*</span>
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">Admin akan membalas ke nomor ini.</p>
+      <input
+        id="lembaga-whatsapp"
+        name="whatsapp"
+        type="tel"
+        required
+        placeholder="+62"
+        class="mt-1.5 w-full h-10 rounded-lg border border-[#DCE3EA] bg-white px-3.5 text-xs sm:text-[13px] text-[#0F2537] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors"
+      />
+    </div>
+
+    <!-- Nama Lembaga & Jabatan (2 Columns) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+      <div>
+        <label for="lembaga-org-name" class="block text-xs font-bold text-[#0F2537]">
+          Nama Lembaga / Instansi / Perusahaan <span class="text-[#DC2626]">*</span>
+        </label>
+        <p class="mt-0.5 text-[11px] text-[#64748B]">Kalau perorangan, tulis &ldquo;Perorangan&rdquo;.</p>
+        <input
+          id="lembaga-org-name"
+          name="organization_name"
+          type="text"
+          required
+          class="mt-1.5 w-full h-10 rounded-lg border border-[#DCE3EA] bg-white px-3.5 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors"
+        />
+      </div>
+
+      <div>
+        <label for="lembaga-role-title" class="block text-xs font-bold text-[#0F2537]">
+          Jabatan / Posisi di Lembaga
+        </label>
+        <p class="mt-0.5 text-[11px] text-[#64748B]">Opsional (memudahkan koordinasi)</p>
+        <input
+          id="lembaga-role-title"
+          name="position"
+          type="text"
+          class="mt-1.5 w-full h-10 rounded-lg border border-[#DCE3EA] bg-white px-3.5 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors"
+        />
+      </div>
+    </div>
+
+    <!-- Domisili / Kota Asal Lembaga -->
+    <div>
+      <label for="lembaga-city" class="block text-xs font-bold text-[#0F2537]">
+        Domisili / Kota Asal Lembaga
+      </label>
+      <div class="relative mt-1.5">
+        <select
+          id="lembaga-city"
+          name="city"
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          {cities.map((city) => (
+            <option value={city}>{city}</option>
+          ))}
+        </select>
+        <svg
+          class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Pesan / Keperluan -->
+  <div class="space-y-4 pt-2">
+    <div class="flex items-center gap-2.5">
+      <span class="w-5 h-5 rounded-full bg-[#0F2537] text-white text-[11px] font-bold inline-flex items-center justify-center shrink-0">
+        3
+      </span>
+      <h3 class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
+        Pesan / Keperluan
+      </h3>
+    </div>
+
+    <!-- Tujuan Kerja Sama / Kebutuhan Utama -->
+    <div>
+      <label for="lembaga-purpose" class="block text-xs font-bold text-[#0F2537]">
+        Tujuan Kerja Sama / Kebutuhan Utama <span class="text-[#DC2626]">*</span>
+      </label>
+      <div class="relative mt-1.5">
+        <select
+          id="lembaga-purpose"
+          name="purpose"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          {purposes.map((purpose) => (
+            <option value={purpose}>{purpose}</option>
+          ))}
+        </select>
+        <svg
+          class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Pesan / Catatan Tambahan -->
+    <div>
+      <label for="lembaga-notes" class="block text-xs font-bold text-[#0F2537]">
+        Pesan / Catatan Tambahan <span class="text-[#DC2626]">*</span>
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">
+        Tuliskan ringkasan kebutuhan, jumlah calon siswa jika ada, atau jadwal yang ingin diajukan.
+      </p>
+      <textarea
+        id="lembaga-notes"
+        name="notes"
+        rows="4"
+        required
+        class="mt-1.5 w-full rounded-lg border border-[#DCE3EA] bg-white p-3.5 text-xs sm:text-[13px] text-[#0F2537] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors resize-y"
+      ></textarea>
+    </div>
+
+    <!-- Consent Checkbox -->
+    <label class="flex items-start gap-2.5 cursor-pointer select-none pt-1">
+      <input
+        id="lembaga-consent"
+        name="consent"
+        type="checkbox"
+        checked
+        required
+        class="mt-0.5 w-4 h-4 rounded border-[#CBD5E1] accent-[#16A34A] cursor-pointer shrink-0"
+      />
+      <span class="text-[11px] sm:text-xs text-[#475569] leading-relaxed">
+        Saya setuju data di atas dipakai PKBM untuk menyusun pesan WhatsApp dan menghubungi saya.
+      </span>
+    </label>
+  </div>
+
+  <!-- Submit Button & Admin Reply Info -->
+  <div class="space-y-3 pt-1">
+    <button
+      type="submit"
+      class="w-full inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0F9D58] hover:bg-[#0D8A4D] active:scale-[0.99] text-white font-bold text-xs sm:text-[13px] py-3.5 px-6 shadow-sm transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2537]"
+    >
+      <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.141 5.281-1.391a9.93 9.93 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969S17.547 2 12.031 2zm5.813 14.172c-.246.691-1.434 1.32-1.992 1.402-.512.078-1.16.109-1.871-.117-.43-.137-.984-.324-1.691-.629-2.977-1.285-4.922-4.273-5.07-4.473-.148-.199-1.211-1.613-1.211-3.078 0-1.465.766-2.184 1.039-2.48.273-.297.598-.371.797-.371.199 0 .398.004.574.012.184.008.43-.07.672.512.246.594.84 2.055.914 2.203.074.148.125.324.023.523-.102.199-.152.324-.3.496-.148.172-.312.387-.445.52-.148.148-.301.309-.129.605.172.297.766 1.262 1.645 2.043 1.129 1.008 2.082 1.32 2.379 1.469.297.148.473.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.672-.148.273.098 1.734.816 2.031.965.297.148.496.223.57.348.074.125.074.723-.172 1.414z" />
+      </svg>
+      <span>Kirim ke WhatsApp Admin</span>
+    </button>
+
+    <div class="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 flex items-start gap-2.5 text-[11px] text-[#64748B] leading-relaxed">
+      <svg
+        class="w-4 h-4 text-[#94A3B8] shrink-0 mt-0.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 14" />
+      </svg>
+      <p>
+        <strong class="font-bold text-[#0F2537]">Admin membalas:</strong> Senin&ndash;Jum&#39;at 08.00&ndash;17.00 WIB dan Sabtu 08.00&ndash;12.00 WIB. Pendaftaran aktif 24 jam! Tim kami akan segera menindaklanjuti pesan Anda.
+      </p>
+    </div>
+  </div>
+</form>
+
+<script>
+  const lembagaForm = document.getElementById('lembaga-consultation-form') as HTMLFormElement | null;
+
+  lembagaForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!lembagaForm.checkValidity()) {
+      lembagaForm.reportValidity();
+      return;
+    }
+
+    const waNumber = lembagaForm.dataset.waNumber ?? '08';
+    window.open(`https://wa.me/${waNumber}`, '_blank', 'noopener,noreferrer');
+  });
+</script>
