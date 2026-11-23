@@ -1,0 +1,120 @@
+---
+interface StepItem {
+  number: string;
+  title: string;
+  caption: string;
+}
+
+const steps: StepItem[] = [
+  { number: '01', title: 'Isi data', caption: '±3 menit' },
+  { number: '02', title: 'Periksa ringkasan', caption: 'Pastikan data benar' },
+  { number: '03', title: 'Kirim di WhatsApp', caption: 'Ke admin resmi' },
+];
+---
+
+<aside
+  class="lg:col-span-5 bg-[#082038] text-white px-6 py-8 sm:px-10 sm:py-10 lg:px-11 lg:py-11 flex flex-col justify-between"
+  aria-label="Informasi Layanan Konsultasi PKBM"
+>
+  <div>
+    <!-- Back to Website Link -->
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 text-xs sm:text-[13px] font-medium text-slate-300 hover:text-white transition-colors focus:outline-none focus-visible:underline"
+    >
+      <span aria-hidden="true">&larr;</span>
+      <span>Kembali ke website</span>
+    </a>
+
+    <!-- White Brand Badge Pill -->
+    <div class="mt-6">
+      <a
+        href="/"
+        class="inline-flex items-center gap-3 bg-white rounded-2xl px-4 py-2.5 shadow-sm"
+      >
+        <div class="w-9 h-9 rounded-lg bg-[#FFF7E6] border border-[#F5DFA8] flex items-center justify-center shrink-0">
+          <svg
+            class="w-5 h-5 text-[#E9A820]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+        </div>
+        <div class="leading-none">
+          <div class="text-sm sm:text-base font-extrabold text-[#082038] tracking-wide">
+            PKBM
+          </div>
+          <div class="mt-0.5 text-[8.5px] font-semibold text-slate-600 tracking-[0.06em] uppercase">
+            INSAN CINTA KEPENDIDIKAN
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Eyebrow -->
+    <div class="mt-8 flex items-center gap-2.5">
+      <span class="w-6 h-[2px] bg-[#E9A820] rounded-full" aria-hidden="true"></span>
+      <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#E9A820]">
+        LAYANAN KONSULTASI
+      </span>
+    </div>
+
+    <!-- Main Headline -->
+    <h1 class="mt-4 text-3xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.14] tracking-tight">
+      <span class="block text-white">Tanya dulu,</span>
+      <span class="block text-[#F5BA28] italic">daftar kemudian.</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
+      Paket A, B, C, dan Homeschooling. Isi data singkat supaya admin bisa langsung membantu lewat WhatsApp.
+    </p>
+  </div>
+
+  <!-- Bottom Steps & Reassurance Box -->
+  <div class="mt-12 pt-7 border-t border-white/10">
+    <div class="grid grid-cols-3 gap-3 sm:gap-4">
+      {steps.map((step, index) => (
+        <div
+          class:list={[
+            'flex flex-col justify-between',
+            index < steps.length - 1 && 'border-r border-white/10 pr-2.5 sm:pr-3',
+          ]}
+        >
+          <div>
+            <span class="block text-xs font-bold text-[#F5BA28]">
+              {step.number}
+            </span>
+            <h2 class="mt-1 text-xs font-bold text-white leading-snug">
+              {step.title}
+            </h2>
+          </div>
+          <p class="mt-2.5 text-[10.5px] text-slate-400">
+            {step.caption}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6 rounded-xl bg-[#102B46]/80 border border-white/10 px-4 py-3 flex items-center gap-3">
+      <span
+        class="w-5 h-5 rounded bg-[#10B981]/20 text-[#34D399] inline-flex items-center justify-center shrink-0"
+        aria-hidden="true"
+      >
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      </span>
+      <p class="text-[11px] sm:text-xs text-slate-300 leading-snug">
+        Ini <strong class="font-bold text-white">bukan</strong> pendaftaran resmi. Silakan isi walau masih mau tanya-tanya dulu.
+      </p>
+    </div>
+  </div>
+</aside>

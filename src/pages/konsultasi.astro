@@ -1,0 +1,16 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ConsultationSidebar from '../components/konsultasi/ConsultationSidebar.astro';
+import ConsultationFormCard from '../components/konsultasi/ConsultationFormCard.astro';
+---
+
+<MainLayout
+  title="Layanan Konsultasi | PKBM INTAN"
+  description="Formulir konsultasi Paket A, B, C, dan Homeschooling PKBM INTAN Bandung."
+  hideChrome={true}
+>
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-12">
+    <ConsultationSidebar />
+    <ConsultationFormCard />
+  </div>
+</MainLayout>
