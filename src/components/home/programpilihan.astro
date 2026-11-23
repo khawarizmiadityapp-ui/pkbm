@@ -1,12 +1,4 @@
 ---
-import { WHATSAPP_NUMBER } from '../../data/contact';
-
-interface Props {
-  whatsappNumber?: string;
-}
-
-const { whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
-
 interface ProgramItem {
   id: string;
   badge: string;
@@ -97,9 +89,7 @@ const programs: ProgramItem[] = [
                 <span class="text-amber-500">&rarr;</span>
               </a>
               <a
-                href={`https://wa.me/${whatsappNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/konsultasi"
                 class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all"
               >
                 Daftar
