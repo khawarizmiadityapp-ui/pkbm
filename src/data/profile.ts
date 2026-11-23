@@ -56,7 +56,7 @@ export const PROFILE_DATA: Record<ProfileId, ProfileMockupData> = {
     href: '/profil',
     sections: [
       {
-        heading: 'Pilihan Program Pendidikan Kesetaraan Paket ABC',
+        heading: 'Tentang PKBM ',
         paragraphs: LOREM_PARAGRAPHS,
       },
       {
@@ -72,7 +72,7 @@ export const PROFILE_DATA: Record<ProfileId, ProfileMockupData> = {
     href: '/visi-misi',
     sections: [
       {
-        heading: 'Pilihan Program Pendidikan Kesetaraan Paket ABC',
+        heading: 'VISI MISI PKBM ',
         paragraphs: LOREM_PARAGRAPHS,
       },
     ],
@@ -84,7 +84,7 @@ export const PROFILE_DATA: Record<ProfileId, ProfileMockupData> = {
     href: '/filosofi-logo',
     sections: [
       {
-        heading: 'Pilihan Program Pendidikan Kesetaraan Paket ABC',
+        heading: 'Filosofi LOGO PKBM',
         paragraphs: LOREM_PARAGRAPHS,
       },
     ],
