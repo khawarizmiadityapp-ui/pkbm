@@ -1,0 +1,40 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/common/PageHero.astro';
+import AgendaDetail from '../../components/agenda/AgendaDetail.astro';
+import {
+  AGENDAS,
+  PROGRAM_AGENDA_ITEM,
+  type AgendaItem,
+} from '../../data/agendas';
+
+export function getStaticPaths() {
+  const allAgendas: AgendaItem[] = [PROGRAM_AGENDA_ITEM, ...AGENDAS];
+
+  return allAgendas.map((agenda) => ({
+    params: { slug: agenda.slug },
+    props: { agenda },
+  }));
+}
+
+interface Props {
+  agenda: AgendaItem;
+}
+
+const { agenda } = Astro.props;
+const heroTitle = agenda.heroTitle ?? agenda.title;
+const currentPage = agenda.breadcrumbLabel ?? agenda.title;
+---
+
+<MainLayout
+  title={`${agenda.title} | Agenda | PKBM`}
+  description={agenda.description}
+>
+  <PageHero
+    badge={agenda.heroBadge}
+    title={heroTitle}
+    currentPage={currentPage}
+    parentPage={{ label: 'Agenda', href: '/agenda' }}
+  />
+  <AgendaDetail agenda={agenda} />
+</MainLayout>

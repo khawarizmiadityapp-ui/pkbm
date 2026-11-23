@@ -21,6 +21,13 @@ export interface AgendaItem {
   actionLabel: string;
   poster: string;
   posterAlt: string;
+  detailPoster?: string;
+  heroBadge?: string;
+  heroTitle?: string;
+  breadcrumbLabel?: string;
+  infoScheduleLabel?: string;
+  infoLocationLabel?: string;
+  paragraphs?: string[];
 }
 
 export interface AgendaFilterOption {
@@ -168,3 +175,38 @@ export const AGENDAS: AgendaItem[] = [
     posterAlt: 'Poster Ekstrakurikuler Kelas Barista Batch 5 PKBM',
   },
 ];
+
+export const PROGRAM_AGENDA_ITEM: AgendaItem = {
+  id: 'program-agenda',
+  slug: 'program-agenda',
+  category: 'Edukasi',
+  badgeLabel: 'ASESMEN',
+  status: 'upcoming',
+  title: 'Tes Kemampuan Akademik (TKA) 2026 Paket C',
+  description:
+    'Pelaksanaan Tes Kemampuan Akademik bagi warga belajar Paket C sebagai persiapan evaluasi akhir pendidikan kesetaraan.',
+  dateLabel: '31 Okt 2026',
+  timeLabel: '07:00',
+  modeLabel: 'Offline',
+  location:
+    'SMP Negeri 17 Kota Bandung (Jl. Pacuan Kuda, Sukamiskin, Kec. Arcamanik, Kota Bandung)',
+  organizer: 'PKBM',
+  feeLabel: 'Gratis untuk Warga Belajar',
+  statusNote: 'Status: Akan Datang',
+  actionLabel: 'Rincian Informasi',
+  poster: '/images/blog/article-tka-2026.svg',
+  detailPoster: '/images/blog/article-tka-2026.svg',
+  posterAlt: 'Poster Siap TKA 2026 Tes Kemampuan Akademik Paket C PKBM',
+  heroBadge: 'Lorem Ipsum Dolor Sit Amet',
+  heroTitle: 'Lorem Ipsum Dolor Sit Amet',
+  breadcrumbLabel: 'Program Agenda...',
+  infoScheduleLabel: 'Sunday, 09 November 2026  07.00 - 12.00',
+  infoLocationLabel:
+    'Offline , SMP Negeri 17 Kota Bandung (Jl. Pacuan Kuda, Sukamiskin, Kec. Arcamanik, Kota Bandung)',
+  paragraphs: [
+    'Lorem ipsum dolor sit amet lorem ipsum Lorem ipsum dolor sit amet lorem ipsum Lorem ipsum dolor sit amet lorem ipsum Lorem ipsum dolor sit amet lorem ipsum',
+    'Lorem ipsum dolor sit amet lorem ipsum Lorem ipsum dolor sit amet lorem ipsum',
+    'Lorem ipsum dolor sit amet lorem ipsum Lorem ipsum dolor sit amet lorem ipsum',
+    'Lorem ipsum dolor sit amet lorem ipsum Lorem ipsum dolor sit amet lorem ipsum',
+  ],
+};
