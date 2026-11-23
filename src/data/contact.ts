@@ -27,8 +27,10 @@ export const CONTACT_INFO_ITEMS: ContactInfoItem[] = [
   },
 ];
 
+export const WHATSAPP_NUMBER = '6285722459994';
+
 export const CONTACT_LINKS = {
-  whatsappHref: 'https://wa.me/6285722459994',
+  whatsappHref: `https://wa.me/${WHATSAPP_NUMBER}`,
   mapEmbedSrc:
     'https://maps.google.com/maps?q=Kota%20Bandung,%20Jawa%20Barat&t=&z=12&ie=UTF8&iwloc=&output=embed',
   mapExternalHref:
