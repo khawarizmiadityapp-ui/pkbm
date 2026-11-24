@@ -15,22 +15,28 @@ const { profile, whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
   <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-8 items-start">
       <!-- Left Main Content Card -->
-      <div class="lg:col-span-8 bg-white rounded-xl border border-[#E6EAF0] shadow-[0_2px_12px_rgba(15,37,55,0.03)] p-7 sm:p-10 lg:p-12 min-h-[560px] flex flex-col">
-        {profile.sections.map((section, idx) => (
-          <div class:list={[idx > 0 && 'mt-auto pt-24 pb-8']}>
-            <h2 class="text-lg sm:text-xl font-extrabold text-[#0F2537] tracking-tight">
-              {section.heading}
-            </h2>
+      <div class="lg:col-span-8 bg-white rounded-xl border border-[#E6EAF0] shadow-[0_2px_12px_rgba(15,37,55,0.03)] p-7 sm:p-10 lg:p-12">
+        {Astro.slots.has('default') ? (
+          <slot />
+        ) : (
+          <div class="min-h-[480px] flex flex-col">
+            {profile.sections.map((section, idx) => (
+              <div class:list={[idx > 0 && 'mt-auto pt-24 pb-8']}>
+                <h2 class="text-lg sm:text-xl font-extrabold text-[#0F2537] tracking-tight">
+                  {section.heading}
+                </h2>
 
-            {section.paragraphs && section.paragraphs.length > 0 && (
-              <div class="mt-4 space-y-2 text-xs sm:text-[13px] text-slate-600 leading-relaxed">
-                {section.paragraphs.map((text) => (
-                  <p>{text}</p>
-                ))}
+                {section.paragraphs && section.paragraphs.length > 0 && (
+                  <div class="mt-4 space-y-2 text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                    {section.paragraphs.map((text) => (
+                      <p>{text}</p>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
+            ))}
           </div>
-        ))}
+        )}
       </div>
 
       <!-- Right Sidebar -->
