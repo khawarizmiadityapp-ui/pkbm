@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import bannerImage1 from '../../images/banner.webp';
 import bannerImage2 from '../../images/Banner-Menggunakan-Format-WebP-di-WordPress.webp';
+import { WHATSAPP_NUMBER } from '../../data/contact';
 
 interface StatItem {
   value: string;
@@ -21,13 +22,13 @@ const {
   title1 = "Daftar Dari Mana",
   title2 = "Saja, Kapan Saja!",
   description = "Menerima pendaftaran warga belajar baru & pindahan dari seluruh nusantara bahkan luar negeri.",
-  whatsappNumber = "6285722459994",
+  whatsappNumber = WHATSAPP_NUMBER,
   programHref = "/program",
   stats = [
-    { value: "Akreditasi A", label: "RESMI KEMDIKBUD" },
-    { value: "1.500+", label: "ALUMNI WARGA BELAJAR" },
-    { value: "100%", label: "FLEKSIBEL ONLINE & OFFLINE" },
-    { value: "Ijazah Resmi", label: "BISA KULIAH & KERJA" },
+    { value: "1.450+", label: "ALUMNI LULUS" },
+    { value: "100%", label: "IJAZAH RESMI NEGARA" },
+    { value: "24+", label: "TUTOR PROFESIONAL" },
+    { value: "15 Thn", label: "PENGALAMAN EDUKASI" },
   ],
 } = Astro.props;
 ---
@@ -140,23 +141,23 @@ const {
     </div>
   </div>
 
-  <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-20 px-4 sm:px-6 pointer-events-none">
-    <div class="max-w-4xl mx-auto bg-[#0b1424] border border-slate-800/90 rounded-xl sm:rounded-2xl shadow-xl shadow-slate-950/30 py-3.5 sm:py-4 px-3 sm:px-6 pointer-events-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 text-center">
+  <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-20 px-4 sm:px-6 lg:px-10 pointer-events-none">
+    <div class="max-w-[1528px] mx-auto bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl shadow-[0_12px_36px_rgba(15,37,55,0.08)] py-4 sm:py-5 px-4 sm:px-8 pointer-events-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-3 text-center">
         {stats.map((item, index) => (
           <div
             class:list={[
-              "px-2 sm:px-3 flex flex-col justify-center",
-              index % 2 === 0 ? "border-r border-slate-800/80 md:border-r" : "",
-              index === 1 ? "md:border-r border-slate-800/80" : "",
-              index === 2 ? "border-r border-slate-800/80" : "",
+              "px-2 sm:px-4 flex flex-col justify-center",
+              index % 2 === 0 ? "border-r border-slate-200/80 md:border-r" : "",
+              index === 1 ? "md:border-r border-slate-200/80" : "",
+              index === 2 ? "border-r border-slate-200/80" : "",
               index === 3 ? "border-none" : "",
             ]}
           >
-            <div class="text-lg sm:text-xl lg:text-2xl font-black text-amber-400 leading-tight">
+            <div class="text-xl sm:text-2xl font-black text-[#0F2537] leading-tight">
               {item.value}
             </div>
-            <div class="text-[9px] sm:text-[11px] text-slate-300 font-bold tracking-wider uppercase mt-1">
+            <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold tracking-wider uppercase mt-1">
               {item.label}
             </div>
           </div>

@@ -1,0 +1,463 @@
+---
+import { WHATSAPP_NUMBER } from '../../data/contact';
+
+interface Props {
+  whatsappNumber?: string;
+}
+
+const { whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
+
+const abroadOptions = [
+  'Tidak, tinggal di Indonesia',
+  'Ya, tinggal / bekerja di Luar Negeri',
+];
+
+const locationOptions = [
+  'Kota Bandung',
+  'Kabupaten Bandung',
+  'Kabupaten Bandung Barat',
+  'Kota Cimahi',
+  'Kota / Kabupaten Lain di Jawa Barat',
+  'Luar Jawa Barat (Indonesia)',
+  'Luar Negeri',
+];
+
+const days = Array.from({ length: 31 }, (_, i) => String(i + 1));
+const months = [
+  { value: '1', label: 'Januari' },
+  { value: '2', label: 'Februari' },
+  { value: '3', label: 'Maret' },
+  { value: '4', label: 'April' },
+  { value: '5', label: 'Mei' },
+  { value: '6', label: 'Juni' },
+  { value: '7', label: 'Juli' },
+  { value: '8', label: 'Agustus' },
+  { value: '9', label: 'September' },
+  { value: '10', label: 'Oktober' },
+  { value: '11', label: 'November' },
+  { value: '12', label: 'Desember' },
+];
+const years = Array.from({ length: 65 }, (_, i) => String(2022 - i));
+
+const programOptions = [
+  'Paket A (SD)',
+  'Paket B (SMP)',
+  'Paket C (SMA)',
+  'Homeschooling',
+];
+
+const graduationStatusOptions = [
+  'Sudah lulus, ijazah ada',
+  'Sudah lulus, ijazah hilang / belum diambil',
+  'Belum pernah lulus',
+];
+
+const graduationYears = Array.from({ length: 37 }, (_, i) => String(2026 - i));
+
+const certificatePlanOptions = [
+  'Melamar Kerja',
+  'Melanjutkan Pendidikan (SMP / SMA / Kuliah)',
+  'Persyaratan Promosi / Kepegawaian',
+  'Kebutuhan Lainnya',
+];
+---
+
+<form
+  id="calon-warga-consultation-form"
+  data-wa-number={whatsappNumber}
+  class="hidden mt-7 pt-6 border-t border-[#EEF2F6] space-y-6"
+>
+  <!-- Section 2: Identitas Pengirim -->
+  <div class="space-y-4">
+    <h3 class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
+      2. Identitas Pengirim
+    </h3>
+
+    <!-- Nama Pengirim -->
+    <div>
+      <label for="cw-sender-name" class="block text-xs font-bold text-[#0F2537]">
+        Nama Pengirim <span class="text-[#DC2626]">*</span>
+      </label>
+      <input
+        id="cw-sender-name"
+        name="sender_name"
+        type="text"
+        required
+        class="mt-1.5 w-full h-10 rounded-lg border border-[#DCE3EA] bg-white px-3.5 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors"
+      />
+    </div>
+
+    <!-- Nomor Whatsapp -->
+    <div>
+      <label for="cw-whatsapp" class="block text-xs font-bold text-[#0F2537]">
+        Nomor Whatsapp <span class="text-[#DC2626]">*</span>
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">Admin akan membalas ke nomor ini</p>
+      <input
+        id="cw-whatsapp"
+        name="whatsapp"
+        type="tel"
+        required
+        class="mt-1.5 w-full h-10 rounded-lg border border-[#DCE3EA] bg-white px-3.5 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors"
+      />
+    </div>
+
+    <!-- Apakah Warga Belajar Tinggal/Bekerja di Luar Negeri? -->
+    <div>
+      <label for="cw-abroad" class="block text-xs font-bold text-[#0F2537]">
+        Apakah Warga Belajar Tinggal/Bekerja di Luar Negeri? <span class="text-[#DC2626]">*</span>
+      </label>
+      <div class="relative mt-1.5">
+        <select
+          id="cw-abroad"
+          name="is_abroad"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          <option value="" disabled selected></option>
+          {abroadOptions.map((opt) => (
+            <option value={opt}>{opt}</option>
+          ))}
+        </select>
+        <svg
+          class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Sekarang Tinggal Mana? -->
+    <div>
+      <label for="cw-location" class="block text-xs font-bold text-[#0F2537]">
+        Sekarang Tinggal Mana? <span class="text-[#DC2626]">*</span>
+      </label>
+      <div class="relative mt-1.5">
+        <select
+          id="cw-location"
+          name="current_location"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          <option value="" disabled selected></option>
+          {locationOptions.map((loc) => (
+            <option value={loc}>{loc}</option>
+          ))}
+        </select>
+        <svg
+          class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Tanggal Lahir Calon Warga Belajar -->
+    <div>
+      <span class="block text-xs font-bold text-[#0F2537]">
+        Tanggal Lahir Calon Warga Belajar <span class="text-[#DC2626]">*</span>
+      </span>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">
+        Cek lagi tahunnya ya, sering salah pilih.
+      </p>
+
+      <div class="mt-1.5 grid grid-cols-3 gap-2.5">
+        <div class="relative">
+          <label for="cw-dob-day" class="sr-only">Tanggal lahir</label>
+          <select
+            id="cw-dob-day"
+            name="dob_day"
+            required
+            class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-8 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+          >
+            {days.map((day) => (
+              <option value={day} selected={day === '19'}>{day}</option>
+            ))}
+          </select>
+          <svg class="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+
+        <div class="relative">
+          <label for="cw-dob-month" class="sr-only">Bulan lahir</label>
+          <select
+            id="cw-dob-month"
+            name="dob_month"
+            required
+            class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-8 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+          >
+            {months.map((month) => (
+              <option value={month.value} selected={month.value === '10'}>{month.label}</option>
+            ))}
+          </select>
+          <svg class="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+
+        <div class="relative">
+          <label for="cw-dob-year" class="sr-only">Tahun lahir</label>
+          <select
+            id="cw-dob-year"
+            name="dob_year"
+            required
+            class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-8 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+          >
+            {years.map((year) => (
+              <option value={year} selected={year === '2013'}>{year}</option>
+            ))}
+          </select>
+          <svg class="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+      </div>
+
+      <p id="cw-age-display" class="mt-1.5 text-[11px] font-medium text-[#475569]">
+        Usia saat ini : 13 Tahun 1 Bulan
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 3: Tujuan Program -->
+  <div class="space-y-4 pt-2">
+    <h3 class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
+      3. Tujuan Program
+    </h3>
+
+    <div>
+      <label for="cw-program" class="block text-xs font-bold text-[#0F2537]">
+        Program <span class="text-[#DC2626]">*</span>
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">
+        Paket A = SD, Paket B = SMP, Paket C = SMA
+      </p>
+      <div class="relative mt-1.5">
+        <select
+          id="cw-program"
+          name="program"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          <option value="" disabled></option>
+          {programOptions.map((prog) => (
+            <option value={prog}>{prog}</option>
+          ))}
+        </select>
+        <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Riwayat Pendidikan -->
+  <div class="space-y-4 pt-2">
+    <h3 class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
+      4. Riwayat Pendidikan
+    </h3>
+
+    <div>
+      <label for="cw-grad-status" class="block text-xs font-bold text-[#0F2537]">
+        Apakah Pernah Lulus SD/MI/Paket A Sebelumnya? <span class="text-[#DC2626]">*</span>
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">
+        Termasuk yang putus sekolah. Belum pernah sekolah? Pilih &ldquo;Belum pernah lulus&rdquo;
+      </p>
+      <div class="relative mt-1.5">
+        <select
+          id="cw-grad-status"
+          name="graduation_status"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          {graduationStatusOptions.map((status) => (
+            <option value={status}>{status}</option>
+          ))}
+        </select>
+        <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+
+    <div>
+      <label for="cw-grad-year" class="block text-xs font-bold text-[#0F2537]">
+        Tahun Lulus SD/MI/Paket A <span class="text-[#DC2626]">*</span>
+      </label>
+      <div class="relative mt-1.5">
+        <select
+          id="cw-grad-year"
+          name="graduation_year"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          {graduationYears.map((yr) => (
+            <option value={yr} selected={yr === '2016'}>{yr}</option>
+          ))}
+        </select>
+        <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+
+    <div>
+      <label for="cw-cert-plan" class="block text-xs font-bold text-[#0F2537]">
+        Rencana Penggunaan Ijazah Setelah Lulus <span class="text-[#DC2626]">*</span>
+      </label>
+      <div class="relative mt-1.5">
+        <select
+          id="cw-cert-plan"
+          name="certificate_plan"
+          required
+          class="w-full h-10 appearance-none rounded-lg border border-[#DCE3EA] bg-white pl-3.5 pr-9 text-xs sm:text-[13px] text-[#0F2537] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors cursor-pointer"
+        >
+          {certificatePlanOptions.map((plan) => (
+            <option value={plan}>{plan}</option>
+          ))}
+        </select>
+        <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Catatan Tambahan -->
+  <div class="space-y-4 pt-2">
+    <h3 class="text-xs sm:text-[13px] font-bold text-[#0F2537]">
+      5. Catatan Tambahan
+    </h3>
+
+    <div>
+      <label for="cw-notes" class="block text-xs font-bold text-[#0F2537]">
+        Catatan/Pertanyaan Tambahan
+      </label>
+      <p class="mt-0.5 text-[11px] text-[#64748B]">
+        Contoh: butuh info rencana biaya
+      </p>
+      <textarea
+        id="cw-notes"
+        name="notes"
+        rows="4"
+        placeholder="Tulis catatan lain, pertanyaan, atau hal yang ingin disampaikan ke admin..."
+        class="mt-1.5 w-full rounded-lg border border-[#DCE3EA] bg-white p-3.5 text-xs sm:text-[13px] text-[#0F2537] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0F2537] focus:ring-2 focus:ring-[#0F2537]/10 transition-colors resize-y"
+      ></textarea>
+    </div>
+
+    <!-- Consent Checkbox -->
+    <label class="flex items-start gap-2.5 cursor-pointer select-none pt-1">
+      <input
+        id="cw-consent"
+        name="consent"
+        type="checkbox"
+        checked
+        required
+        class="mt-0.5 w-4 h-4 rounded border-[#CBD5E1] accent-[#0F2537] cursor-pointer shrink-0"
+      />
+      <span class="text-[11px] sm:text-xs text-[#475569] leading-relaxed">
+        Saya menyetujui data di atas digunakan PKBM untuk menghubungi WhatsApp saya.
+      </span>
+    </label>
+  </div>
+
+  <!-- Submit Button & Admin Hours Banner -->
+  <div class="space-y-3 pt-1">
+    <button
+      type="submit"
+      class="w-full inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#16C653] hover:bg-[#13B04A] active:scale-[0.99] text-white font-bold text-xs sm:text-[13px] py-3.5 px-6 shadow-sm transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2537]"
+    >
+      <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.141 5.281-1.391a9.93 9.93 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969S17.547 2 12.031 2zm5.813 14.172c-.246.691-1.434 1.32-1.992 1.402-.512.078-1.16.109-1.871-.117-.43-.137-.984-.324-1.691-.629-2.977-1.285-4.922-4.273-5.07-4.473-.148-.199-1.211-1.613-1.211-3.078 0-1.465.766-2.184 1.039-2.48.273-.297.598-.371.797-.371.199 0 .398.004.574.012.184.008.43-.07.672.512.246.594.84 2.055.914 2.203.074.148.125.324.023.523-.102.199-.152.324-.3.496-.148.172-.312.387-.445.52-.148.148-.301.309-.129.605.172.297.766 1.262 1.645 2.043 1.129 1.008 2.082 1.32 2.379 1.469.297.148.473.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.672-.148.273.098 1.734.816 2.031.965.297.148.496.223.57.348.074.125.074.723-.172 1.414z" />
+      </svg>
+      <span>Kirim ke WhatsApp Admin</span>
+    </button>
+
+    <div class="rounded-xl border border-[#F6E2B3] bg-[#FEF9EC] px-4 py-3 text-center text-[11px] text-[#64748B] leading-relaxed">
+      <div class="inline-flex items-center justify-center gap-1.5">
+        <svg
+          class="w-3.5 h-3.5 text-[#94A3B8] shrink-0"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <polyline points="12 7 12 12 15 14" />
+        </svg>
+        <span>
+          Admin membalas <strong class="font-bold text-[#0F2537]">Senin - Jumat 08.00 - 17.00 WIB</strong> dan <strong class="font-bold text-[#0F2537]">Sabtu 08.00 - 12.00 WIB</strong>
+        </span>
+      </div>
+      <p class="mt-0.5 text-[10.5px] text-[#64748B]">
+        Pendaftaran aktif 24 jam! Kami akan hubungi ulang ya.
+      </p>
+    </div>
+  </div>
+</form>
+
+<script>
+  const cwForm = document.getElementById('calon-warga-consultation-form') as HTMLFormElement | null;
+  const dobDay = document.getElementById('cw-dob-day') as HTMLSelectElement | null;
+  const dobMonth = document.getElementById('cw-dob-month') as HTMLSelectElement | null;
+  const dobYear = document.getElementById('cw-dob-year') as HTMLSelectElement | null;
+  const ageDisplay = document.getElementById('cw-age-display');
+
+  function updateCalculatedAge() {
+    if (!dobDay || !dobMonth || !dobYear || !ageDisplay) return;
+    const day = Number(dobDay.value);
+    const month = Number(dobMonth.value);
+    const year = Number(dobYear.value);
+    if (!day || !month || !year) return;
+
+    const today = new Date();
+    let yearsDiff = today.getFullYear() - year;
+    let monthsDiff = today.getMonth() + 1 - month;
+    if (today.getDate() < day) {
+      monthsDiff -= 1;
+    }
+    if (monthsDiff < 0) {
+      yearsDiff -= 1;
+      monthsDiff += 12;
+    }
+
+    const safeYears = Math.max(0, yearsDiff);
+    const safeMonths = Math.max(0, monthsDiff);
+    ageDisplay.textContent = `Usia saat ini : ${safeYears} Tahun ${safeMonths} Bulan`;
+  }
+
+  dobDay?.addEventListener('change', updateCalculatedAge);
+  dobMonth?.addEventListener('change', updateCalculatedAge);
+  dobYear?.addEventListener('change', updateCalculatedAge);
+  updateCalculatedAge();
+
+  cwForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!cwForm.checkValidity()) {
+      cwForm.reportValidity();
+      return;
+    }
+
+    const waNumber = cwForm.dataset.waNumber ?? '08';
+    window.open(`https://wa.me/${waNumber}`, '_blank', 'noopener,noreferrer');
+  });
+</script>

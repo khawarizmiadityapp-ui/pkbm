@@ -49,77 +49,9 @@ import AgendaPagination from '../../components/blog/BlogPagination.astro';
  <AgendaPagination />     
     </div>
   </section>
-
-  <dialog
-    id="agenda-detail-dialog"
-    aria-labelledby="agenda-dialog-title"
-    class="m-auto w-[calc(100%-2rem)] max-w-2xl rounded-xl border border-[#DCE3EA] bg-white p-0 text-[#102F4D] shadow-xl backdrop:bg-[#091E32]/65"
-  >
-    <div class="flex flex-col sm:flex-row sm:items-stretch">
-      <div class="sm:w-64 shrink-0 bg-[#091E32] flex items-center justify-center">
-        <img
-          id="agenda-dialog-poster"
-          alt=""
-          class="w-full aspect-[4/5] object-contain"
-        />
-      </div>
-
-      <div class="p-5 sm:p-6 flex flex-col flex-1">
-        <div class="flex items-start justify-between gap-3">
-          <span
-            id="agenda-dialog-badge"
-            class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#EFF7FC] text-[#1D6FA5]"
-          ></span>
-          <button
-            id="agenda-dialog-close"
-            type="button"
-            aria-label="Tutup detail agenda"
-            class="w-8 h-8 rounded-md border border-[#DCE3EA] text-[#687789] hover:text-[#102F4D] hover:bg-[#F5F7F9] inline-flex items-center justify-center transition-colors cursor-pointer"
-          >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-        </div>
-
-        <h3 id="agenda-dialog-title" class="mt-3 text-lg font-bold text-[#102F4D] leading-snug"></h3>
-        <p id="agenda-dialog-desc" class="mt-2 text-sm text-[#687789] leading-relaxed"></p>
-
-        <dl class="mt-4 pt-4 border-t border-[#EDF1F5] space-y-2 text-xs">
-          <div class="flex justify-between gap-4">
-            <dt class="text-[#687789]">Tanggal &amp; Waktu</dt>
-            <dd id="agenda-dialog-date" class="font-semibold text-[#102F4D] text-right"></dd>
-          </div>
-          <div class="flex justify-between gap-4">
-            <dt class="text-[#687789]">Lokasi</dt>
-            <dd id="agenda-dialog-location" class="font-semibold text-[#102F4D] text-right"></dd>
-          </div>
-          <div class="flex justify-between gap-4">
-            <dt class="text-[#687789]">Penyelenggara</dt>
-            <dd id="agenda-dialog-organizer" class="font-semibold text-[#102F4D] text-right"></dd>
-          </div>
-          <div class="flex justify-between gap-4">
-            <dt class="text-[#687789]">Biaya</dt>
-            <dd id="agenda-dialog-fee" class="font-semibold text-[#102F4D] text-right"></dd>
-          </div>
-        </dl>
-
-        <div class="mt-6 flex justify-end">
-          <button
-            id="agenda-dialog-dismiss"
-            type="button"
-            class="h-9 px-4 rounded-md bg-[#102F4D] hover:bg-[#153A5B] text-white text-xs font-semibold transition-colors cursor-pointer"
-          >
-            Tutup
-          </button>
-        </div>
-      </div>
-    </div>
-  </dialog>
 </MainLayout>
 
-<script define:vars={{ agendas: AGENDAS }}>
+<script>
   const filterButtons = Array.from(
     document.querySelectorAll('[data-agenda-filter]'),
   );
@@ -171,49 +103,5 @@ import AgendaPagination from '../../components/blog/BlogPagination.astro';
     activeCategory = 'ALL';
     updateFilterStyles();
     applyAgendaFilter();
-  });
-
-  const dialog = document.getElementById('agenda-detail-dialog');
-  const closeBtn = document.getElementById('agenda-dialog-close');
-  const dismissBtn = document.getElementById('agenda-dialog-dismiss');
-  const posterEl = document.getElementById('agenda-dialog-poster');
-  const badgeEl = document.getElementById('agenda-dialog-badge');
-  const titleEl = document.getElementById('agenda-dialog-title');
-  const descEl = document.getElementById('agenda-dialog-desc');
-  const dateEl = document.getElementById('agenda-dialog-date');
-  const locEl = document.getElementById('agenda-dialog-location');
-  const orgEl = document.getElementById('agenda-dialog-organizer');
-  const feeEl = document.getElementById('agenda-dialog-fee');
-
-  const agendaMap = new Map(agendas.map((item) => [item.id, item]));
-
-  for (const trigger of document.querySelectorAll('[data-agenda-open]')) {
-    trigger.addEventListener('click', () => {
-      const id = trigger.getAttribute('data-agenda-open');
-      const item = id ? agendaMap.get(id) : null;
-      if (!item || !dialog) return;
-
-      if (posterEl) {
-        posterEl.setAttribute('src', item.poster);
-        posterEl.setAttribute('alt', item.posterAlt);
-      }
-      if (badgeEl) {
-        badgeEl.textContent = `${item.category} • ${item.status === 'completed' ? 'Selesai' : 'Akan Datang'}`;
-      }
-      if (titleEl) titleEl.textContent = item.title;
-      if (descEl) descEl.textContent = item.description;
-      if (dateEl) dateEl.textContent = `${item.dateLabel} (${item.timeLabel})`;
-      if (locEl) locEl.textContent = item.location;
-      if (orgEl) orgEl.textContent = item.organizer;
-      if (feeEl) feeEl.textContent = item.feeLabel;
-
-      dialog.showModal();
-    });
-  }
-
-  closeBtn?.addEventListener('click', () => dialog?.close());
-  dismissBtn?.addEventListener('click', () => dialog?.close());
-  dialog?.addEventListener('click', (event) => {
-    if (event.target === dialog) dialog.close();
   });
 </script>

@@ -1,12 +1,14 @@
 ---
 import type { AlbumPhotoItem } from '../../data/gallery';
+import { WHATSAPP_NUMBER } from '../../data/contact';
 
 interface Props {
   albumTitle: string;
   photos: AlbumPhotoItem[];
+  whatsappNumber?: string;
 }
 
-const { albumTitle, photos } = Astro.props;
+const { albumTitle, photos, whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
 ---
 
 <section class="bg-white py-10 md:py-14" aria-label={`Album ${albumTitle}`}>
@@ -92,7 +94,9 @@ const { albumTitle, photos } = Astro.props;
 
       <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
         <a
-          href="#daftar-whatsapp"
+          href={`https://wa.me/${whatsappNumber}`}
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition-colors"
         >
           <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
