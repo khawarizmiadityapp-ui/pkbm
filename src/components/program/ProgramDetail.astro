@@ -1,5 +1,6 @@
 ---
 import type { ProgramMockupData } from '../../data/programs';
+import { CONTACT_LINKS } from '../../data/contact';
 import BottomCtaBanner from '../common/BottomCtaBanner.astro';
 
 interface Props {
@@ -9,8 +10,8 @@ interface Props {
 const { program } = Astro.props;
 ---
 
-<section class="bg-white py-10 md:py-14" aria-label={program.title}>
-  <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-10">
+<section class="bg-[#F8FAFC] py-10 md:py-14" aria-label={program.title}>
+  <div class="max-w-[1528px] mx-auto px-4 sm:px-6 lg:px-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-8 items-start">
       <!-- Left Main Content Card -->
       <div class="lg:col-span-8 bg-white rounded-xl border border-[#E6EAF0] shadow-[0_2px_12px_rgba(15,37,55,0.03)] overflow-hidden">
@@ -176,7 +177,7 @@ const { program } = Astro.props;
           <!-- CTA Daftar Sekarang -->
           <div class="mt-8">
             <a
-              href="#daftar"
+              href="/konsultasi"
               class="inline-flex items-center gap-2 bg-[#DDA027] hover:bg-[#c88d19] text-[#0F2537] font-bold text-xs px-5 py-2.5 rounded-lg transition-colors shadow-2xs"
             >
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -217,7 +218,9 @@ const { program } = Astro.props;
           </ul>
 
           <a
-            href="#chat-whatsapp"
+            href={CONTACT_LINKS.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
             class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-[#DDA027] hover:bg-[#c88d19] text-[#0B192C] font-bold text-xs py-2.5 px-4 rounded-lg transition-colors"
           >
             <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
