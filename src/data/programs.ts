@@ -21,7 +21,7 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
   'paket-a': {
     id: 'paket-a',
     slug: '/program/paket-a',
-    title: 'Kesetaraan Paket A',
+    title: 'Paket A',
     subHeading: 'Program Paket A (Setara SD/MI)',
     paragraphs: [
       'Paket A adalah program pendidikan pada jalur nonformal setara dengan SD/MI bagi siapapun yang terkendala ke pendidikan formal atau memilih Pendidikan Kesetaraan untuk ketuntasan pendidikan.',
@@ -29,22 +29,21 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
     ],
     requirementsTitle: 'Berkas Persyaratan Paket A:',
     features: [
-      'Ijazah resmi Negara',
       'Tidak ada batasan usia peserta',
       'Waktu belajar fleksibel',
       'Diterima dari seluruh Indonesia',
-      'Tutor professional berpengalaman',
+      'Tenaga pendidik berpengalaman',
     ],
     relatedPrograms: [
       {
         id: 'paket-b',
-        title: 'Kesetaraan Paket B',
+        title: 'Paket B',
         subtitle: 'Setara SMP / MTs',
         href: '/program/paket-b',
       },
       {
         id: 'paket-c',
-        title: 'Kesetaraan Paket C',
+        title: 'Paket C',
         subtitle: 'Setara SMA / MA',
         href: '/program/paket-c',
       },
@@ -53,7 +52,7 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
   'paket-b': {
     id: 'paket-b',
     slug: '/program/paket-b',
-    title: 'Kesetaraan Paket B',
+    title: 'Paket B',
     subHeading: 'Program Paket B (Setara SMP/MTS)',
     paragraphs: [
       'Paket A adalah program pendidikan pada jalur nonformal setara dengan SmP/MTS bagi siapapun yang terkendala ke pendidikan formal atau memilih Pendidikan Kesetaraan untuk ketuntasan pendidikan.',
@@ -61,22 +60,21 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
     ],
     requirementsTitle: 'Berkas Persyaratan Paket B:',
     features: [
-      'Ijazah resmi Negara',
       'Tidak ada batasan usia peserta',
       'Waktu belajar fleksibel',
       'Diterima dari seluruh Indonesia',
-      'Tutor professional berpengalaman',
+      'Tenaga pendidik berpengalaman',
     ],
     relatedPrograms: [
       {
         id: 'paket-a',
-        title: 'Kesetaraan Paket A',
+        title: 'Paket A',
         subtitle: 'Setara SD / MI',
         href: '/program/paket-a',
       },
       {
         id: 'paket-c',
-        title: 'Kesetaraan Paket C',
+        title: 'Paket C',
         subtitle: 'Setara SMA / MA',
         href: '/program/paket-c',
       },
@@ -85,7 +83,7 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
   'paket-c': {
     id: 'paket-c',
     slug: '/program/paket-c',
-    title: 'Kesetaraan Paket C',
+    title: 'Paket C',
     subHeading: 'Program Paket C (Setara SMA/SMK)',
     paragraphs: [
       'Paket A adalah program pendidikan pada jalur nonformal setara dengan SMA/SMK bagi siapapun yang terkendala ke pendidikan formal atau memilih Pendidikan Kesetaraan untuk ketuntasan pendidikan.',
@@ -93,22 +91,21 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
     ],
     requirementsTitle: 'Berkas Persyaratan Paket C:',
     features: [
-      'Ijazah resmi Negara',
       'Tidak ada batasan usia peserta',
       'Waktu belajar fleksibel',
       'Diterima dari seluruh Indonesia',
-      'Tutor professional berpengalaman',
+      'Tenaga pendidik berpengalaman',
     ],
     relatedPrograms: [
       {
         id: 'paket-b',
-        title: 'Kesetaraan Paket B',
+        title: 'Paket B',
         subtitle: 'Setara SMP / MTs',
         href: '/program/paket-b',
       },
       {
         id: 'paket-a',
-        title: 'Kesetaraan Paket A',
+        title: 'Paket A',
         subtitle: 'Setara SD / MI',
         href: '/program/paket-a',
       },
