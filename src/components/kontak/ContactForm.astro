@@ -27,7 +27,35 @@
     </div>
   </div>
 
-  <form id="contact-mockup-form" class="space-y-5">
+  <div
+    id="contact-form-error"
+    role="alert"
+    aria-live="polite"
+    class="hidden mb-6 rounded-lg border border-[#FCA5A5] bg-[#FEF2F2] px-4 py-3 text-sm text-[#991B1B]"
+  >
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-start gap-2.5">
+        <svg class="w-4 h-4 shrink-0 mt-0.5 text-[#DC2626]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        <p id="contact-form-error-text">
+          Mohon lengkapi kolom wajib yang ditandai * terlebih dahulu.
+        </p>
+      </div>
+      <button
+        id="contact-error-close"
+        type="button"
+        aria-label="Tutup peringatan"
+        class="text-[#991B1B]/70 hover:text-[#991B1B] font-bold text-xs cursor-pointer shrink-0"
+      >
+        Tutup
+      </button>
+    </div>
+  </div>
+
+  <form id="contact-mockup-form" novalidate class="space-y-5">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <div>
         <label for="contact-name" class="block text-sm font-semibold text-[#102F4D] mb-2">
@@ -113,21 +141,30 @@
 </div>
 
 <script>
+  import { attachCustomFormValidation, clearAllFormErrors } from '../../scripts/formValidation';
+
   const form = document.getElementById('contact-mockup-form') as HTMLFormElement | null;
   const feedback = document.getElementById('contact-form-feedback');
   const closeFeedback = document.getElementById('contact-feedback-close');
+  const errorBox = document.getElementById('contact-form-error');
+  const errorText = document.getElementById('contact-form-error-text');
+  const closeError = document.getElementById('contact-error-close');
 
-  form?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    feedback?.classList.remove('hidden');
-    form.reset();
+  attachCustomFormValidation(form, {
+    summaryBox: errorBox,
+    summaryTextEl: errorText,
+    onValidSubmit: (validForm) => {
+      clearAllFormErrors(validForm, errorBox);
+      feedback?.classList.remove('hidden');
+      validForm.reset();
+    },
   });
 
   closeFeedback?.addEventListener('click', () => {
     feedback?.classList.add('hidden');
+  });
+
+  closeError?.addEventListener('click', () => {
+    errorBox?.classList.add('hidden');
   });
 </script>

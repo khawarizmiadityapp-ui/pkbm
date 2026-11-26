@@ -22,7 +22,6 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
     id: 'paket-a',
     slug: '/program/paket-a',
     title: 'Kesetaraan Paket A',
-    badge: 'Setara SD / MI',
     subHeading: 'Program Paket A (Setara SD/MI)',
     paragraphs: [
       'Paket A adalah program pendidikan pada jalur nonformal setara dengan SD/MI bagi siapapun yang terkendala ke pendidikan formal atau memilih Pendidikan Kesetaraan untuk ketuntasan pendidikan.',
@@ -55,7 +54,6 @@ export const PROGRAMS_DATA: Record<'paket-a' | 'paket-b' | 'paket-c', ProgramMoc
     id: 'paket-b',
     slug: '/program/paket-b',
     title: 'Kesetaraan Paket B',
-    badge: 'Setara SD / MI',
     subHeading: 'Program Paket B (Setara SMP/MTS)',
     paragraphs: [
       'Paket A adalah program pendidikan pada jalur nonformal setara dengan SmP/MTS bagi siapapun yang terkendala ke pendidikan formal atau memilih Pendidikan Kesetaraan untuk ketuntasan pendidikan.',

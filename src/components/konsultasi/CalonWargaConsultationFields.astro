@@ -65,6 +65,7 @@ const certificatePlanOptions = [
 <form
   id="calon-warga-consultation-form"
   data-wa-number={whatsappNumber}
+  novalidate
   class="hidden mt-7 pt-6 border-t border-[#EEF2F6] space-y-6"
 >
   <!-- Section 2: Identitas Pengirim -->
@@ -416,6 +417,8 @@ const certificatePlanOptions = [
 </form>
 
 <script>
+  import { attachCustomFormValidation } from '../../scripts/formValidation';
+
   const cwForm = document.getElementById('calon-warga-consultation-form') as HTMLFormElement | null;
   const dobDay = document.getElementById('cw-dob-day') as HTMLSelectElement | null;
   const dobMonth = document.getElementById('cw-dob-month') as HTMLSelectElement | null;
@@ -450,14 +453,10 @@ const certificatePlanOptions = [
   dobYear?.addEventListener('change', updateCalculatedAge);
   updateCalculatedAge();
 
-  cwForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!cwForm.checkValidity()) {
-      cwForm.reportValidity();
-      return;
-    }
-
-    const waNumber = cwForm.dataset.waNumber ?? '08';
-    window.open(`https://wa.me/${waNumber}`, '_blank', 'noopener,noreferrer');
+  attachCustomFormValidation(cwForm, {
+    onValidSubmit: (validForm) => {
+      const waNumber = validForm.dataset.waNumber ?? '08';
+      window.open(`https://wa.me/${waNumber}`, '_blank', 'noopener,noreferrer');
+    },
   });
 </script>

@@ -28,6 +28,7 @@ const purposes = [
 <form
   id="lembaga-consultation-form"
   data-wa-number={whatsappNumber}
+  novalidate
   class="hidden mt-7 pt-6 border-t border-[#EEF2F6] space-y-6"
 >
   <!-- Section 2: Identitas Pengirim -->
@@ -242,16 +243,14 @@ const purposes = [
 </form>
 
 <script>
+  import { attachCustomFormValidation } from '../../scripts/formValidation';
+
   const lembagaForm = document.getElementById('lembaga-consultation-form') as HTMLFormElement | null;
 
-  lembagaForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!lembagaForm.checkValidity()) {
-      lembagaForm.reportValidity();
-      return;
-    }
-
-    const waNumber = lembagaForm.dataset.waNumber ?? '08';
-    window.open(`https://wa.me/${waNumber}`, '_blank', 'noopener,noreferrer');
+  attachCustomFormValidation(lembagaForm, {
+    onValidSubmit: (validForm) => {
+      const waNumber = validForm.dataset.waNumber ?? '08';
+      window.open(`https://wa.me/${waNumber}`, '_blank', 'noopener,noreferrer');
+    },
   });
 </script>
