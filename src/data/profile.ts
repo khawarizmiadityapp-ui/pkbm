@@ -1,4 +1,4 @@
-export type ProfileId = 'tentang-pkbm' | 'visi-misi' | 'filosofi-logo';
+export type ProfileId = 'tentang-pkbm' | 'visi-misi';
 
 export interface ProfileSectionBlock {
   heading: string;
@@ -17,7 +17,7 @@ export interface ProfileNavItem {
   id: ProfileId;
   label: string;
   href: string;
-  icon: 'file' | 'target' | 'star';
+  icon: 'file' | 'target';
 }
 
 export const PROFILE_NAV_ITEMS: ProfileNavItem[] = [
@@ -32,12 +32,6 @@ export const PROFILE_NAV_ITEMS: ProfileNavItem[] = [
     label: 'Visi & Misi',
     href: '/visi-misi',
     icon: 'target',
-  },
-  {
-    id: 'filosofi-logo',
-    label: 'Filosofi Logo',
-    href: '/filosofi-logo',
-    icon: 'star',
   },
 ];
 
@@ -73,18 +67,6 @@ export const PROFILE_DATA: Record<ProfileId, ProfileMockupData> = {
     sections: [
       {
         heading: 'VISI MISI PKBM ',
-        paragraphs: LOREM_PARAGRAPHS,
-      },
-    ],
-  },
-  'filosofi-logo': {
-    id: 'filosofi-logo',
-    title: 'Filosofi Logo',
-    breadcrumbLabel: 'Filosofi Logo',
-    href: '/filosofi-logo',
-    sections: [
-      {
-        heading: 'Filosofi LOGO PKBM',
         paragraphs: LOREM_PARAGRAPHS,
       },
     ],
