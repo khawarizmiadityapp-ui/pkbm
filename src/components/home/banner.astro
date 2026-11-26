@@ -26,8 +26,7 @@ const {
   programHref = "/program",
   stats = [
     { value: "1.450+", label: "ALUMNI LULUS" },
-    { value: "100%", label: "IJAZAH RESMI NEGARA" },
-    { value: "24+", label: "TUTOR PROFESIONAL" },
+    { value: "24+", label: "TENAGA PENDIDIK" },
     { value: "15 Thn", label: "PENGALAMAN EDUKASI" },
   ],
 } = Astro.props;
@@ -115,10 +114,6 @@ const {
             <span class="text-amber-400 font-bold">&#10003;</span>
             <span>NPSN P9948537</span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="text-amber-400 font-bold">&#10003;</span>
-            <span>Ijazah resmi Negara</span>
-          </div>
         </div>
 
         <div class="flex items-center gap-2 pt-4">
@@ -143,17 +138,9 @@ const {
 
   <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-20 px-4 sm:px-6 lg:px-10 pointer-events-none">
     <div class="max-w-[1528px] mx-auto bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl shadow-[0_12px_36px_rgba(15,37,55,0.08)] py-4 sm:py-5 px-4 sm:px-8 pointer-events-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-3 text-center">
-        {stats.map((item, index) => (
-          <div
-            class:list={[
-              "px-2 sm:px-4 flex flex-col justify-center",
-              index % 2 === 0 ? "border-r border-slate-200/80 md:border-r" : "",
-              index === 1 ? "md:border-r border-slate-200/80" : "",
-              index === 2 ? "border-r border-slate-200/80" : "",
-              index === 3 ? "border-none" : "",
-            ]}
-          >
+      <div class="grid grid-cols-3 divide-x divide-slate-200/80 text-center">
+        {stats.map((item) => (
+          <div class="px-2 sm:px-4 flex flex-col justify-center">
             <div class="text-xl sm:text-2xl font-black text-[#0F2537] leading-tight">
               {item.value}
             </div>

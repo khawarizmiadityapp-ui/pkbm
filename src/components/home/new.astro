@@ -1,126 +1,189 @@
 ---
-import { WHATSAPP_NUMBER } from '../../data/contact';
-
 interface Props {
-  whatsappNumber?: string;
+  perpusUrl?: string;
+  newsHref?: string;
 }
 
-const { whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
+const {
+  perpusUrl = "https://perpus.pkbm.id",
+  newsHref = "/blog/pkbm-buka-perpustakaan-digital-perpus-pkbm-id",
+} = Astro.props;
 ---
 
 <section class="bg-white py-16 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
-    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12">
-      <div class="lg:col-span-5 bg-[#0b1424] text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_12px_40px_rgba(15,37,55,0.07)] p-5 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      <!-- Left Visual Banner -->
+      <div class="lg:col-span-6 relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#07213b] via-[#0c2d4e] to-[#081c33] text-white border-b-4 border-[#e5a823] p-6 sm:p-8 min-h-[290px] sm:min-h-[320px] flex items-center">
+        <div class="absolute -top-20 -left-20 w-56 h-56 bg-sky-400/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-16 right-8 w-56 h-56 bg-[#e5a823]/15 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="relative z-10">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-            Baca & Akses Pembelajaran Di Perpustakaan Digital
-          </h3>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Dapatkan modul cetak maupun e-book digital resmi yang mudah dipelajari kapan saja dan dari mana saja.
-          </p>
-
-          <div class="my-8 flex justify-center items-end gap-3 sm:gap-4 py-4">
-            <div class="w-24 sm:w-28 h-36 sm:h-40 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl p-3 flex flex-col justify-between shadow-lg shadow-amber-500/20 transform -rotate-3 hover:rotate-0 transition-transform">
-              <span class="text-[10px] font-black text-slate-900 bg-white/70 px-2 py-0.5 rounded w-fit">PAKET A</span>
-              <div class="space-y-1">
-                <div class="w-full h-1 bg-slate-900/20 rounded"></div>
-                <div class="w-3/4 h-1 bg-slate-900/20 rounded"></div>
-                <div class="text-[10px] font-bold text-slate-950 mt-1">Dasar</div>
-              </div>
+        <!-- Left Copy Inside Visual -->
+        <div class="relative z-10 w-full sm:w-[58%] pr-2">
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
             </div>
-
-            <div class="w-24 sm:w-28 h-40 sm:h-44 bg-gradient-to-br from-sky-500 to-blue-700 rounded-xl p-3 flex flex-col justify-between shadow-xl shadow-blue-500/20 transform translate-y-[-8px] hover:translate-y-[-14px] transition-transform">
-              <span class="text-[10px] font-black text-white bg-white/20 px-2 py-0.5 rounded w-fit">PAKET B</span>
-              <div class="space-y-1">
-                <div class="w-full h-1 bg-white/30 rounded"></div>
-                <div class="w-3/4 h-1 bg-white/30 rounded"></div>
-                <div class="text-[10px] font-bold text-white mt-1">Menengah</div>
-              </div>
-            </div>
-
-            <div class="w-24 sm:w-28 h-36 sm:h-40 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-xl p-3 flex flex-col justify-between shadow-lg shadow-emerald-500/20 transform rotate-3 hover:rotate-0 transition-transform">
-              <span class="text-[10px] font-black text-slate-900 bg-white/70 px-2 py-0.5 rounded w-fit">PAKET C</span>
-              <div class="space-y-1">
-                <div class="w-full h-1 bg-slate-900/20 rounded"></div>
-                <div class="w-3/4 h-1 bg-slate-900/20 rounded"></div>
-                <div class="text-[10px] font-bold text-slate-950 mt-1">Lanjutan</div>
-              </div>
+            <div class="leading-tight">
+              <span class="block text-sm font-extrabold tracking-wide text-white">PKBM</span>
+              <span class="block text-[9px] tracking-[0.14em] text-slate-300 uppercase">Perpustakaan Digital</span>
             </div>
           </div>
-        </div>
 
-      </div>
+          <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-[#e5a823] uppercase">
+            <span class="w-5 h-[1.5px] bg-[#e5a823]"></span>
+            <span>Perpustakaan Digital</span>
+          </div>
 
-      <div class="lg:col-span-7 bg-white p-8 sm:p-12 flex flex-col justify-between">
-        <div>
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
-            Kemudahan Belajar Bersama PKBM 
+          <h3 class="mt-2.5 text-2xl sm:text-[28px] font-extrabold text-white leading-[1.15] tracking-tight">
+            Baca Modul dan<br />Buku Pelajaran
           </h3>
-          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-            Tidak ada kata terlambat untuk menuntut ilmu. Kami menyederhanakan seluruh alur administrasi agar Anda bisa fokus belajar dengan tenang dan meraih masa depan yang lebih cerah.
+
+          <p class="mt-2.5 text-xs sm:text-[13px] text-slate-300 leading-relaxed">
+            Gratis untuk semua, tanpa mendaftar.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                ✓
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-900 text-sm">Bebas Biaya Pendaftaran Awal</h4>
-                <p class="text-xs text-slate-500 mt-0.5">Konsultasi dan asesmen gratis.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                ✓
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-900 text-sm">Waktu Belajar Fleksibel</h4>
-                <p class="text-xs text-slate-500 mt-0.5">Tersedia kelas daring (online) penuh.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                ✓
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-900 text-sm">Didampingi Tutor Ahli</h4>
-                <p class="text-xs text-slate-500 mt-0.5">Bimbingan intensif hingga kelulusan.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                ✓
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-900 text-sm">Ijazah Resmi Akreditasi A</h4>
-                <p class="text-xs text-slate-500 mt-0.5">Legalitas penuh untuk masa depan.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-4 mt-10 pt-6 border-t border-slate-100">
           <a
-            href={`https://wa.me/${whatsappNumber}`}
+            href={perpusUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all"
+            class="inline-block mt-5 bg-[#e5a823] hover:bg-[#d4971a] text-[#07213b] font-extrabold text-xs px-4 py-1.5 rounded-full transition-colors shadow-md shadow-[#e5a823]/25"
           >
-            (ini harusnya yang ke web perpustakaan)
+            perpus.pkbm.id
           </a>
-          <a
-            href="/program"
-            class="text-sm font-semibold text-slate-700 hover:text-amber-600 px-4 py-3 transition"
-          >
-            Pelajari Syarat & Ketentuan &rarr;
-          </a>
+        </div>
+
+        <!-- Right Fanned Book Covers Mockup -->
+        <div class="hidden sm:flex items-end justify-end absolute right-0 bottom-4 top-6 w-[48%] pointer-events-none select-none pr-1">
+          <div class="relative w-full h-full flex items-center justify-end">
+            <!-- Book 1: IPAS -->
+            <div class="w-24 h-36 rounded-md bg-gradient-to-b from-[#2f9ac9] via-[#5bb8db] to-[#e6f4f9] shadow-2xl border border-white/40 p-2 flex flex-col justify-between transform -rotate-12 -mr-8 translate-y-2 z-10">
+              <div class="text-[7px] font-extrabold text-white leading-tight uppercase drop-shadow-xs">
+                Ilmu Pengetahuan<br />Alam &amp; Sosial
+              </div>
+              <div class="h-14 rounded bg-white/80 p-1.5 flex flex-col justify-end">
+                <div class="w-full h-2 rounded bg-emerald-400/80 mb-1"></div>
+                <div class="w-2/3 h-1.5 rounded bg-sky-400/70"></div>
+              </div>
+            </div>
+
+            <!-- Book 2: Matematika -->
+            <div class="w-24 h-36 rounded-md bg-gradient-to-b from-[#e89da3] via-[#f2b8bd] to-[#fce7e9] shadow-2xl border border-white/40 p-2 flex flex-col justify-between transform -rotate-3 -mr-8 -translate-y-1 z-20">
+              <div class="text-[8px] font-black text-[#125587] tracking-tight uppercase">
+                Matematika
+              </div>
+              <div class="h-16 rounded bg-white/80 p-1.5 flex items-center justify-center">
+                <div class="grid grid-cols-2 gap-1 w-full">
+                  <div class="h-4 rounded bg-amber-300/80"></div>
+                  <div class="h-4 rounded bg-sky-300/80"></div>
+                  <div class="h-4 rounded bg-rose-300/80"></div>
+                  <div class="h-4 rounded bg-emerald-300/80"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book 3: Bahasa Indonesia -->
+            <div class="w-24 h-36 rounded-md bg-gradient-to-b from-[#f3d43c] via-[#f7df63] to-[#fdf3b8] shadow-2xl border border-white/40 p-2 flex flex-col justify-between transform rotate-6 -mr-7 -translate-y-2 z-30">
+              <div class="text-[8px] font-black text-[#b91c1c] leading-tight uppercase">
+                Bahasa<br />Indonesia
+              </div>
+              <div class="h-16 rounded bg-white/80 p-1.5 flex flex-col justify-end gap-1">
+                <div class="w-full h-1.5 rounded bg-amber-400/80"></div>
+                <div class="w-4/5 h-1.5 rounded bg-red-400/70"></div>
+                <div class="w-3/5 h-1.5 rounded bg-slate-300"></div>
+              </div>
+            </div>
+
+            <!-- Book 4: Buku Bacaan -->
+            <div class="w-20 h-36 rounded-md bg-gradient-to-b from-[#dfd6ec] via-[#cfc2e6] to-[#e9e3f5] shadow-2xl border border-white/40 p-2 flex flex-col justify-between transform rotate-12 translate-y-2 z-40">
+              <div class="text-[8px] font-black text-[#4c1d95] leading-tight">
+                Cerita &amp;<br />Literasi
+              </div>
+              <div class="h-14 rounded bg-white/75 p-1.5 flex flex-col justify-end gap-1">
+                <div class="w-full h-1.5 rounded bg-violet-400/80"></div>
+                <div class="w-3/4 h-1.5 rounded bg-indigo-300/80"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="lg:col-span-6 flex flex-col justify-center">
+        <div>
+          <span class="inline-block bg-amber-50 text-[#c98a12] border border-amber-200/70 text-[11px] font-bold tracking-[0.15em] uppercase px-3.5 py-1 rounded-full">
+            Baru
+          </span>
+
+          <h2 class="mt-4 text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#0b233d] leading-tight tracking-tight">
+            Perpustakaan Digital PKBM
+          </h2>
+
+          <p class="mt-3 text-sm sm:text-[15px] text-slate-600 leading-relaxed">
+            Baca modul Paket A, B, C dan buku pelajaran secara gratis, langsung dari HP. Tanpa mendaftar, terbuka untuk semua.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 mt-6 text-sm font-medium text-[#1b334b]">
+            <div class="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#d99816] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+                <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+                <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+              </svg>
+              <span>Modul Paket A, B, C</span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#d99816] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              </svg>
+              <span>Buku sekolah SD – SMA/SMK</span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#d99816] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+              <span>Buku bacaan pilihan</span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#d99816] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2v7.31" />
+                <path d="M14 9.3V1.99" />
+                <path d="M8.5 2h7" />
+                <path d="M14 9.3a6.5 6.5 0 1 1-4 0" />
+              </svg>
+              <span>Game edukasi matematika &amp; sains</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-5 mt-8">
+            <a
+              href={perpusUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 bg-[#e5a823] hover:bg-[#d4971a] active:scale-95 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-[0_8px_20px_rgba(229,168,35,0.3)] transition-all"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+              <span>Buka perpus.pkbm.id</span>
+            </a>
+
+            <a
+              href={newsHref}
+              class="inline-flex items-center gap-1.5 text-sm font-bold text-[#1d75bd] hover:text-[#155a94] transition-colors"
+            >
+              <span>Baca beritanya</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

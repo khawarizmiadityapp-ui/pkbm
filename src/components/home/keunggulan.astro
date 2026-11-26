@@ -27,13 +27,8 @@ const features: FeatureItem[] = [
     icon: "users",
   },
   {
-    title: "Biaya Ringan & Terjangkau",
-    desc: "Biaya pendidikan transparan dan terjangkau dengan skema pembayaran bertahap untuk mempermudah warga belajar.",
-    icon: "badge-percent",
-  },
-  {
-    title: "Tutor Berpengalaman & Ramah",
-    desc: "Pengajar profesional yang siap membimbing materi belajar dengan metode yang mudah dipahami dan komunikatif.",
+    title: "Tenaga Pendidik Berpengalaman & Ramah",
+    desc: "Tenaga pendidik yang siap membimbing materi belajar dengan metode yang mudah dipahami dan komunikatif.",
     icon: "sparkles",
   },
   {
@@ -55,8 +50,8 @@ const features: FeatureItem[] = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      {features.slice(0, 4).map((item) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {features.map((item) => (
         <div class="group bg-white hover:bg-[#006ce4] active:bg-[#0058be] rounded-2xl p-6 border border-slate-200/80 hover:border-transparent shadow-xs hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-1.5 active:scale-95 transition-all duration-300 flex flex-col items-center text-center cursor-pointer">
           <div class="w-12 h-12 rounded-full bg-blue-50 text-[#006ce4] group-hover:bg-white/20 group-hover:text-white flex items-center justify-center mb-4 transition-all duration-300">
             {item.icon === "award" && (
@@ -77,26 +72,6 @@ const features: FeatureItem[] = [
             {item.icon === "users" && (
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            )}
-          </div>
-          <h3 class="font-bold text-slate-900 group-hover:text-white text-base sm:text-lg transition-colors duration-300">
-            {item.title}
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-600 group-hover:text-white/90 mt-2 leading-relaxed transition-colors duration-300">
-            {item.desc}
-          </p>
-        </div>
-      ))}
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mt-5">
-      {features.slice(4).map((item) => (
-        <div class="group bg-white hover:bg-[#006ce4] active:bg-[#0058be] rounded-2xl p-6 border border-slate-200/80 hover:border-transparent shadow-xs hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-1.5 active:scale-95 transition-all duration-300 flex flex-col items-center text-center cursor-pointer">
-          <div class="w-12 h-12 rounded-full bg-blue-50 text-[#006ce4] group-hover:bg-white/20 group-hover:text-white flex items-center justify-center mb-4 transition-all duration-300">
-            {item.icon === "badge-percent" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="18" height="18" x="3" y="3" rx="2"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/>
               </svg>
             )}
             {item.icon === "sparkles" && (
