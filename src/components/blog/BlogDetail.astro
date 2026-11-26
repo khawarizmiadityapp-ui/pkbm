@@ -1,6 +1,5 @@
 ---
 import { CATEGORY_BADGE_STYLES, type Article } from '../../data/articles';
-import BottomCtaBanner from '../common/BottomCtaBanner.astro';
 import EventMetaList from '../common/EventMetaList.astro';
 
 interface Props {
@@ -131,8 +130,5 @@ const bodyParagraphs = article.paragraphs && article.paragraphs.length > 0
         )}
       </aside>
     </div>
-
-    <!-- Bottom CTA Banner -->
-    <BottomCtaBanner />
   </div>
 </section>

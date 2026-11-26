@@ -1,7 +1,6 @@
 ---
 import { PROFILE_NAV_ITEMS, type ProfileMockupData } from '../../data/profile';
 import { WHATSAPP_NUMBER } from '../../data/contact';
-import BottomCtaBanner from '../common/BottomCtaBanner.astro';
 
 interface Props {
   profile: ProfileMockupData;
@@ -123,8 +122,5 @@ const { profile, whatsappNumber = WHATSAPP_NUMBER } = Astro.props;
         </div>
       </aside>
     </div>
-
-    <!-- Bottom CTA Banner -->
-    <BottomCtaBanner />
   </div>
 </section>
